@@ -1,0 +1,53 @@
+@font-face {
+    font-family: 'Acrom';
+    src: local('Acrom Regular'), local('Acrom-Regular'),
+        url('../assets/fonts/Acrom-Regular.woff') format('woff'),
+        url('../assets/fonts/Acrom-Regular.woff2') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Acrom';
+    src: local('Acrom Medium'), local('Acrom-Medium'),
+        url('../assets/fonts/Acrom-Medium.woff') format('woff'),
+        url('../assets/fonts/Acrom-Medium.woff2') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Acrom';
+    src: local('Acrom Bold'), local('Acrom-Bold'),
+        url('../assets/fonts/Acrom-Bold.woff') format('woff'),
+        url('../assets/fonts/Acrom-Bold.woff2') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+/* @font-face {
+    font-family: 'TT Norms';
+    src: local('TT Norms Regular'), local('TTNorms-Regular'),
+        url('../assets/fonts/TTNorms-Regular.woff') format('woff'),
+        url('../assets/fonts/TTNorms-Regular.woff2') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+} */
+
+@font-face {
+    font-family: 'TT Norms';
+    src: local('TT Norms Medium'), local('TTNorms-Medium'),
+        url('../assets/fonts/TTNorms-Medium.woff') format('woff'),
+        url('../assets/fonts/TTNorms-Medium.woff2') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'TT Norms';
+    src: local('TT Norms Bold'), local('TTNorms-Bold'),
+        url('../assets/fonts/TTNorms-Bold.woff') format('woff'),
+        url('../assets/fonts/TTNorms-Bold.woff2') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}

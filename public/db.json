@@ -1,0 +1,15 @@
+{
+    "sidebar": {
+        "status": {
+            "items": [{
+                "goods": {
+                    "value": "181 924 36"
+                }
+            }, {
+                "users": {
+                    "value": "486 532"
+                }
+            }]
+        }
+    }
+}

@@ -1,0 +1,69 @@
+:root {
+    --content-padding-left: 37;
+    --content-padding-right: 63;
+
+    --black: #000;
+    --dark: #1D222C;
+    --dark-2: #292C33;
+    --dark-3: #0C0C0C;
+    --gray-text: #BEC1DB;
+    --dark-gray: #7F8CA5;
+    --dark-89: #8995AF;
+    --gray-a8: #A8B4CD;
+    --gray-ea: #EAEBF8;
+    --gray-da: #DADBED;
+    --gray-f3: #F3F7FF;
+    --gray-c5: #C5CFE4;
+    --gray-a2: #A2AEC8;
+    --gray-c9: #C9D0DF;
+    --gray-ac: #ACB6CC;
+    --gray-e3: #E3E9F5;
+    --gray-ba: #BAC9E6;
+    --gray-b9: #B9C3D6;
+    --gray-b2: #B2B9D1;
+    --gray-a1: #A1AEC8;
+    --gray-8a: #8A98B3;
+
+    --light-blue: #EBEFFE;
+
+    --purple-gradient: linear-gradient(36.87deg, #B139FE 18.57%, #1E61EB 80.26%);
+    --green: #8CD23C;
+    --green-gradient: linear-gradient(90deg, var(--green) 0%, #417A00 100%);
+    --red: #FF5343;
+    --red-gradient: linear-gradient(222.47deg, #FF8176 14%, var(--red) 80.18%);
+    --orange-gradient: linear-gradient(43.39deg, #F9B544 26.46%, #FFD77F 80%);
+    --blue-gradient: linear-gradient(90deg, #647AE8 0%, #54A3F5 104.25%);
+
+    --offset-l: 3.2rem;
+    --offset-m: 2.4rem;
+    --offset: 1.6rem;
+    --offset-s: 1.2rem;
+    --offset-xs: 1rem;
+    --offset-xxs: 0.8rem;
+    --offset-xxxs: 0.4rem;
+}
+
+$sidebar: 424;
+$toolbar: 125;
+
+$ff: 'TT Norms';
+$ff-acrom: 'Acrom';
+$fz: 14;
+$default-color: var(--black);
+
+$brs: 4px;
+$brs-2: 6px;
+$brs-card: 8px;
+$brs-btn: 100px;
+
+$bsh: 0 0 65px rgba(220, 225, 246, 0.85);
+$bsh-2: 0 4px 4px rgba(0, 0, 0, 0.25);
+$bsh-field: 0 4px 35px rgba(142, 145, 176, 0.15);
+$bsh-card: 0 25px 35px rgba(226, 227, 243, 0.65);
+
+
+$transition-timing: cubic-bezier(0.4, 0, 0.2, 1);
+$duration: 0.3s;
+$duration--long: 1s;
+$delay: $duration;
+$transition: $duration $transition-timing;

@@ -1,0 +1,22 @@
+.status {
+    $this: &;
+
+    display: flex;
+    align-items: center;
+
+    &__text {
+        display: grid;
+        row-gap: vw(2);
+    }
+
+    &__value {
+        font-weight: 700;
+    }
+
+    &__descr {
+        font-size: vw(12);
+        line-height: calc(14 / 12 * 100%);
+        font-weight: 500;
+        color: var(--gray-b2);
+    }
+}

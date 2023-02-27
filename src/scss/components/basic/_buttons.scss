@@ -1,0 +1,88 @@
+.button {
+    $this: &;
+
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--green-gradient);
+    border-radius: $brs-btn;
+    font-family: $ff, sans-serif;
+    font-size: $fz;
+    line-height: calc(17 / $fz * 100%);
+    transition: $transition all;
+
+    .icon {
+        margin-right: vw(5);
+    }
+
+    /* @media (any-hover: hover) {
+        &:hover {
+            
+        }
+    } */
+
+    &[disabled] {
+        border: none;
+        cursor: not-allowed;
+
+        /* @media (any-hover: hover) {
+            &:hover {
+                
+            }
+        } */
+    }
+
+    &--disabled {
+        background: transparent;
+
+        @media (any-hover: hover) {
+            &:hover {
+                background: transparent;
+            }
+        }
+    }
+
+    &--border {
+        background: transparent;
+        border: 1px solid rgba(192, 194, 220, 0.35);
+        color: var(--gray-a1);
+
+        .icon {
+            fill: var(--gray-a1);
+        }
+
+        @media (any-hover: hover) {
+            &:hover {
+                background: transparent;
+                color: var(--dark);
+
+                .icon {
+                    fill: var(--dark);
+                }
+            }
+        }
+    }
+
+    &--transparent {
+        background: transparent;
+
+        @media (any-hover: hover) {
+            &:hover {
+                background: transparent;
+            }
+        }
+    }
+
+    &--style {
+        &_bg {
+            &-purple {
+                background: var(--purple);
+            }
+
+            &-red {
+                background: var(--red-gradient);
+            }
+        }
+    }
+}

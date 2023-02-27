@@ -1,0 +1,65 @@
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 101;
+    width: vw(424);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+
+    &__top {
+        height: vw(150);
+
+        .logo {
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    &__body {
+        flex-grow: 1;
+        padding: vw(11) vw(30) vw(30) vw(25);
+    }
+
+    &__bottom {
+        @include row-grid(vw(10));
+        justify-items: center;
+        padding: vw(11) vw(20) vw(46);
+    }
+
+    &__btns {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    &__logo-btn {
+        min-width: vw(160);
+        padding: vw(11);
+
+        img {
+            flex-shrink: 0;
+            margin-right: vw(10);
+            width: vw(28);
+            height: vw(28);
+            border-radius: 50%;
+            object-fit: cover;
+        }
+    }
+
+    &__btn {
+        font-family: $ff-acrom, sans-serif;
+        padding: vw(21);
+
+        &:first-child {
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+            border-right: none;
+        }
+
+        &:last-child {
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+        }
+    }
+}

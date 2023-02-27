@@ -1,0 +1,13 @@
+.empty-block {
+    display: grid;
+    place-items: center;
+    text-align: center;
+
+    // .empty-page__img
+
+    &__img {}
+
+    // .empty-page__text
+
+    &__text {}
+}

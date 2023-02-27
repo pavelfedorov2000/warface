@@ -1,0 +1,29 @@
+.breadcrumbs {
+    $this: &;
+
+    &__item {
+        position: relative;
+        display: inline-block;
+        transition: $transition color;
+
+        /* @media (any-hover: hover) {
+            &:hover {
+                
+            }
+        }
+
+        span {
+            
+        } */
+
+        &:not(:last-child) {
+            &:after {
+                content: '|';
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                right: 0;
+            }
+        }
+    }
+}

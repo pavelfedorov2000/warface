@@ -1,0 +1,12 @@
+.page {
+    position: relative;
+    flex: 1 0 auto;
+    padding: vw(49) vw(63) vw(63) vw($sidebar + $toolbar);
+
+    &-top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+}

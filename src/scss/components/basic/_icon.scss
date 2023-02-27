@@ -1,0 +1,45 @@
+.icon {
+    flex-shrink: 0;
+    width: vw(18);
+    height: vw(18);
+    fill: #fff;
+    transition: $transition fill;
+
+    &--size {
+        &_xs {
+            width: var(--icon-size_xs);
+            height: var(--icon-size_xs);
+        }
+
+        &_sm {
+            width: var(--icon-size_s);
+            height: var(--icon-size_s);
+        }
+
+        &_s {
+            width: var(--icon-size_s);
+            height: var(--icon-size_s);
+        }
+
+        &_m {
+            width: var(--icon-size_m);
+            height: var(--icon-size_m);
+        }
+
+        &_l {
+            width: var(--icon-size_l);
+            height: var(--icon-size_l);
+        }
+    }
+
+    &--width {
+        &_22 {
+            width: vw(22);
+        }
+
+        &_24 {
+            width: vw(24);
+            height: vw(20);
+        }
+    }
+}

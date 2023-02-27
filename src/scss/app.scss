@@ -1,0 +1,137 @@
+@import 'fonts';
+@import 'mixins';
+@import 'vars';
+@import 'null';
+
+html {
+    box-sizing: border-box;
+
+    /* @media (max-width: 1920px) {
+        font-size: calc(100vw / 1920 * 10);
+    }
+
+    @media (max-width: 1600px) {
+        font-size: calc(100vw / 1600 * 10);
+    }
+
+    @media (max-width: 1440px) {
+        font-size: calc(100vw / 1440 * 10);
+    }
+
+    @media (max-width: 1024px) {
+        font-size: calc(100vw / 768 * 10);
+    }
+
+    @media (max-width: 767px) {
+        font-size: calc(100vw / 500 * 10);
+    }
+
+    @media (max-width: 500px) {
+        font-size: calc(100vw / 360 * 10);
+    } */
+
+    &.disable-fix {
+        @media (min-width: 1025px) {
+            padding-right: 17px;
+        }
+    }
+}
+
+body {
+    min-width: 320px;
+    font-family: $ff, sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    color: $default-color;
+    font-size: vw($fz);
+    line-height: calc(17 / #{$fz} * 100%);
+    overflow-x: hidden;
+
+    &._lock {
+        overflow-y: hidden;
+    }
+}
+
+.wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* .container {
+    width: calc(var(--container-width) + var(--container-padding) * 2);
+    max-width: 100%;
+    padding: 0 var(--container-padding);
+    margin: 0 auto;
+} */
+
+button,
+textarea,
+input {
+    font-family: 'Raleway', sans-serif;
+    font-feature-settings: 'pnum'on, 'lnum'on;
+}
+
+dt {
+    float: left;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    vertical-align: top;
+    border: none;
+
+    table & {
+        max-width: none;
+    }
+}
+
+a {
+    transition: $transition all;
+
+    @media (any-hover: hover) {
+        &:hover {
+            color: var(--gray-777);
+        }
+    }
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    border: 0;
+    clip: rect(0 0 0 0);
+}
+
+.full-link {
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+    }
+}
+
+.mr {
+    &-12 {
+        margin-right: vw(12);
+    }
+}
+
+.mb {
+    &-44 {
+        margin-bottom: vw(44);
+    }
+}
+
+@import 'components/components';
+@import 'modules/modules';

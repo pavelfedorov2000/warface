@@ -1,0 +1,58 @@
+.sidebar-nav {
+    $this: &;
+
+    @include row-grid(vw(22));
+
+    &__item-link {
+        display: flex;
+        align-items: center;
+        height: vw(70);
+        background-color: #fff;
+        border-radius: $brs;
+        box-shadow: $bsh;
+        background-size: vw(90);
+        background-position: vw(-34) vw(-33);
+        background-repeat: no-repeat;
+        transition: $transition background-color;
+
+        &.active {
+            background-color: var(--light-blue);
+
+            #{$this} {
+                &__item-icon {
+                    background: var(--green-gradient);
+                }
+            }
+        }
+
+        @media (any-hover: hover) {
+            &:hover {
+                background-color: var(--light-blue);
+
+                #{$this} {
+                    &__item-icon {
+                        background: var(--green-gradient);
+                    }
+                }
+            }
+        }
+    }
+
+    &__item-icon {
+        position: relative;
+        flex-shrink: 0;
+        margin-right: vw(28);
+        width: vw(74);
+        height: 100%;
+        border-radius: $brs;
+        display: grid;
+        place-items: center;
+        background: var(--purple-gradient);
+    }
+
+    &__item-text {
+        font-weight: 700;
+        color: var(--gray-b2);
+        text-transform: uppercase;
+    }
+}

@@ -1,0 +1,41 @@
+.pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    padding: var(--gap) 0;
+
+    // .pagination__list
+
+    &__list {
+        display: flex;
+    }
+
+    // .pagination__link
+
+    /* &__link {
+        &.active {
+           
+        }
+
+        @media (any-hover: hover) {
+            &:hover {
+                
+            }
+        }
+    } */
+
+    &__arrow {
+        svg {
+            transition: $transition fill;
+        }
+
+        /* @media (any-hover: hover) {
+            &:hover {
+                svg {
+                    
+                }
+            }
+        } */
+    }
+}

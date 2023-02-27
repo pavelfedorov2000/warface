@@ -1,0 +1,9 @@
+.sidebar-status {
+    padding: vw(12.5) vw(10);
+    display: flex;
+    gap: vw(7);
+    background-color: #fff;
+    border-radius: $brs-btn;
+    border: 2px solid rgba(226, 227, 243, 0.65);
+    box-shadow: $bsh-card;
+}

@@ -1,0 +1,51 @@
+.checkbox {
+    $this: &;
+
+    &__input {
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+        position: absolute;
+        clip: rect(0 0 0 0);
+
+        /* &:checked ~ #{$this}__style {
+            
+        } */
+    }
+
+    &__style {
+        position: relative;
+        flex-shrink: 0;
+    }
+
+    &__text {
+        
+    }
+}
+
+.radiobutton {
+    $this: &;
+
+    &__input {
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+        position: absolute;
+        clip: rect(0 0 0 0);
+
+        /* &:checked ~ #{$this} {
+            &__style {
+            
+            }
+        } */
+    }
+
+    &__style {
+        position: relative;
+        flex-shrink: 0;
+    }
+
+    &--type {
+        
+    }
+}

@@ -1,0 +1,38 @@
+.menu {
+    $this: &;
+
+    &__list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: vw(25);
+    }
+
+    &__link {
+        position: relative;
+        padding-bottom: vw(9);
+        font-weight: 700;
+        color: var(--gray-8a);
+        text-transform: uppercase;
+        transition: $transition color;
+
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: vw(3);
+            background: var(--purple-gradient);
+            opacity: 0;
+            transition: $transition opacity;
+        }
+
+        &.active {
+            color: var(--dark-3);
+
+            &::after {
+                opacity: 1;
+            }
+        }
+    }
+}
