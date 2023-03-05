@@ -1,0 +1,39 @@
+.good {
+    position: relative;
+    width: vw(65);
+    height: vw(65);
+
+    &__status {
+        position: absolute;
+        top: vw(1);
+        left: vw(4);
+    }
+
+    &__img {
+        position: absolute;
+        object-fit: contain;
+
+        &--type {
+            &_gun {
+                bottom: vw(-3);
+                left: vw(-6);
+                //width: vw(73);
+                //height: vw(25);
+            }
+        }
+    }
+
+    &__small-img {
+        position: absolute;
+        object-fit: contain;
+
+        &--type {
+            &_gun {
+                right: vw(-5);
+                bottom: vw(6);
+                //width: vw(37);
+                //height: vw(12);
+            }
+        }
+    }
+}

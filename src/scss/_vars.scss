@@ -6,9 +6,11 @@
     --dark: #1D222C;
     --dark-2: #292C33;
     --dark-3: #0C0C0C;
-    --gray-text: #BEC1DB;
-    --dark-gray: #7F8CA5;
-    --dark-89: #8995AF;
+    --dark-4: #0B0C10;
+    --gray-be: #BEC1DB;
+    --gray-7f: #7F8CA5;
+    --gray-e5: #E5EAF5;
+    --gray-89: #8995AF;
     --gray-a8: #A8B4CD;
     --gray-ea: #EAEBF8;
     --gray-da: #DADBED;
@@ -23,24 +25,27 @@
     --gray-b2: #B2B9D1;
     --gray-a1: #A1AEC8;
     --gray-8a: #8A98B3;
+    --gray-a6: #A6B1C7;
+    --gray-c8: #C8D5ED;
+    --gray-cd: #CDD6E6;
+    --gray-ca: #CAD2E4;
+    --gray-cf: #CFD2EA;
+    --gray-e8: #E8EAF7;
+    --gray-c5: #C5CFE4;
+    --gray-af: #AFB8CC;
+    --gray-8f: #8F96A4;
+    --gray-a4: #A4B0C7;
 
     --light-blue: #EBEFFE;
 
     --purple-gradient: linear-gradient(36.87deg, #B139FE 18.57%, #1E61EB 80.26%);
     --green: #8CD23C;
+    --green-2: #7AB23A;
     --green-gradient: linear-gradient(90deg, var(--green) 0%, #417A00 100%);
     --red: #FF5343;
     --red-gradient: linear-gradient(222.47deg, #FF8176 14%, var(--red) 80.18%);
     --orange-gradient: linear-gradient(43.39deg, #F9B544 26.46%, #FFD77F 80%);
     --blue-gradient: linear-gradient(90deg, #647AE8 0%, #54A3F5 104.25%);
-
-    --offset-l: 3.2rem;
-    --offset-m: 2.4rem;
-    --offset: 1.6rem;
-    --offset-s: 1.2rem;
-    --offset-xs: 1rem;
-    --offset-xxs: 0.8rem;
-    --offset-xxxs: 0.4rem;
 }
 
 $sidebar: 424;
@@ -54,6 +59,7 @@ $default-color: var(--black);
 $brs: 4px;
 $brs-2: 6px;
 $brs-card: 8px;
+$brs-3: 12px;
 $brs-btn: 100px;
 
 $bsh: 0 0 65px rgba(220, 225, 246, 0.85);
@@ -67,3 +73,40 @@ $duration: 0.3s;
 $duration--long: 1s;
 $delay: $duration;
 $transition: $duration $transition-timing;
+
+%card {
+    background-color: #fff;
+    border-radius: $brs-card;
+    box-shadow: $bsh-card;
+}
+
+%cover {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+%text-10 {
+    font-size: vw(10);
+    line-height: calc(12 / 10 * 100%);
+}
+
+%text-11 {
+    font-size: vw(11);
+    line-height: calc(13 / 11 * 100%);
+}
+
+%text-12 {
+    font-size: vw(12);
+    line-height: calc(14 / 12 * 100%);
+}
+
+%text-16 {
+    font-size: vw(16);
+    line-height: calc(19 / 16 * 100%);
+}
+
+%text-18 {
+    font-size: vw(18);
+    line-height: calc(21 / 18 * 100%);
+}

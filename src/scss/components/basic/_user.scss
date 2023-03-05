@@ -1,0 +1,38 @@
+.user {
+    $this: &;
+
+    display: flex;
+    align-items: center;
+
+    &__avatar {
+        flex-shrink: 0;
+        margin-right: vw(11);
+        width: vw(59);
+        height: vw(59);
+        border-radius: 50%;
+        box-shadow: $bsh-card;
+    }
+
+    &__name {
+        font-size: vw(16);
+        line-height: calc(19 / 16 * 100%);
+        font-weight: 700;
+    }
+
+    &--size {
+        &_xs {
+            #{$this} {
+                &__avatar {
+                    margin-right: vw(15);
+                    width: vw(45);
+                    height: vw(45);
+                }
+
+                &__name {
+                    font-size: vw(14);
+                    line-height: calc(17 / 14 * 100%);
+                }
+            }
+        }
+    }
+}

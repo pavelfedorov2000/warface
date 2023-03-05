@@ -1,0 +1,39 @@
+.users-table-row {
+    @include padding-y(vw(16));
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    align-items: center;
+    background-color: #fff;
+    border-radius: $brs;
+    box-shadow: $bsh-card;
+    font-family: $ff-acrom;
+    font-weight: 700;
+    font-size: vw(18);
+    line-height: calc(22 / 18 * 100%);
+}
+
+.users-table {
+    font-family: $ff-acrom;
+    font-weight: 700;
+    font-size: vw(18);
+    line-height: calc(22 / 18 * 100%);
+
+    &__head {
+        padding: vw(30) 0;
+        color: #C3CFE8;
+        background-color: transparent;
+        border-radius: 0;
+        box-shadow: none;
+    }
+
+    &__body {
+        @include row-grid(vw(19));
+        color: #1D222C;
+    }
+
+    &__cell {
+        &:first-child {
+            padding-left: vw(40);
+        }
+    }
+}

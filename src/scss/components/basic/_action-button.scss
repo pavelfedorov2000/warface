@@ -7,6 +7,17 @@
     width: vw(50);
     height: vw(50);
     border-radius: 50%;
+    transition: $transition box-shadow;
+
+    svg {
+        fill: #fff;
+    }
+
+    @media (any-hover: hover) {
+        &:hover {
+            box-shadow: $bsh-card;
+        }
+    }
 
     &--style {
         &_bg {
@@ -17,6 +28,18 @@
             &-purple {
                 background: var(--purple-gradient);
             }
+
+            &-blue {
+                background: var(--blue-gradient);
+            }
+
+            &-orange {
+                background: var(--orange-gradient);
+            }
         }
+    }
+
+    &[aria-expanded="true"]~.dropdown-menu {
+        @include show();
     }
 }

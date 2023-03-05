@@ -1,0 +1,173 @@
+.cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: vw(10) vw(22);
+}
+
+.card {
+    @extend %card;
+    position: relative;
+    padding: vw(28) vw(30) vw(19) vw(23);
+    font-family: $ff-acrom;
+
+    &__badge {
+        position: absolute;
+        top: vw(-6);
+        left: calc(103 / 300 * 100%);
+        padding: vw(8.5) vw(21);
+        border-radius: $brs-btn;
+        background: var(--purple-gradient);
+        color: #fff;
+        font-weight: 700;
+        font-size: vw(12);
+        line-height: calc(14 / 12 * 100%);
+    }
+
+    &__actions {
+        position: absolute;
+        top: vw(15);
+        right: vw(23);
+        display: flex;
+        gap: vw(11);
+    }
+
+    &__action-btn {
+        svg {
+            fill: var(--gray-c5);
+            width: vw(12);
+            height: vw(12);
+            transition: $transition fill;
+        }
+
+        @media (any-hover: hover) {
+            &:hover {
+                svg {
+                    fill: var(--dark);
+                }
+            }
+        }
+    }
+
+    &__content {
+        display: grid;
+        grid-template-rows: vw(9) auto vw(8) auto vw(5) auto;
+        grid-template-columns: vw(33) vw(10) vw(22) vw(11) 1fr vw(6) vw(45);
+        grid-template-areas:
+            'good good good . . . .'
+            'good good good . title . favorite'
+            'good good good . . . .'
+            'good good good . dl . .'
+            '. . . . . . .'
+            'user . price price price . ellipsis'
+        ;
+    }
+
+    &__good {
+        grid-area: good;
+    }
+
+    &__title {
+        grid-area: title;
+        font-weight: 700;
+        font-size: vw(13);
+        line-height: calc(16 / 13 * 100%);
+    }
+
+    &__favorite {
+        grid-area: favorite;
+        justify-self: end;
+
+        svg {
+            fill: #FF5343;
+        }
+    }
+
+    &__list {
+        grid-area: dl;
+    }
+
+    &__user {
+        grid-area: user;
+    }
+
+    &__price {
+        grid-area: price;
+    }
+
+    &__ellipsis-btn {
+        grid-area: ellipsis;
+
+        svg {
+            width: vw(20);
+            height: vw(4);
+        }
+    }
+}
+
+.card-list {
+    @include row-grid(vw(8));
+    font-size: vw(10);
+    line-height: calc(12 / 10 * 100%);
+    color: var(--gray-be);
+}
+
+.price-box {
+    padding: vw(14) vw(11) vw(17);
+    display: flex;
+    justify-content: flex-end;
+    border: 1px solid #F3F7FF;
+    border-radius: $brs-btn;
+    font-weight: 700;
+    color: var(--gray-be);
+
+    &__value {
+        padding-left: vw(3);
+        color: var(--black);
+    }
+}
+
+.small-user {
+    $this: &;
+
+    @include row-grid(vw(4));
+    justify-items: center;
+    text-align: center;
+
+    &__avatar {
+        position: relative;
+        width: vw(33);
+        height: vw(33);
+        border-radius: 50%;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+    }
+
+    &__name {
+        font-size: vw(10);
+        line-height: calc(12 / 10 * 100%);
+    }
+
+    &.online {
+        #{$this} {
+            &__avatar {
+                &::before {
+                    content: '';
+                    position: absolute;
+                    right: vw(2);
+                    bottom: vw(-1);
+                    width: vw(9);
+                    height: vw(9);
+                    border-radius: 50%;
+                    background: var(--green);
+                    box-shadow: $bsh;
+                    border: 1.3px solid #FFF;
+                }
+            }
+        }
+    }
+}

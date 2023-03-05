@@ -1,0 +1,33 @@
+.back-button {
+    $this: &;
+
+    /* position: absolute;
+    bottom: 0;
+    left: 0; */
+    display: grid;
+    place-items: center;
+    width: vw(65);
+    height: vw(40);
+    border: 1px solid var(--gray-e8);
+    border-radius: $brs-btn;
+    transition: $transition border-color;
+
+    &__arrow {
+        width: vw(26);
+        height: vw(16);
+        fill: var(--gray-c5);
+        transition: $transition fill;
+    }
+
+    @media (any-hover: hover) {
+        &:hover {
+            border-color: var(--dark);
+
+            #{$this} {
+                &__arrow {
+                    fill: var(--dark);
+                }
+            }
+        }
+    }
+}

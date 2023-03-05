@@ -1,3 +1,21 @@
 .header {
     $this: &;
+
+    &__inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &__actions {
+        display: flex;
+        gap: vw(23);
+        height: vw(65);
+    }
+
+    &__action {
+        position: relative;
+        display: flex;
+        align-items: center;
+    }
 }

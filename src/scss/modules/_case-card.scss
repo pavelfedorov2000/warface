@@ -1,0 +1,121 @@
+.case-card {
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: $brs-card;
+
+    &__img {
+        position: absolute;
+        left: vw(-46);
+        top: vw(21);
+        width: vw(240);
+        height: vw(186);
+        border-radius: $brs-card;
+    }
+
+    &__content {
+        padding: vw(26) vw(25) vw(35) vw(10);
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        color: #fff;
+    }
+
+    &__badge {
+        position: relative;
+        align-self: flex-end;
+        padding: vw(10.5) vw(27) vw(10.5) vw(24);
+        background: var(--purple-gradient);
+        border-radius: $brs-btn 0 25px $brs-btn;
+
+        &--green {
+            background: var(--green-gradient);
+        }
+    }
+
+    &__badge-value {
+        font-weight: 700;
+        font-size: vw(16);
+        line-height: calc(19 / 16 * 100%);
+    }
+
+    &__badge-dot {
+        position: absolute;
+        top: vw(8);
+        right: vw(10);
+        width: vw(5);
+        height: vw(5);
+        border-radius: 50%;
+    }
+
+    &__badge-discount {
+        position: absolute;
+        top: vw(-7);
+        left: vw(-14);
+        padding: vw(1) vw(4);
+        background: rgba(#EB5757, .68);
+        border-radius: $brs-btn;
+        font-weight: 700;
+    }
+
+    &__badge-label {
+        position: absolute;
+        bottom: vw(-13);
+        left: 50%;
+        transform: translateX(-50%);
+        padding: vw(3.5) vw(7);
+        background: var(--green-gradient);
+        border-radius: $brs-btn;
+        font-size: vw(11);
+        line-height: calc(13 / 11 * 100%);
+        font-weight: 700;
+        white-space: nowrap;
+    }
+
+    &__suptitle {
+        font-family: $ff-acrom, sans-serif;
+        font-size: vw(16);
+        line-height: calc(19 / 16 * 100%);
+        font-weight: 700;
+    }
+
+    &__title {
+        margin-bottom: vw(20);
+        font-size: vw(45);
+        line-height: calc(53 / 45 * 100%);
+        letter-spacing: 0.15em;
+        font-weight: 700;
+        text-transform: uppercase;
+        font-style: italic;
+        @include border-text(#fff, transparent);
+    }
+
+    &__btn {
+        padding: vw(16.5) vw(27.5);
+    }
+}
+
+.small-case {
+    @include row-grid(vw(4));
+    justify-items: center;
+    font-family: $ff-acrom;
+    font-weight: 700;
+
+    &__img {
+        margin-bottom: vw(4);
+        width: vw(70);
+        height: vw(54);
+    }
+
+    &__title {
+        @extend %text-12;
+    }
+
+    &__price {
+        @extend %text-12;
+        color: #CED0E4;
+    }
+}

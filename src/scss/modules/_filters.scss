@@ -1,0 +1,59 @@
+.filters {
+    @include row-grid(vw(20));
+    padding: vw(28) vw(20);
+    background-color: #fff;
+    box-shadow: $bsh-2;
+    border-radius: $brs-2;
+
+    &__btns {
+        @include row-grid(vw(17));
+        margin: 0 auto;
+    }
+
+    &__btn {
+        padding: vw(14.5) vw(27.5);
+        border-radius: $brs;
+
+        svg {
+            margin-right: vw(10);
+            width: vw(15);
+            height: vw(15);
+        }
+    }
+}
+
+.filter {
+    &__title {
+        margin-bottom: vw(13);
+        font-family: $ff-acrom, sans-serif;
+        font-weight: 700;
+        font-size: vw(12);
+        line-height: calc(14 / 12 * 100%);
+    }
+
+    &__row-radios {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: vw(10);
+    }
+
+    &__col-radios {
+        @include row-grid(vw(12));
+    }
+}
+
+.accounts {
+    &__grid {
+        margin-top: vw(20);
+        display: grid;
+        grid-template-columns: vw(305) 1fr;
+        gap: vw(20);
+        align-items: flex-start;
+    }
+
+    &__cards {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: vw(30);
+    }
+}

@@ -1,9 +1,18 @@
-import { Page } from "../../interfaces/Route";
+import BackButton from "../BackButton";
+import SearchField from "../SearchField";
+import Title from "../Title";
 
-const PageTop = ({ title }: Page) => {
+interface Props {
+    title: string;
+    search?: boolean;
+}
+
+const PageTop = ({ title, search }: Props) => {
     return (
         <div className="page-top">
-            <h1 className="title">{title}</h1>
+            <BackButton />
+            <Title text={title} />
+            {search && <SearchField />}
         </div>
     );
 };

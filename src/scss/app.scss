@@ -42,6 +42,7 @@ body {
     font-family: $ff, sans-serif;
     font-style: normal;
     font-weight: 500;
+    background-color: #F3F7FF;
     color: $default-color;
     font-size: vw($fz);
     line-height: calc(17 / #{$fz} * 100%);
@@ -130,6 +131,41 @@ a {
 .mb {
     &-44 {
         margin-bottom: vw(44);
+    }
+}
+
+.eclipse {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: vw(22 - 90);
+    z-index: 10;
+    width: vw(90);
+    height: vw(90);
+    border-radius: 50%;
+    background-color: #F3F7FF;
+
+    &::before,
+    &::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    &::before {
+        width: vw(45);
+        height: vw(45);
+        border-radius: 50%;
+        background: var(--purple-gradient);
+    }
+
+    &::after {
+        width: vw(15);
+        height: vw(15);
+        border-radius: 50%;
+        background-color: #D0D4FB;
     }
 }
 

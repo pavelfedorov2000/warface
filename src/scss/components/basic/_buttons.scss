@@ -2,18 +2,29 @@
     $this: &;
 
     cursor: pointer;
+    position: relative;
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    gap: vw(5);
     background: var(--green-gradient);
+    color: #fff;
     border-radius: $brs-btn;
     font-family: $ff, sans-serif;
-    font-size: $fz;
-    line-height: calc(17 / $fz * 100%);
+    font-size: vw($fz);
+    line-height: calc(17 / #{$fz} * 100%);
     transition: $transition all;
 
-    .icon {
-        margin-right: vw(5);
+    @media (any-hover: hover) {
+        &:hover {
+            box-shadow: $bsh;
+        }
+    }
+
+    svg {
+        flex-shrink: 0;
+        fill: #fff;
+        transition: $transition fill;
     }
 
     /* @media (any-hover: hover) {
@@ -48,7 +59,7 @@
         border: 1px solid rgba(192, 194, 220, 0.35);
         color: var(--gray-a1);
 
-        .icon {
+        svg {
             fill: var(--gray-a1);
         }
 
@@ -57,7 +68,7 @@
                 background: transparent;
                 color: var(--dark);
 
-                .icon {
+                svg {
                     fill: var(--dark);
                 }
             }
@@ -77,12 +88,88 @@
     &--style {
         &_bg {
             &-purple {
-                background: var(--purple);
+                background: var(--purple-gradient);
             }
 
             &-red {
                 background: var(--red-gradient);
             }
+
+            &-gray {
+                background: #EAEBF8;
+                color: #292C33;
+
+                svg {
+                    fill: #292C33;
+                }
+            }
+        }
+
+        &_link,
+        &_link-2 {
+            background: transparent;
+            padding-bottom: vw(5);
+
+            #{$this} {
+                &__text {
+                    &::after {
+                        content: '';
+                        position: absolute;
+                        bottom: 0;
+                        left: 0;
+                        width: 100%;
+                        height: vw(1);
+                        transition: $transition background-color;
+                    }
+                }
+            }
+
+            @media (any-hover: hover) {
+                &:hover {
+                    color: var(--dark);
+
+                    #{$this} {
+                        &__text {
+                            &::after {
+                                background-color: var(--dark);
+                            }
+                        }
+                    }
+
+                    svg {
+                        fill: var(--dark);
+                    }
+                }
+            }
+        }
+
+        &_link {
+            color: var(--gray-c5);
+
+            #{$this} {
+                &__text {
+                    &::after {
+                        background-color: rgba(226, 227, 243, 0.65);
+                    }
+                }
+            }
+        }
+
+        &_link-2 {
+            color: #ACB6CC;
+
+            #{$this} {
+                &__text {
+                    &::after {
+                        background-color: #ACB6CC;
+                    }
+                }
+            }
+        }
+
+        &_link-3 {
+            background: transparent;
+            color: #C5CFE4;
         }
     }
 }

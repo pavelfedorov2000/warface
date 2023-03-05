@@ -12,9 +12,11 @@ interface Props {
     isDisabled?: boolean;
     icon?: ReactNode;
     transparent?: boolean;
+    style?: string;
+    bg?: string;
 }
 
-const Button = ({ href, onClick, className, border, text, type, isDisabled, transparent, icon }: Props) => {
+const Button = ({ href, onClick, className, border, text, type, isDisabled, transparent, icon, style, bg }: Props) => {
     const content = <>
         {icon ? icon : null}
         <span className="button__text">{text}</span>
@@ -25,7 +27,7 @@ const Button = ({ href, onClick, className, border, text, type, isDisabled, tran
             {href ?
                 <Link
                     to={href}
-                    className={classNames('button', className, {
+                    className={classNames('button', className, style && `button--style_${style}`, bg && `button--style_bg-${bg}`, {
                         'button--border': border,
                         'button--transparent': transparent,
                     })}>
@@ -36,7 +38,7 @@ const Button = ({ href, onClick, className, border, text, type, isDisabled, tran
                     onClick={onClick}
                     disabled={isDisabled}
                     type={type || 'button'}
-                    className={classNames('button', className, {
+                    className={classNames('button', className, style && `button--style_${style}`, bg && `button--style_bg-${bg}`, {
                         'button--border': border,
                         'button--transparent': transparent,
                     })}>
@@ -48,5 +50,3 @@ const Button = ({ href, onClick, className, border, text, type, isDisabled, tran
 }
 
 export default Button;
-
-//style={cart && { backgroundColor: `${isBasketProduct ? '#479458' : '#ee3333'}` }}

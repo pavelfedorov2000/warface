@@ -1,0 +1,40 @@
+.notification {
+    display: grid;
+    grid-template-columns: vw(45) 1fr auto;
+    grid-template-rows: repeat(2, auto);
+    grid-template-areas:
+        'icon title time'
+        'icon text text'
+    ;
+    gap: vw(8) vw(9);
+    font-family: $ff-acrom, sans-serif;
+
+    &__icon {
+        grid-area: icon;
+        width: vw(45);
+        height: vw(45);
+    }
+
+    &__title {
+        grid-area: title;
+        font-weight: 700;
+    }
+
+    &__title,
+    &__time {
+        font-size: vw(12);
+        line-height: calc(14 / 12 * 100%);
+    }
+
+    &__time {
+        grid-area: time;
+        color: var(--gray-c5);
+    }
+
+    &__text {
+        grid-area: text;
+        font-size: vw(10);
+        line-height: calc(13 / 10 * 100%);
+        color: var(--gray-a6);
+    }
+}

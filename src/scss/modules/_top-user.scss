@@ -1,0 +1,105 @@
+.top-three-users {
+    padding-top: vw(70);
+    padding-bottom: vw(17);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: vw(35);
+}
+
+.top-user {
+    position: relative;
+    padding: 0 vw(30) vw(35);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #fff;
+    box-shadow: $bsh-card;
+    border-radius: $brs-3;
+    font-family: $ff-acrom;
+
+    &__avatar {
+        position: relative;
+        margin-top: vw(-30);
+        margin-bottom: vw(32);
+        width: vw(130);
+        height: vw(130);
+        border-radius: 50%;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    &__place {
+        position: absolute;
+        bottom: vw(-16);
+        left: 50%;
+        transform: translateX(-50%);
+        padding: vw(10.5) vw(12.5);
+        border-radius: $brs-btn;
+        color: #fff;
+        font-weight: 700;
+        font-size: vw(12);
+        line-height: calc(14 / 12 * 100%);
+        white-space: nowrap;
+
+        span {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: vw(24);
+            height: vw(24);
+            background-position: center;
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+
+        &--gold {
+            background: linear-gradient(90deg, #A5703B 0%, #E6BB86 54.17%, #A5703B 100%);
+        }
+
+        &--silver {
+            background: linear-gradient(90deg, #A4A8CB 0%, #C6C9E7 53.97%, #A4A8CB 100%);
+        }
+
+        &--bronze {
+            background: linear-gradient(90deg, #96595A 0%, #BA7172 52.6%, #96595A 99.99%, #CD7F32 100%);
+        }
+    }
+
+    &__name {
+        font-size: vw(18);
+        line-height: calc(22 / 18 * 100%);
+        font-weight: 700;
+        margin-bottom: vw(22);
+    }
+
+    &__stats {
+        display: flex;
+        gap: vw(10);
+    }
+
+    &__stats-item {
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+        gap: vw(6);
+        text-align: center;
+
+        dt {
+            font-size: vw(12);
+            line-height: calc(14 / 12 * 100%);
+            color: #B4BAD2;
+        }
+
+        dd {
+            font-size: vw(16);
+            line-height: calc(19 / 16 * 100%);
+            font-weight: 700;
+            letter-spacing: 0.05em;
+        }
+    }
+}

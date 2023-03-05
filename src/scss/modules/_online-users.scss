@@ -1,0 +1,25 @@
+.online-users {
+    padding: vw(8) vw(7) vw(8) vw(34);
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    border-radius: $brs-btn;
+    box-shadow: $bsh-card;
+    background-position: vw(7) 50%;
+    background-size: vw(20);
+    background-repeat: no-repeat;
+
+    &__value {
+        font-size: vw(12);
+        line-height: calc(14 / 12 * 100%);
+        font-weight: 700;
+        color: var(--gray-89);
+    }
+
+    &__descr {
+        grid-column: 2 / 3;
+        font-size: vw(10);
+        line-height: calc(12 / 10 * 100%);
+        color: var(--gray-a8);
+    }
+}

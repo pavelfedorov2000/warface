@@ -1,7 +1,8 @@
 import { EmptyBlock } from "./EmptyBlock";
+import { ReactNode } from "react";
 
 export interface Page {
-    title?: string;
+    title: string;
     subtitle?: string;
     emptyBlock?: EmptyBlock;
 }
@@ -13,4 +14,5 @@ export interface Route extends Page {
     exact?: boolean;
     profile?: boolean;
     component?: any;
+    icon?: ReactNode;
 }

@@ -1,1 +1,26 @@
+.title {
+    position: relative;
+    padding-bottom: vw(18);
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-family: $ff-acrom, sans-serif;
+    font-weight: 700;
+    font-size: vw(24);
+    line-height: calc(29 / 24 * 100%);
+    background-position: center vw(-14);
+    background-size: vw(157) vw(85);
+    background-repeat: no-repeat;
 
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: vw(35);
+        height: vw(4);
+        background: var(--purple-gradient);
+        border-radius: $brs-btn;
+    }
+}

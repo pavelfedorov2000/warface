@@ -1,12 +1,26 @@
 .page {
     position: relative;
     flex: 1 0 auto;
-    padding: vw(49) vw(63) vw(63) vw($sidebar + $toolbar);
+    padding: vw(49) vw(63) vw(63) vw($sidebar + $toolbar + 38);
 
     &-top {
-        display: flex;
+        position: relative;
+        padding-top: vw(33);
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: vw(15);
         align-items: center;
-        justify-content: space-between;
-        flex-wrap: wrap;
+    }
+
+    &__content {
+        margin: 0 auto;
+
+        &--small {
+            max-width: vw(910);
+        }
+    }
+
+    .title {
+        align-self: stretch;
     }
 }

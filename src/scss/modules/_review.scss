@@ -1,0 +1,165 @@
+.review {
+    display: grid;
+    grid-template-columns: vw(356) vw(44) vw(82) 1fr;
+    grid-template-areas:
+        'info . content content'
+        '. . . answer'
+    ;
+    gap: vw(24) 0;
+}
+
+.review-card {
+    @extend %card;
+    position: relative;
+    grid-area: info;
+    padding: vw(23) vw(21);
+    display: flex;
+    align-items: flex-start;
+
+    &__avatar {
+        flex-shrink: 0;
+        margin-right: vw(10);
+        width: vw(45);
+        height: vw(45);
+        border-radius: 50%;
+    }
+
+    &__info {
+        margin-right: vw(23);
+        padding-right: vw(25);
+        display: flex;
+        align-items: flex-start;
+        border-right: 1px solid rgba(226, 227, 243, 0.65);
+        font-family: $ff-acrom;
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    &__name {
+        @extend %text-16;
+        font-weight: 700;
+        margin-bottom: vw(10);
+    }
+
+    &__datetime {
+        @extend %text-11;
+        color: #B4BAD2;
+        margin-bottom: vw(17);
+    }
+}
+
+.rating {
+    display: flex;
+    gap: vw(5);
+
+    &-star {
+        width: vw(20);
+        height: vw(20);
+        fill: #DDE6F8;
+
+        &.filled {
+            fill: #FFBF53;
+        }
+    }
+}
+
+.review-content {
+    @extend %card;
+    grid-area: content;
+    padding: vw(27) vw(30) vw(16) vw(37);
+    font-family: $ff-acrom;
+
+    &__text {
+        margin-bottom: vw(12);
+        color: #A2AEC8;
+    }
+
+    &__btns {
+        padding-left: vw(45);
+        display: flex;
+        justify-content: space-between;
+
+        svg {
+            width: vw(15);
+            height: vw(15);
+            fill: #C5CFE4;
+        }
+    }
+}
+
+.review-answer {
+    @extend %card;
+    grid-area: answer;
+    /* position: absolute;
+    top: calc(100% + vw(24));
+    left: vw(82);
+    right: 0; */
+    padding: vw(20) vw(25) vw(25) vw(16);
+    font-family: $ff-acrom;
+    display: grid;
+    grid-template-columns: auto 1fr auto vw(20);
+    grid-template-areas:
+        'avatar name datetime remove'
+        'avatar text text edit'
+    ;
+    gap: vw(4) vw(8);
+
+    &__avatar {
+        margin-right: vw(5);
+        grid-area: avatar;
+        width: vw(45);
+        height: vw(45);
+        border-radius: 50%;
+    }
+
+    &__name {
+        @extend %text-12;
+        grid-area: name;
+        font-weight: 700;
+    }
+
+    &__text {
+        @extend %text-10;
+        color: #A2AEC8;
+        grid-area: text;
+        max-height: vw(24);
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    &__datetime {
+        @extend %text-10;
+        color: #C9D0DF;
+        align-self: center;
+    }
+
+    &__action {
+        svg {
+            width: vw(12);
+            height: vw(13);
+            fill: #C5CFE4;
+            transition: $transition fill;
+        }
+
+        @media (any-hover: hover) {
+            &:hover {
+                svg {
+                    fill: var(--dark);
+                }
+            }
+        }
+
+        &--remove {
+            grid-area: remove;
+        }
+
+        &--edit {
+            grid-area: edit;
+            align-self: flex-end;
+        }
+    }
+}

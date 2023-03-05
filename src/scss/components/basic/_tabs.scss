@@ -1,22 +1,62 @@
-.tabs {
+.tabs-wrap {
+    padding-bottom: vw(32);
     display: flex;
+    justify-content: center;
+}
+
+.tabs {
+    @include padding-x(vw(18));
+    display: flex;
+    background-color: #fff;
+    box-shadow: $bsh-card;
+    border-radius: $brs;
+
+    &--style {
+        &_2 {
+            background-color: transparent;
+            box-shadow: none;
+            border-radius: 0;
+        }
+    }
 }
 
 .tab {
     position: relative;
+    padding: vw(23) vw(18);
+    font-weight: 700;
+    font-size: vw(16);
+    line-height: calc(19 / 16 * 100%);
+    color: var(--gray-cf);
+    transition: $transition color;
+
+    &::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: vw(3);
+        background: var(--purple-gradient);
+        opacity: 0;
+        transition: $transition opacity;
+    }
 
     @media (any-hover: hover) {
         &:hover {
-            //color: var(--gray);
+            color: var(--dark-4);
         }
     }
 
-    &.active {
-        //color: var(--green);
+    &[aria-selected="true"] {
+        color: var(--dark-4);
+
+        &::after {
+            opacity: 1;
+        }
 
         @media (any-hover: hover) {
             &:hover {
-                //color: var(--green);
+                color: var(--dark-4);
             }
         }
     }

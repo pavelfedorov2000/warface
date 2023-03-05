@@ -1,0 +1,128 @@
+.toolbar {
+    position: fixed;
+    top: 0;
+    left: vw($sidebar);
+    width: vw($toolbar);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--gray-e5);
+    overflow-y: auto;
+    z-index: 101;
+    scrollbar-width: 0;
+
+    &::-webkit-scrollbar {
+        -webkit-appearance: none;
+        width: 0;
+    }
+
+    &::before {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 20;
+        height: vw(154);
+        background: linear-gradient(180deg, rgba(229, 234, 245, 0) 0%, #E5EAF5 100%);
+    }
+
+    &__top {
+        padding: vw(10) vw(10) vw(12);
+        display: grid;
+        grid-template-columns: 1fr vw(4);
+        gap: vw(2);
+        align-items: center;
+    }
+
+    &__items {
+        padding: vw(17) vw(12) 0 vw(9);
+    }
+}
+
+.toolbar-switchers {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    background-color: var(--gray-ca);
+}
+
+.toolbar-switcher {
+    display: grid;
+    place-items: center;
+    height: vw(45);
+
+    svg {
+        fill: var(--gray-7f);
+        transition: $transition fill;
+    }
+
+    &.active {
+        background: var(--purple-gradient);
+
+        svg {
+            fill: #fff;
+        }
+    }
+
+    &:first-child {
+        &.active {
+            border-radius: 0 $brs-btn $brs-btn 0;
+        }
+    }
+
+    &:last-child {
+        &.active {
+            border-radius: $brs-btn 0 0 $brs-btn;
+        }
+    }
+}
+
+.toolbar-card {
+    display: grid;
+    grid-template-columns: vw(3) vw(21) vw(21) 1fr;
+    grid-template-rows: vw(78) vw(9) vw(15) vw(15) vw(6);
+
+    &__img {
+        position: relative;
+        z-index: 1;
+        grid-row: 1 / 4;
+        grid-column: 2 / -1;
+        object-fit: contain;
+        align-self: center;
+    }
+
+    &__avatar {
+        position: relative;
+        z-index: 3;
+        grid-column: 1 / 4;
+        grid-row: 2 / -1;
+        width: vw(45);
+        height: vw(45);
+        border-radius: 50%;
+        object-fit: cover;
+    }
+
+    &__name {
+        position: relative;
+        z-index: 2;
+        grid-column: 3 / -1;
+        grid-row: 3 / -2;
+        padding-left: vw(25);
+        padding-right: vw(11);
+        display: flex;
+        align-items: center;
+        background-color: #fff;
+        border-radius: $brs-btn;
+        box-shadow: $bsh-card;
+        font-weight: 700;
+        font-size: vw(12);
+        line-height: calc(14 / 12 * 100%);
+        color: var(--dark);
+
+        span {
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+        }
+    }
+}

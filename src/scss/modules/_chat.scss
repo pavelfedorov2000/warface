@@ -1,0 +1,214 @@
+.chat {
+    background-color: #fff;
+    border-radius: $brs-3;
+    box-shadow: $bsh-card;
+
+    &__head {
+        padding: vw(28) vw(38);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: 1px solid #D9DFEB;
+    }
+
+    &__supported {
+        display: flex;
+        align-items: center;
+        gap: vw(11);
+        font-size: vw(16);
+        line-height: calc(19 / 16 * 100%);
+        font-weight: 700;
+    }
+
+    &__body {
+        padding: vw(40) vw(22) vw(35) vw(25);
+    }
+
+    &__messages {
+        margin-bottom: vw(50);
+        @include row-grid(vw(30));
+    }
+
+    &__message {
+        display: flex;
+        align-items: center;
+        gap: vw(23);
+
+        &--reverse {
+            flex-direction: row-reverse;
+
+            .chat-message {
+                flex-direction: row-reverse;
+            }
+        }
+    }
+
+    &__avatar {
+        width: vw(50);
+        height: vw(50);
+        border-radius: 50%;
+    }
+}
+
+.chat-message {
+    $this: &;
+
+    position: relative;
+    padding: vw(18.5) vw(25);
+    min-width: vw(373);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--gray-f3);
+    border-radius: 120px;
+    font-family: $ff-acrom;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: vw(42);
+        height: vw(34);
+        background-color: var(--gray-f3);
+        z-index: 1;
+    }
+
+    &__date {
+        position: relative;
+        z-index: 2;
+        font-size: vw(16);
+        line-height: calc(19 / 16 * 100%);
+        color: var(--gray-a4);
+
+        img {
+            flex-shrink: 0;
+            margin-right: vw(8);
+            width: vw(16);
+            height: vw(16);
+        }
+    }
+
+    &__text {
+        position: relative;
+        z-index: 2;
+        line-height: calc(25 / 14 * 100%);
+        color: var(--gray-8f);
+    }
+
+    &__remove {
+        flex-shrink: 0;
+
+        svg {
+            width: vw(16);
+            height: vw(16);
+            fill: var(--gray-a4);
+            transition: $transition fill;
+        }
+
+        @media (any-hover: hover) {
+            &:hover {
+                svg {
+                    fill: var(--dark);
+                }
+            }
+        }
+    }
+
+    &.is-user {
+        &::before {
+            left: vw(-10);
+            clip-path: polygon(0% 50%, 100% 0%, 100% 100%);
+        }
+    }
+
+    &.is-support {
+        &::before {
+            right: vw(-10);
+            clip-path: polygon(0% 0%, 100% 50%, 0% 100%);
+        }
+    }
+}
+
+.support-icon {
+    position: relative;
+    display: grid;
+    place-items: center;
+    width: vw(59);
+    height: vw(59);
+    border-radius: 50%;
+    background: var(--purple-gradient);
+
+    &--size {
+        &_xs {
+            width: vw(50);
+            height: vw(50);
+        }
+    }
+
+    span {
+        position: absolute;
+        top: vw(-5);
+        right: vw(-5);
+        display: grid;
+        place-items: center;
+        width: vw(30);
+        height: vw(30);
+        border-radius: 50%;
+        background: var(--green-gradient);
+        font-size: vw(12);
+        line-height: calc(14 / 12 * 100%);
+        font-weight: 700;
+        color: #fff;
+    }
+}
+
+.chat-textfield {
+    position: relative;
+    min-height: vw(100);
+    border-radius: $brs-3;
+    border: 1px solid #E4E9F4;
+
+    &__textarea {
+        width: 100%;
+        padding: vw(30);
+        border: none;
+        border-radius: $brs-3;
+        font-family: $ff-acrom;
+        font-size: vw(14);
+        line-height: calc(17 / 14 * 100%);
+
+        &::placeholder {
+            color: #BAC9E6;
+        }
+    }
+
+    &__btns {
+        position: absolute;
+        right: vw(21);
+        bottom: vw(23);
+        display: flex;
+        align-items: center;
+        gap: vw(24);
+    }
+
+    &__btn {
+        svg {
+            width: vw(22);
+            height: vw(22);
+            fill: var(--gray-af);
+            fill-opacity: .45;
+            transition: $transition fill-opacity,
+                $transition fill;
+        }
+
+        @media (any-hover: hover) {
+            &:hover {
+                svg {
+                    fill: var(--green);
+                    fill-opacity: 1;
+                }
+            }
+        }
+    }
+}
