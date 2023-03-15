@@ -1,0 +1,91 @@
+.notifications-list {
+    @include padding-y(vw(45));
+    @include grid(3, vw(30), vw(30));
+}
+
+.notification-card {
+    $this: &;
+
+    position: relative;
+    font-family: $ff-acrom;
+
+    &__toggle {
+        @extend %card;
+        width: 100%;
+        display: grid;
+        grid-template-columns: auto 1fr vw(16);
+        grid-template-rows: 1fr auto auto 1fr;
+        grid-template-areas:
+            'icon . .'
+            'icon title title'
+            'icon datetime toggle'
+            'icon . .'
+        ;
+        align-items: center;
+        gap: vw(13) vw(8);
+        padding: vw(15) vw(25) vw(19) vw(19);
+        text-align: left;
+        font-family: $ff-acrom;
+
+        &[aria-expanded="true"] {
+            border-radius: $brs-card $brs-card 0 0;
+
+            #{$this} {
+                &__toggle-arrow {
+                    transform: rotate(180deg);
+                }
+            }
+
+            &+#{$this}__content {
+                display: block;
+                //@include show();
+            }
+        }
+    }
+
+    &__icon {
+        grid-area: icon;
+    }
+
+    &__title {
+        grid-area: title;
+        font-size: vw(14);
+        line-height: calc(17 / 14 * 100%);
+        font-weight: 700;
+    }
+
+    &__datetime {
+        @extend %text-12;
+        color: #C5CFE4;
+        grid-area: datetime;
+        font-weight: 500;
+    }
+
+    &__toggle-arrow {
+        grid-area: toggle;
+        width: vw(16);
+        height: vw(9);
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+
+    &__content {
+        /* position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        z-index: 10; */
+        display: none;
+        padding: vw(17) vw(19) vw(43) vw(21);
+        border-top: 1px solid #E5E9F3;
+        background-color: #fff;
+        border-radius: 0 0 $brs-card $brs-card;
+        //@include hide();
+
+        p {
+            @extend %text-12;
+            color: #A7B2C8;
+        }
+    }
+}

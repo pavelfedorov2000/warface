@@ -1,15 +1,17 @@
-import { Accounts, Home, Profile, Support } from "../Pages";
+import { Accounts, Achievements, Home, Notifications, Profile, Support, ViewsHistory, Settings, Promo, Reviews, Guarantee, Goods } from "../Pages";
 
 import User from "../Components/icons/User";
 import ShoppingHouse from "../Components/icons/ShoppingHouse";
 import Truck from "../Components/icons/Truck";
 import Winner from "../Components/icons/Winner";
-import Settings from "../Components/icons/Settings";
+import SettingsIcon from "../Components/icons/Settings";
 import Wallet from "../Components/icons/Wallet";
 import Workflow from "../Components/icons/Workflow";
 import TopUsers from "../Pages/TopUsers";
+import { Thumbnail } from "../Components/icons";
 
 enum Page {
+    Promo = 'Promo',
     Home = 'Home',
     Accounts = 'Accounts',
     PinCodes = 'PinCodes',
@@ -17,7 +19,6 @@ enum Page {
     Reviews = 'Reviews',
     Guarantee = 'Guarantee',
     Forum = 'Forum',
-
     Profile = 'Profile',
     Goods = 'Goods',
     Orders = 'Orders',
@@ -25,16 +26,23 @@ enum Page {
     Settings = 'Settings',
     Payment = 'Payment',
     ReferalSystem = 'ReferalSystem',
-
-    Support = 'Support'
-    //NotFound = 'NotFound',
+    ViewsHistory = 'ViewsHistory',
+    Support = 'Support',
+    Notifications = 'Notifications'
 }
 
 export const Pages = {
     main: [{
-        [Page.Home]: {
+        [Page.Promo]: {
             id: 0,
             path: '/',
+            exact: true,
+            component: Promo,
+        }
+    }, {
+        [Page.Home]: {
+            id: 0,
+            path: '/home',
             title: 'Главная',
             exact: true,
             component: Home
@@ -47,12 +55,6 @@ export const Pages = {
             component: Accounts,
         }
     }, {
-        [Page.PinCodes]: {
-            id: 2,
-            path: '/pin-codes',
-            title: 'Пин-коды'
-        }
-    }, {
         [Page.TopUsers]: {
             id: 3,
             path: '/top-users',
@@ -63,13 +65,15 @@ export const Pages = {
         [Page.Reviews]: {
             id: 4,
             path: '/reviews',
-            title: 'Отзывы'
+            title: 'Отзывы',
+            component: Reviews
         }
     }, {
         [Page.Guarantee]: {
             id: 5,
             path: '/guarantee',
-            title: 'Гарантии'
+            title: 'Гарантии',
+            component: Guarantee
         }
     }, {
         [Page.Forum]: {
@@ -91,7 +95,8 @@ export const Pages = {
             id: 8,
             title: 'Мои товары',
             path: '/goods',
-            icon: <ShoppingHouse />
+            icon: <ShoppingHouse />,
+            component: Goods
         }
     }, {
         [Page.Orders]: {
@@ -105,14 +110,16 @@ export const Pages = {
             id: 10,
             title: 'Достижения',
             path: '/achievements',
-            icon: <Winner />
+            icon: <Winner />,
+            component: Achievements
         }
     }, {
         [Page.Settings]: {
             id: 11,
             title: 'Настройки',
             path: '/settings',
-            icon: <Settings />
+            icon: <SettingsIcon />,
+            component: Settings
         }
     }, {
         [Page.Payment]: {
@@ -129,12 +136,28 @@ export const Pages = {
             icon: <Workflow />
         }
     }],
+    sidebar: [{
+        [Page.ViewsHistory]: {
+            id: 14,
+            title: 'История просмотров',
+            path: '/views-history',
+            icon: <Thumbnail />,
+            component: ViewsHistory
+        }
+    }],
     other: [{
         [Page.Support]: {
-            id: 14,
+            id: 15,
             title: 'Техническая поддержка',
             path: '/support',
             component: Support
+        }
+    }, {
+        [Page.Notifications]: {
+            id: 16,
+            title: 'Уведомления',
+            path: '/notifications',
+            component: Notifications
         }
     }]
 };

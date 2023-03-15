@@ -3,10 +3,20 @@
     width: vw(65);
     height: vw(65);
 
+    @media(max-width: 1024px) {
+        width: 6.5rem;
+        height: 6.5rem;
+    }
+
     &__status {
         position: absolute;
         top: vw(1);
         left: vw(4);
+
+        @media(max-width: 1024px) {
+            top: 0.1rem;
+            left: 0.4rem;
+        }
     }
 
     &__img {
@@ -19,6 +29,11 @@
                 left: vw(-6);
                 //width: vw(73);
                 //height: vw(25);
+
+                @media(max-width: 1024px) {
+                    bottom: -0.3rem;
+                    left: -0.6rem;
+                }
             }
         }
     }
@@ -33,6 +48,11 @@
                 bottom: vw(6);
                 //width: vw(37);
                 //height: vw(12);
+
+                @media(max-width: 1024px) {
+                    right: -0.5rem;
+                    bottom: 0.6rem;
+                }
             }
         }
     }

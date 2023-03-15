@@ -107,9 +107,7 @@
                     position: static;
                     flex-shrink: 0;
                     margin-right: vw(8);
-                    width: vw(23);
-                    height: vw(23);
-                    border-radius: 50%;
+                    @include round(vw(23));
                     background: transparent;
                     box-shadow: none;
                 }

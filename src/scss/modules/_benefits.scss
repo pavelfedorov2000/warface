@@ -1,0 +1,71 @@
+.benefits {
+    .back-button {
+        display: none;
+    }
+
+    &__list {
+        margin-top: vw(55);
+        @include grid(2, vw(42), vw(38));
+    }
+}
+
+.guarantee-card {
+    @extend %card;
+    padding: vw(26) vw(32) vw(26) vw(18);
+    font-family: $ff-acrom;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: repeat(2, auto);
+    gap: vw(11) vw(17);
+    align-items: flex-start;
+
+    &__icon {
+        grid-row: 1 / -1;
+        width: vw(65);
+        height: vw(65);
+        display: grid;
+        place-items: center;
+
+        img {
+            width: vw(22);
+        }
+
+        &--green {
+            border-radius: $brs-btn $brs-btn $brs-btn 0;
+            background: var(--green-gradient);
+        }
+
+        &--purple {
+            border-radius: 0 $brs-btn $brs-btn $brs-btn;
+            background: linear-gradient(223.77deg, #5E92FF 0%, #B23BFE 89.66%);
+        }
+    }
+
+    &__title {
+        @extend %text-16;
+        position: relative;
+        padding-bottom: vw(15);
+        font-weight: 700;
+
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: vw(30);
+            height: vw(3);
+            background: var(--green-gradient);
+        }
+    }
+
+    &__text {
+        @extend %text-13;
+        color: #ADBAD5;
+        grid-column: 2 / 3;
+    }
+}
+
+.guarantee-block {
+    padding-top: vw(30);
+    @include grid(3, vw(25), vw(25));
+}

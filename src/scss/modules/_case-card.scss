@@ -14,6 +14,13 @@
         width: vw(240);
         height: vw(186);
         border-radius: $brs-card;
+
+        @media(max-width: 1024px) {
+            left: -5rem;
+            top: 2.1rem;
+            width: 24rem;
+            height: 18.6rem;
+        }
     }
 
     &__content {
@@ -22,6 +29,10 @@
         flex-direction: column;
         align-items: flex-start;
         color: #fff;
+
+        @media(max-width: 1024px) {
+            padding: 2.5rem 1.5rem;
+        }
     }
 
     &__badge {
@@ -31,24 +42,32 @@
         background: var(--purple-gradient);
         border-radius: $brs-btn 0 25px $brs-btn;
 
+        @media(max-width: 1024px) {
+            padding: 1.05rem 2.7rem 1.05rem 2.4rem;
+        }
+
         &--green {
             background: var(--green-gradient);
         }
     }
 
     &__badge-value {
+        @extend %text-16;
         font-weight: 700;
-        font-size: vw(16);
-        line-height: calc(19 / 16 * 100%);
     }
 
     &__badge-dot {
         position: absolute;
         top: vw(8);
         right: vw(10);
-        width: vw(5);
-        height: vw(5);
-        border-radius: 50%;
+        @include round(vw(5));
+
+        @media(max-width: 1024px) {
+            top: 0.8rem;
+            right: 1rem;
+            width: 0.5rem;
+            height: 0.5rem;
+        }
     }
 
     &__badge-discount {
@@ -59,9 +78,16 @@
         background: rgba(#EB5757, .68);
         border-radius: $brs-btn;
         font-weight: 700;
+
+        @media(max-width: 1024px) {
+            top: -0.7rem;
+            left: -1.4rem;
+            padding: 0.1rem 0.4rem;
+        }
     }
 
     &__badge-label {
+        @extend %text-11;
         position: absolute;
         bottom: vw(-13);
         left: 50%;
@@ -69,16 +95,18 @@
         padding: vw(3.5) vw(7);
         background: var(--green-gradient);
         border-radius: $brs-btn;
-        font-size: vw(11);
-        line-height: calc(13 / 11 * 100%);
         font-weight: 700;
         white-space: nowrap;
+
+        @media(max-width: 1024px) {
+            bottom: -1.3rem;
+            padding: 0.35rem 0.7rem;
+        }
     }
 
     &__suptitle {
+        @extend %text-16;
         font-family: $ff-acrom, sans-serif;
-        font-size: vw(16);
-        line-height: calc(19 / 16 * 100%);
         font-weight: 700;
     }
 
@@ -91,10 +119,21 @@
         text-transform: uppercase;
         font-style: italic;
         @include border-text(#fff, transparent);
+
+        @media(max-width: 1024px) {
+            font-size: 4.5rem;
+            margin-bottom: 2rem;
+        }
     }
 
     &__btn {
         padding: vw(16.5) vw(27.5);
+        font-weight: 700;
+        text-transform: uppercase;
+
+        @media(max-width: 1024px) {
+            padding: 1.65rem 2.75rem;
+        }
     }
 }
 
@@ -108,6 +147,12 @@
         margin-bottom: vw(4);
         width: vw(70);
         height: vw(54);
+
+        @media(max-width: 1024px) {
+            margin-bottom: 0.4rem;
+            width: 7rem;
+            height: 5.4rem;
+        }
     }
 
     &__title {

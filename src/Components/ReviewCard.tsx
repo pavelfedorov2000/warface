@@ -15,16 +15,19 @@ const ReviewCard = ({ name, date, time, value, good }: ReviewItem) => {
                     <time className="review-card__datetime" dateTime={`${formatDateTime(date)}T${time}`}>
                         {time} {date}
                     </time>
-                    <div className="rating">
-                        {Array(5).fill(0).map((_, index) => (
-                            <Star key={index} className={classNames('rating-star', {
-                                'filled': index + 1 <= value
-                            })} />
-                        ))}
-                    </div>
+                    {value ?
+                        <div className="rating">
+                            {Array(5).fill(0).map((_, index) => (
+                                <Star key={index} className={classNames('rating-star', {
+                                    'filled': value && index + 1 <= value
+                                })} />
+                            ))}
+                        </div>
+                        : null
+                    }
                 </div>
             </div>
-            <SmallCase {...good} />
+            {good && <SmallCase className="review-card__case" {...good} />}
             <div className="eclipse"></div>
         </div>
     );

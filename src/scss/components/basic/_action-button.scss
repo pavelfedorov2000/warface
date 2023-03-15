@@ -4,13 +4,21 @@
     flex-shrink: 0;
     display: grid;
     place-items: center;
-    width: vw(50);
-    height: vw(50);
-    border-radius: 50%;
+    @include round(vw(50));
     transition: $transition box-shadow;
+
+    @media(max-width: 1024px) {
+        width: 5rem;
+        height: 5rem;
+    }
 
     svg {
         fill: #fff;
+
+        @media(max-width: 1024px) {
+            width: 1.7rem;
+            height: 1.7rem;
+        }
     }
 
     @media (any-hover: hover) {
@@ -34,7 +42,16 @@
             }
 
             &-orange {
-                background: var(--orange-gradient);
+                background: linear-gradient(90deg, #F5C63B 0%, #ED502A 100%);
+            }
+
+            &-gray {
+                background-color: #D4D8EF;
+                box-shadow: $bsh-card;
+
+                svg {
+                    fill: #B5BBDB;
+                }
             }
         }
     }

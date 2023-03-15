@@ -1,13 +1,17 @@
 .sidebar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 101;
-    width: vw(424);
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    background-color: #fff;
+    display: none;
+
+    @media(min-width: 1025px) {
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 101;
+        width: vw(424);
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        background-color: #fff;
+    }
 
     &__top {
         height: vw(150);
@@ -22,11 +26,16 @@
         flex-grow: 1;
         padding: vw(11) vw(30) vw(30) vw(25);
     }
+}
 
-    &__bottom {
-        @include row-grid(vw(10));
-        justify-items: center;
-        padding: vw(11) vw(20) vw(46);
+.bottom-sidebar {
+    @include row-grid(vw(10));
+    justify-items: center;
+    padding: vw(11) vw(20) vw(46);
+
+    @media(max-width: 1024px) {
+        row-gap: 1rem;
+        padding: 1.1rem 2rem 4.6rem;
     }
 
     &__btns {
@@ -38,19 +47,32 @@
         min-width: vw(160);
         padding: vw(11);
 
+        @media(max-width: 1024px) {
+            min-width: 16rem;
+            padding: 1.1rem;
+        }
+
         img {
             flex-shrink: 0;
             margin-right: vw(10);
-            width: vw(28);
-            height: vw(28);
-            border-radius: 50%;
+            @include round(vw(28));
             object-fit: cover;
+
+            @media(max-width: 1024px) {
+                margin-right: 1rem;
+                width: 2.8rem;
+                height: 2.8rem;
+            }
         }
     }
 
     &__btn {
         font-family: $ff-acrom, sans-serif;
         padding: vw(21);
+
+        @media(max-width: 1024px) {
+            padding: 2.1rem;
+        }
 
         &:first-child {
             border-top-right-radius: 0;

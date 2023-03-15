@@ -6,18 +6,6 @@
 html {
     box-sizing: border-box;
 
-    /* @media (max-width: 1920px) {
-        font-size: calc(100vw / 1920 * 10);
-    }
-
-    @media (max-width: 1600px) {
-        font-size: calc(100vw / 1600 * 10);
-    }
-
-    @media (max-width: 1440px) {
-        font-size: calc(100vw / 1440 * 10);
-    }
-
     @media (max-width: 1024px) {
         font-size: calc(100vw / 768 * 10);
     }
@@ -27,8 +15,8 @@ html {
     }
 
     @media (max-width: 500px) {
-        font-size: calc(100vw / 360 * 10);
-    } */
+        font-size: calc(100vw / 375 * 10);
+    }
 
     &.disable-fix {
         @media (min-width: 1025px) {
@@ -48,6 +36,14 @@ body {
     line-height: calc(17 / #{$fz} * 100%);
     overflow-x: hidden;
 
+    @media(max-width: 1024px) {
+        font-size: 1.4rem;
+    }
+
+    @media(max-width: 500px) {
+        font-size: 1.2rem;
+    }
+
     &._lock {
         overflow-y: hidden;
     }
@@ -59,20 +55,6 @@ body {
     flex-direction: column;
     min-height: 100vh;
     overflow-x: hidden;
-}
-
-/* .container {
-    width: calc(var(--container-width) + var(--container-padding) * 2);
-    max-width: 100%;
-    padding: 0 var(--container-padding);
-    margin: 0 auto;
-} */
-
-button,
-textarea,
-input {
-    font-family: 'Raleway', sans-serif;
-    font-feature-settings: 'pnum'on, 'lnum'on;
 }
 
 dt {
@@ -125,47 +107,20 @@ a {
 .mr {
     &-12 {
         margin-right: vw(12);
+
+        @media(max-width: 1024px) {
+            margin-right: 1.2rem;
+        }
     }
 }
 
 .mb {
     &-44 {
         margin-bottom: vw(44);
-    }
-}
 
-.eclipse {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    right: vw(22 - 90);
-    z-index: 10;
-    width: vw(90);
-    height: vw(90);
-    border-radius: 50%;
-    background-color: #F3F7FF;
-
-    &::before,
-    &::after {
-        content: '';
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-    }
-
-    &::before {
-        width: vw(45);
-        height: vw(45);
-        border-radius: 50%;
-        background: var(--purple-gradient);
-    }
-
-    &::after {
-        width: vw(15);
-        height: vw(15);
-        border-radius: 50%;
-        background-color: #D0D4FB;
+        @media(max-width: 1024px) {
+            margin-bottom: 4.4rem;
+        }
     }
 }
 

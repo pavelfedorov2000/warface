@@ -12,7 +12,7 @@ const Review = ({ review }: Props) => {
         <article className="review">
             <ReviewCard {...review} />
             <ReviewContent {...review} />
-            <ReviewAnswer {...review} />
+            {review.answer && <ReviewAnswer {...review} />}
         </article>
     );
 };

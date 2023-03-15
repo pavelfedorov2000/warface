@@ -15,6 +15,14 @@
     line-height: calc(17 / #{$fz} * 100%);
     transition: $transition all;
 
+    @media(max-width: 1024px) {
+        font-size: 1.4rem;
+    }
+
+    @media(max-width: 500px) {
+        font-size: 1.2rem;
+    }
+
     @media (any-hover: hover) {
         &:hover {
             box-shadow: $bsh;
@@ -25,6 +33,24 @@
         flex-shrink: 0;
         fill: #fff;
         transition: $transition fill;
+    }
+
+    &__arrow {
+        width: vw(26);
+        height: vw(16);
+
+        @media(max-width: 1024px) {
+            width: 2.6rem;
+            height: 1.6rem;
+        }
+    }
+
+    &__text {
+        position: relative;
+    }
+
+    &--reversed {
+        flex-direction: row-reverse;
     }
 
     /* @media (any-hover: hover) {
@@ -96,11 +122,28 @@
             }
 
             &-gray {
-                background: #EAEBF8;
+                background-color: #EAEBF8;
                 color: #292C33;
 
                 svg {
                     fill: #292C33;
+                }
+            }
+
+            &-gray-2 {
+                background: rgba(226, 227, 243, 0.65);
+                color: #B1B3CB;
+
+                svg {
+                    fill: #B1B3CB;
+                }
+
+                @media (any-hover: hover) {
+                    &:hover {
+                        svg {
+                            fill: var(--dark);
+                        }
+                    }
                 }
             }
         }

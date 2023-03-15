@@ -1,9 +1,12 @@
+export { default as Promo } from './Promo';
 export { default as Home } from './Home';
 export { default as Support } from './Support';
 export { default as Accounts } from './Accounts';
-
-// Other
+export { default as Achievements } from './Achievements';
+export { default as Guarantee } from './Guarantee';
+export { default as Reviews } from './Reviews';
 export { default as Profile } from './Profile';
-
-// 404
-export { default as NotFound } from './NotFound';
+export { default as Goods } from './Goods';
+export { default as Settings } from './Settings';
+export { default as ViewsHistory } from './ViewsHistory';
+export { default as Notifications } from './Notifications';

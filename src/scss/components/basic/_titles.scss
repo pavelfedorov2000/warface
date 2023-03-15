@@ -1,6 +1,7 @@
 .title {
     position: relative;
     padding-bottom: vw(18);
+    grid-column: 2 / 3;
     display: flex;
     justify-content: center;
     text-align: center;
@@ -12,6 +13,12 @@
     background-size: vw(157) vw(85);
     background-repeat: no-repeat;
 
+    @media(max-width: 1024px) {
+        font-size: 2.4rem;
+        background-size: 15.7rem 8.5rem;
+        padding-bottom: 1.5rem;
+    }
+
     &::after {
         content: '';
         position: absolute;
@@ -22,5 +29,38 @@
         height: vw(4);
         background: var(--purple-gradient);
         border-radius: $brs-btn;
+
+        @media(max-width: 1024px) {
+            width: 3.5rem;
+            height: 0.4rem;
+        }
+    }
+
+    &--line {
+        &_green {
+            &::after {
+                background: var(--green-gradient);
+            }
+        }
+    }
+
+    &--small {
+        font-family: $ff, sans-serif;
+        font-size: vw(18);
+        line-height: calc(23 / 18 * 100%);
+
+        @media(max-width: 1024px) {
+            font-size: 1.8rem;
+        }
+
+        &::after {
+            left: 0;
+            transform: none;
+            height: vw(3);
+
+            @media(max-width: 1024px) {
+                height: 0.3rem;
+            }
+        }
     }
 }

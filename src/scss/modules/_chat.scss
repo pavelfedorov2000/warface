@@ -44,9 +44,7 @@
     }
 
     &__avatar {
-        width: vw(50);
-        height: vw(50);
-        border-radius: 50%;
+        @include round(vw(50));
     }
 }
 
@@ -134,9 +132,7 @@
     position: relative;
     display: grid;
     place-items: center;
-    width: vw(59);
-    height: vw(59);
-    border-radius: 50%;
+    @include round(vw(59));
     background: var(--purple-gradient);
 
     &--size {
@@ -152,9 +148,7 @@
         right: vw(-5);
         display: grid;
         place-items: center;
-        width: vw(30);
-        height: vw(30);
-        border-radius: 50%;
+        @include round(vw(30));
         background: var(--green-gradient);
         font-size: vw(12);
         line-height: calc(14 / 12 * 100%);
@@ -163,14 +157,14 @@
     }
 }
 
-.chat-textfield {
+.textfield {
     position: relative;
-    min-height: vw(100);
     border-radius: $brs-3;
     border: 1px solid #E4E9F4;
 
     &__textarea {
         width: 100%;
+        min-height: vw(100);
         padding: vw(30);
         border: none;
         border-radius: $brs-3;

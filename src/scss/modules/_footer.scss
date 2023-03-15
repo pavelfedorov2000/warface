@@ -1,3 +1,13 @@
 .footer {
-    $this: &;
+    @include padding-y(34px);
+    width: 1571px;
+    max-width: 100%;
+    margin: 0 auto;
+
+    p {
+        font-size: 16px;
+        line-height: 23px;
+        font-weight: 400;
+        color: rgba(#fff, 0.35);
+    }
 }

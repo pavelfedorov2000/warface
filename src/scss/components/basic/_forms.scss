@@ -67,9 +67,7 @@ input[type='number']:focus {
         #{$this} {
             &-handle {
                 top: -10px !important;
-                width: vw(25) !important;
-                height: vw(25) !important;
-                border-radius: 50%;
+                @include round(vw(25) !important);
                 background: linear-gradient(36.87deg, #B139FE 18.57%, #1E61EB 80.26%);
                 border: vw(4) solid #FFF;
                 box-shadow: none !important;
@@ -131,5 +129,61 @@ input[type='number']:focus {
                 }
             }
         }
+    }
+}
+
+.field {
+    $this: &;
+
+    padding: vw(18.5) vw(24);
+    background-color: rgba(226, 227, 243, 0.65);
+    box-shadow: $bsh-card;
+    border-radius: $brs;
+    display: grid;
+    grid-template-columns: 1fr vw(20);
+    grid-template-rows: auto auto;
+    gap: vw(5);
+    align-items: center;
+    background-position: 92% 50%;
+    background-size: vw(20);
+    background-repeat: no-repeat;
+
+    &__label,
+    &__input {
+        grid-column: 1 / 2;
+        font-family: $ff-acrom;
+    }
+
+    &__label {
+        @extend %text-12;
+        color: #ABB1D2;
+        text-transform: uppercase;
+    }
+
+    &__input {
+        @extend %text-16;
+        font-weight: 700;
+        color: #000;
+        text-align: left;
+    }
+
+    &__edit {
+        grid-row: 1 / -1;
+        grid-column: 2 / 3;
+    }
+
+    button#{$this}__input {
+        text-decoration: underline;
+    }
+}
+
+.edit-btn {
+    width: vw(20);
+    height: vw(20);
+
+    svg {
+        width: vw(20);
+        height: vw(20);
+        fill: #BEC2DC;
     }
 }

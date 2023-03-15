@@ -1,7 +1,12 @@
 .page {
     position: relative;
     flex: 1 0 auto;
-    padding: vw(49) vw(63) vw(63) vw($sidebar + $toolbar + 38);
+    display: flex;
+    flex-direction: column;
+
+    @media(min-width: 1025px) {
+        padding: vw(49) vw(63) vw(63) vw($sidebar + $toolbar + 38);
+    }
 
     &-top {
         position: relative;
@@ -10,17 +15,62 @@
         grid-template-columns: repeat(3, 1fr);
         gap: vw(15);
         align-items: center;
+
+        .title {
+            align-self: stretch;
+        }
+
+        p {
+            @extend %text-18;
+            font-family: $ff-acrom;
+            font-weight: 700;
+            color: rgba(#000, 0.2);
+            justify-self: end;
+        }
     }
 
     &__content {
-        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+
+        @media(min-width: 1025px) {
+            margin: 0 auto;
+        }
+
+        @media(max-width: 1024px) {
+            padding: 0 3rem;
+        }
 
         &--small {
             max-width: vw(910);
         }
+
+        &--w-900 {
+            max-width: vw(900);
+        }
+
+        &--w-990 {
+            max-width: vw(990);
+        }
+
+        &--w-1070 {
+            max-width: vw(1070);
+        }
+
+        &--w-1140 {
+            max-width: vw(1140);
+        }
+
+        &--w-1175 {
+            max-width: vw(1175);
+        }
     }
 
-    .title {
-        align-self: stretch;
+    >.bottom-sidebar,
+    >.sidebar-status {
+        @media(min-width: 1025px) {
+            display: none;
+        }
     }
 }

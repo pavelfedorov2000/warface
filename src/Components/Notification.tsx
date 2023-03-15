@@ -1,7 +1,7 @@
 import cartIcon from "../assets/images/icons/cart.svg";
-import { NotificationNew } from "../interfaces/Notification";
+import { Notification as NotificationType } from "../interfaces/Notification";
 
-const Notification = ({ title, time, text }: NotificationNew) => {
+const Notification = ({ title, time, text }: NotificationType) => {
     return (
         <li className="notification">
             <div className="action-button notification__icon action-button--style_bg-green">

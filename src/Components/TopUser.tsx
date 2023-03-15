@@ -1,7 +1,6 @@
 import santchezz from "../assets/images/santchezz.png";
 import { TopUser as TopUserType } from "../interfaces/TopUser";
 import starIcon from "../assets/images/icons/actions-star.svg";
-import eclipse from "../assets/images/icons/eclipse.svg";
 
 interface Props extends TopUserType {
     index: number;
@@ -29,7 +28,7 @@ const TopUser = ({ index, medal, place, userName, goods, revenue }: Props) => {
                     <dd>{revenue}</dd>
                 </div>
             </dl>
-            {index <= 2 && <img src={eclipse} alt="eclipse" className="eclipse" />}
+            {index <= 2 && <span className="eclipse"></span>}
         </article>
     );
 };

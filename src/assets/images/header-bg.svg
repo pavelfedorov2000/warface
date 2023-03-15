@@ -1,0 +1,53 @@
+<svg width="414" height="150" viewBox="0 0 414 150" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M0 0H414V150C252.324 123.653 161.672 122.992 0 150V0Z" fill="url(#paint0_linear_429_2390)"/>
+<g opacity="0.15">
+<circle cx="33" cy="88" r="2" fill="white"/>
+<circle cx="52" cy="88" r="2" fill="white"/>
+<circle cx="71" cy="88" r="2" fill="white"/>
+<circle cx="90" cy="88" r="2" fill="white"/>
+<circle cx="109" cy="88" r="2" fill="white"/>
+<circle cx="33" cy="68" r="2" fill="white"/>
+<circle cx="52" cy="68" r="2" fill="white"/>
+<circle cx="71" cy="68" r="2" fill="white"/>
+<circle cx="90" cy="68" r="2" fill="white"/>
+<circle cx="109" cy="68" r="2" fill="white"/>
+<circle cx="33" cy="48" r="2" fill="white"/>
+<circle cx="52" cy="48" r="2" fill="white"/>
+<circle cx="71" cy="48" r="2" fill="white"/>
+<circle cx="90" cy="48" r="2" fill="white"/>
+<circle cx="109" cy="48" r="2" fill="white"/>
+<circle cx="33" cy="28" r="2" fill="white"/>
+<circle cx="52" cy="28" r="2" fill="white"/>
+<circle cx="71" cy="28" r="2" fill="white"/>
+<circle cx="90" cy="28" r="2" fill="white"/>
+<circle cx="109" cy="28" r="2" fill="white"/>
+</g>
+<g opacity="0.15">
+<circle cx="366" cy="133" r="1" fill="white"/>
+<circle cx="375" cy="133" r="1" fill="white"/>
+<circle cx="384" cy="133" r="1" fill="white"/>
+<circle cx="393" cy="133" r="1" fill="white"/>
+<circle cx="402" cy="133" r="1" fill="white"/>
+<circle cx="366" cy="124" r="1" fill="white"/>
+<circle cx="375" cy="124" r="1" fill="white"/>
+<circle cx="384" cy="124" r="1" fill="white"/>
+<circle cx="393" cy="124" r="1" fill="white"/>
+<circle cx="402" cy="124" r="1" fill="white"/>
+<circle cx="366" cy="115" r="1" fill="white"/>
+<circle cx="375" cy="115" r="1" fill="white"/>
+<circle cx="384" cy="115" r="1" fill="white"/>
+<circle cx="393" cy="115" r="1" fill="white"/>
+<circle cx="402" cy="115" r="1" fill="white"/>
+<circle cx="366" cy="106" r="1" fill="white"/>
+<circle cx="375" cy="106" r="1" fill="white"/>
+<circle cx="384" cy="106" r="1" fill="white"/>
+<circle cx="393" cy="106" r="1" fill="white"/>
+<circle cx="402" cy="106" r="1" fill="white"/>
+</g>
+<defs>
+<linearGradient id="paint0_linear_429_2390" x1="94.0909" y1="126.818" x2="135.068" y2="-23.9785" gradientUnits="userSpaceOnUse">
+<stop stop-color="#B139FE"/>
+<stop offset="1" stop-color="#1E61EB"/>
+</linearGradient>
+</defs>
+</svg>

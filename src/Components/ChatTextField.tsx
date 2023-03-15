@@ -4,16 +4,16 @@ import Send from "./icons/Send";
 
 const ChatTextField = () => {
     return (
-        <div className="chat-textfield">
-            <textarea className="chat-textfield__textarea" placeholder="Введите сообщение..."></textarea>
-            <div className="chat-textfield__btns">
-                <button className="chat-textfield__btn" type="button">
+        <div className="textfield">
+            <textarea className="textfield__textarea" placeholder="Введите сообщение..."></textarea>
+            <div className="textfield__btns">
+                <button className="textfield__btn" type="button">
                     <Camera />
                 </button>
-                <button className="chat-textfield__btn" type="button">
+                <button className="textfield__btn" type="button">
                     <Clip />
                 </button>
-                <button className="chat-textfield__btn" type="button">
+                <button className="textfield__btn" type="button">
                     <Send />
                 </button>
             </div>

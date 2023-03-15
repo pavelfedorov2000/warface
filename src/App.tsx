@@ -1,3 +1,4 @@
+import { BottomSidebar, SidebarStatus } from './Components';
 import AppRouter from './Components/AppRouter';
 import { Header, Sidebar } from './Components/Layout';
 import Toolbar from './Components/Layout/Toolbar';
@@ -9,7 +10,9 @@ const App = () => {
             <Toolbar />
             <div className="page">
                 <Header />
+                <SidebarStatus />
                 <AppRouter />
+                <BottomSidebar />
             </div>
         </div>
     );

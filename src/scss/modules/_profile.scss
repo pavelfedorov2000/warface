@@ -6,6 +6,7 @@
 
     &__cards {
         @include row-grid(vw(25));
+        align-content: start;
     }
 }
 
@@ -20,9 +21,7 @@
         position: relative;
         margin-top: vw(-37);
         margin-bottom: vw(16);
-        width: vw(200);
-        height: vw(200);
-        border-radius: 50%;
+        @include round(vw(200));
 
         img {
             @extend %cover;
@@ -34,9 +33,12 @@
         position: absolute;
         right: vw(21);
         bottom: vw(-1);
-        width: vw(50);
-        height: vw(50);
-        border-radius: 50%;
+        @include round(vw(50));
+
+        svg {
+            width: vw(21);
+            height: vw(12);
+        }
     }
 
     &__name {
@@ -62,20 +64,17 @@
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
-            border-radius: 50%;
         }
 
         &::before {
             left: 0;
-            width: vw(20);
-            height: vw(20);
+            @include round(vw(20));
             background-color: rgba(#8CD23C, .45);
         }
 
         &::after {
             left: vw(5);
-            width: vw(10);
-            height: vw(10);
+            @include round(vw(10));
             background-color: var(--green);
         }
     }
@@ -227,33 +226,5 @@
 
     &__items {
         @include row-grid(vw(12));
-    }
-
-    &__item {
-        display: flex;
-        align-items: center;
-    }
-
-    &__item-img {
-        flex-shrink: 0;
-        margin-right: vw(13);
-        width: vw(45);
-        height: vw(45);
-        border-radius: 50%;
-        border: 2px solid #E2E6F4;
-        box-shadow: $bsh-card;
-    }
-
-    &__item-content {
-        @include row-grid(vw(4));
-    }
-
-    &__item-title {
-        font-weight: 700;
-    }
-
-    &__item-descr {
-        @extend %text-12;
-        color: #C5CFE4;
     }
 }

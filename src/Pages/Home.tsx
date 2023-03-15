@@ -1,40 +1,10 @@
 import { Cards, Cases } from "../Components";
+import { PageTop } from "../Components/Layout";
 import Tabs from "../Components/Tabs";
-import { CardStatus } from "../enums/CardStatus";
-import { Currency } from "../enums/Currency";
+import { CASES } from "../constants/cases";
 import { Label } from "../enums/Label";
 import { Card } from "../interfaces/Card";
-import { Case } from "../interfaces/Case";
 import { Tab } from "../interfaces/Tab";
-
-const CASES: Case[] = [{
-    price: 1990,
-    currency: Currency.Bet,
-}, {
-    price: 1990,
-    discount: 15,
-    label: true
-}, {
-    price: 1990,
-}, {
-    price: 1990,
-    currency: Currency.Bet,
-}, {
-    price: 1990,
-    discount: 15,
-    label: true
-}, {
-    price: 1990,
-}, {
-    price: 1990,
-    currency: Currency.Bet,
-}, {
-    price: 1990,
-    discount: 15,
-    label: true
-}, {
-    price: 1990,
-}];
 
 const CARDS: Card[] = [{
     id: '1',
@@ -252,9 +222,7 @@ const Home = () => {
         <main className="page__content">
             <Cases title="Популярные кейсы" items={CASES} />
 
-            <div className="tabs-wrap">
-                <Tabs items={TABS} />
-            </div>
+            <PageTop title="Топ аккаунтов" />
 
             <Cards items={CARDS} />
         </main>

@@ -1,6 +1,7 @@
 export { default as Pagination } from './Pagination';
 export { default as SidebarStatus } from './SidebarStatus';
 export { default as SidebarNav } from './SidebarNav';
+export { default as BottomSidebar } from './BottomSidebar';
 
 export { default as Menu } from './Menu';
 export { default as DropdownMenu } from './DropdownMenu';
@@ -17,6 +18,8 @@ export { default as ToolbarCard } from './ToolbarCard';
 
 export { default as BackButton } from './BackButton';
 export { default as Title } from './Title';
+
+export { default as Field } from './Field';
 
 export { default as User } from './User';
 export { default as Chat } from './Chat';
@@ -55,18 +58,25 @@ export { default as ProfileInfo } from './ProfileInfo';
 export { default as ProfileInfoList } from './ProfileInfoList';
 export { default as ProfileRating } from './ProfileRating';
 export { default as ProfileReviews } from './ProfileReviews';
-//export { default as Phone } from './Phone';
-//export { default as SearchForm } from './SearchForm';
 
-//export { default as Social } from './Social';
-//export { default as PageNav } from './PageNav';
-//export { default as DateTime } from './DateTime';
-//export { default as Prices } from './Prices';
+export { default as AchievementCard } from './AchievementCard';
 
-//export { default as AsideFilters } from './AsideFilters';
-//export { default as FiltersButton } from './FiltersButton';
-//export { default as CatalogCard } from './CatalogCard/CatalogCard';
+export { default as ViewsHistoryList } from './ViewsHistoryList';
+export { default as ViewsHistoryItem } from './ViewsHistoryItem';
 
-//export { default as Counter } from './Counter';
+export { default as NotificationsList } from './NotificationsList';
+export { default as NotificationCard } from './NotificationCard';
 
-//export { default as FormAgree } from './FormAgree';
+export { default as SettingsForm } from './SettingsForm';
+
+export { default as PromoBenefits } from './PromoBenefits';
+export { default as BenefitCard } from './BenefitCard';
+
+export { default as ReviewsBlock } from './ReviewsBlock';
+
+export { default as Benefits } from './Benefits';
+export { default as GuaranteeBlock } from './GuaranteeBlock';
+export { default as GuaranteeCard } from './GuaranteeCard';
+
+export { default as DonateBlock } from './DonateBlock';
+export { default as DonateCard } from './DonateCard';

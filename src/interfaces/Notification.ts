@@ -1,8 +1,6 @@
 export interface Notification {
     title: string;
     text: string;
-}
-
-export interface NotificationNew extends Notification {
+    date?: string;
     time: string;
 }

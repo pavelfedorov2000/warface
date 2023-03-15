@@ -4,9 +4,10 @@ interface Props {
     title: string;
     link: string;
     items: any[];
+    Card: any;
 }
 
-const ProfileCardSection = ({ title, link, items }: Props) => {
+const ProfileCardSection = ({ title, link, items, Card }: Props) => {
     return (
         <section className="profile-card-section">
             <div className="profile-card-section__top">
@@ -17,16 +18,8 @@ const ProfileCardSection = ({ title, link, items }: Props) => {
             </div>
             <ul className="profile-card-section__items">
                 {items.map((item, index) => (
-                    <li key={index} className="profile-card-section__item">
-                        <div className="profile-card-section__item-img"></div>
-                        <div className="profile-card-section__item-content">
-                            <div className="profile-card-section__item-title">
-                                {item.title}
-                            </div>
-                            <p className="profile-card-section__item-descr">
-                                {item.text}
-                            </p>
-                        </div>
+                    <li key={index}>
+                        <Card style="row" {...item} />
                     </li>
                 ))}
             </ul>

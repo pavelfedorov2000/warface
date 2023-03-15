@@ -27,8 +27,8 @@ interface Props extends Case {
 
 const CaseCard = ({ index, price, discount, label, currency }: Props) => {
     return (
-        <article className="case-card" style={{ backgroundImage: `url(${(index === 1 || index * 3 % 3 === 2) ? farmBgBlue : (index === 2 || index * 3 % 3 === 1) ? farmBgOrange : farmBgPink})` }}>
-            <img src={(index === 1 || index * 3 % 3 === 2) ? farmBlue : (index === 2 || index * 3 % 3 === 1) ? farmOrange : farmPink} alt="img" className="case-card__img" />
+        <article className="case-card" style={{ backgroundImage: `url(${(index === 1 || index % 3 === 1) ? farmBgBlue : (index === 2 || index % 3 === 2) ? farmBgOrange : farmBgPink})` }}>
+            <img src={(index === 1 || index % 3 === 1) ? farmBlue : (index === 2 || index % 3 === 2) ? farmOrange : farmPink} alt="img" className="case-card__img" />
             <div className="case-card__content">
                 <div className={classNames('case-card__badge', {
                     'case-card__badge--green': currency === Currency.Bet

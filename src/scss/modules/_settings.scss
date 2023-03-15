@@ -1,0 +1,13 @@
+.settings-block {
+    @include padding-y(vw(60));
+    display: grid;
+    grid-template-columns: vw(300) vw(700);
+    gap: vw(38);
+    align-items: flex-start;
+}
+
+.settings-form {
+    @extend %card;
+    padding: vw(40) vw(35);
+    @include grid(2, vw(30), vw(30));
+}

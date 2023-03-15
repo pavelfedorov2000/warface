@@ -21,9 +21,7 @@
         position: relative;
         margin-top: vw(-30);
         margin-bottom: vw(32);
-        width: vw(130);
-        height: vw(130);
-        border-radius: 50%;
+        @include round(vw(130));
 
         img {
             width: 100%;

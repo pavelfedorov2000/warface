@@ -60,6 +60,7 @@ $brs: 4px;
 $brs-2: 6px;
 $brs-card: 8px;
 $brs-3: 12px;
+$brs-4: 16px;
 $brs-btn: 100px;
 
 $bsh: 0 0 65px rgba(220, 225, 246, 0.85);
@@ -89,24 +90,53 @@ $transition: $duration $transition-timing;
 %text-10 {
     font-size: vw(10);
     line-height: calc(12 / 10 * 100%);
+
+    @media(max-width: 1024px) {
+        font-size: 1rem;
+    }
 }
 
 %text-11 {
     font-size: vw(11);
     line-height: calc(13 / 11 * 100%);
+
+    @media(max-width: 1024px) {
+        font-size: 1.1rem;
+    }
 }
 
 %text-12 {
     font-size: vw(12);
     line-height: calc(14 / 12 * 100%);
+
+    @media(max-width: 1024px) {
+        font-size: 1.2rem;
+    }
+}
+
+%text-13 {
+    font-size: vw(13);
+    line-height: calc(17 / 13 * 100%);
+
+    @media(max-width: 1024px) {
+        font-size: 1.3rem;
+    }
 }
 
 %text-16 {
     font-size: vw(16);
     line-height: calc(19 / 16 * 100%);
+
+    @media(max-width: 1024px) {
+        font-size: 1.6rem;
+    }
 }
 
 %text-18 {
     font-size: vw(18);
     line-height: calc(21 / 18 * 100%);
+
+    @media(max-width: 1024px) {
+        font-size: 1.8rem;
+    }
 }

@@ -1,0 +1,28 @@
+.eclipse {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: vw(22 - 90);
+    z-index: 10;
+    @include round(vw(90));
+    background-color: #F3F7FF;
+
+    &::before,
+    &::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    &::before {
+        @include round(vw(45));
+        background: var(--purple-gradient);
+    }
+
+    &::after {
+        @include round(vw(15));
+        background-color: #D0D4FB;
+    }
+}

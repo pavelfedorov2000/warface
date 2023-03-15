@@ -1,3 +1,5 @@
+@import './promo';
+
 @import './sidebar';
 @import './sidebar-status';
 @import './sidebar-nav';
@@ -6,6 +8,7 @@
 @import './online-users';
 
 @import './header';
+@import './footer';
 @import './menu';
 @import './dropdown-menu';
 @import './user-select';
@@ -31,8 +34,15 @@
 
 @import './profile';
 @import './review';
-//@import './footer';
 
+@import './achievements';
+
+@import './views-history';
+@import './notifications';
+@import './settings';
+
+@import './benefits';
+@import './donate';
 //@import './catalog-card';
 
 //@import './aside-filters';

@@ -13,6 +13,12 @@
     }
 }
 
+@mixin round($size) {
+    width: $size;
+    height: $size;
+    border-radius: 50%;
+}
+
 @mixin hide() {
     visibility: hidden;
     opacity: 0;
@@ -23,6 +29,12 @@
     visibility: visible;
     opacity: 1;
     pointer-events: all;
+}
+
+@mixin grid($cols, $row-gap, $col-gap) {
+    display: grid;
+    grid-template-columns: repeat($cols, 1fr);
+    gap: $row-gap $col-gap;
 }
 
 @mixin row-grid($gap) {
@@ -50,13 +62,13 @@
     margin-bottom: $gap;
 }
 
-@function vw($px) {
-    @return $px * 100vw / 1920;
-}
-
 @mixin border-text($color, $fill-color) {
     color: $color;
     -webkit-text-fill-color: $fill-color;
     -webkit-text-stroke-width: 2px;
     -webkit-text-stroke-color: $color;
+}
+
+@function vw($px) {
+    @return $px * 100vw / 1920;
 }

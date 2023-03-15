@@ -2,6 +2,15 @@
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: vw(10) vw(22);
+
+    @media(max-width: 1024px) {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem 1rem;
+    }
+
+    @media(max-width: 767px) {
+        grid-template-columns: 1fr;
+    }
 }
 
 .card {
@@ -10,7 +19,12 @@
     padding: vw(28) vw(30) vw(19) vw(23);
     font-family: $ff-acrom;
 
+    @media(max-width: 1024px) {
+        padding: 2.8rem 3rem 1.9rem 2.3rem;
+    }
+
     &__badge {
+        @extend %text-12;
         position: absolute;
         top: vw(-6);
         left: calc(103 / 300 * 100%);
@@ -19,8 +33,11 @@
         background: var(--purple-gradient);
         color: #fff;
         font-weight: 700;
-        font-size: vw(12);
-        line-height: calc(14 / 12 * 100%);
+
+        @media(max-width: 1024px) {
+            top: -0.6rem;
+            padding: 0.85rem 2.1rem;
+        }
     }
 
     &__actions {
@@ -29,6 +46,12 @@
         right: vw(23);
         display: flex;
         gap: vw(11);
+
+        @media(max-width: 1024px) {
+            top: 1.5rem;
+            right: 2.3rem;
+            gap: 1.1rem;
+        }
     }
 
     &__action-btn {
@@ -37,6 +60,11 @@
             width: vw(12);
             height: vw(12);
             transition: $transition fill;
+
+            @media(max-width: 1024px) {
+                width: 1.2rem;
+                height: 1.2rem;
+            }
         }
 
         @media (any-hover: hover) {
@@ -51,15 +79,20 @@
     &__content {
         display: grid;
         grid-template-rows: vw(9) auto vw(8) auto vw(5) auto;
-        grid-template-columns: vw(33) vw(10) vw(22) vw(11) 1fr vw(6) vw(45);
+        grid-template-columns: vw(33) vw(10) vw(22) vw(11) 1fr auto;
         grid-template-areas:
-            'good good good . . . .'
-            'good good good . title . favorite'
-            'good good good . . . .'
-            'good good good . dl . .'
-            '. . . . . . .'
-            'user . price price price . ellipsis'
+            'good good good . . .'
+            'good good good . title favorite'
+            'good good good . . .'
+            'good good good . dl .'
+            '. . . . . .'
+            'user . price price price price'
         ;
+
+        @media(max-width: 1024px) {
+            grid-template-rows: 0.9rem auto 0.8rem auto 0.5rem auto;
+            grid-template-columns: 3.3rem 1rem 2.2rem 1.1rem 1fr auto;
+        }
     }
 
     &__good {
@@ -67,10 +100,9 @@
     }
 
     &__title {
+        @extend %text-13;
         grid-area: title;
         font-weight: 700;
-        font-size: vw(13);
-        line-height: calc(16 / 13 * 100%);
     }
 
     &__favorite {
@@ -93,36 +125,56 @@
     &__price {
         grid-area: price;
     }
-
-    &__ellipsis-btn {
-        grid-area: ellipsis;
-
-        svg {
-            width: vw(20);
-            height: vw(4);
-        }
-    }
 }
 
 .card-list {
     @include row-grid(vw(8));
-    font-size: vw(10);
-    line-height: calc(12 / 10 * 100%);
+    @extend %text-10;
     color: var(--gray-be);
+
+    @media(max-width: 1024px) {
+        row-gap: 0.8rem;
+    }
 }
 
 .price-box {
-    padding: vw(14) vw(11) vw(17);
+    position: relative;
+    padding: vw(14) vw(55) vw(14) vw(17);
     display: flex;
-    justify-content: flex-end;
     border: 1px solid #F3F7FF;
     border-radius: $brs-btn;
     font-weight: 700;
     color: var(--gray-be);
+    white-space: nowrap;
+
+    @media(max-width: 1024px) {
+        padding: 1.4rem 5.5rem 1.4rem 1.7rem;
+    }
 
     &__value {
         padding-left: vw(3);
         color: var(--black);
+
+        @media(max-width: 1024px) {
+            padding-left: 0.3rem;
+        }
+    }
+
+    &__btn {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+
+        svg {
+            width: vw(20);
+            height: vw(4);
+
+            @media(max-width: 1024px) {
+                width: 2rem;
+                height: 0.4rem;
+            }
+        }
     }
 }
 
@@ -133,23 +185,27 @@
     justify-items: center;
     text-align: center;
 
+    @media(max-width: 1024px) {
+        row-gap: 0.4rem;
+    }
+
     &__avatar {
         position: relative;
-        width: vw(33);
-        height: vw(33);
-        border-radius: 50%;
+        @include round(vw(33));
+
+        @media(max-width: 1024px) {
+            width: 3.3rem;
+            height: 3.3rem;
+        }
 
         img {
-            width: 100%;
-            height: 100%;
+            @include round(100%);
             object-fit: cover;
-            border-radius: 50%;
         }
     }
 
     &__name {
-        font-size: vw(10);
-        line-height: calc(12 / 10 * 100%);
+        @extend %text-10;
     }
 
     &.online {
@@ -160,12 +216,17 @@
                     position: absolute;
                     right: vw(2);
                     bottom: vw(-1);
-                    width: vw(9);
-                    height: vw(9);
-                    border-radius: 50%;
+                    @include round(vw(9));
                     background: var(--green);
                     box-shadow: $bsh;
                     border: 1.3px solid #FFF;
+
+                    @media(max-width: 1024px) {
+                        right: 0.2rem;
+                        bottom: -0.1rem;
+                        width: 0.9rem;
+                        height: 0.9rem;
+                    }
                 }
             }
         }

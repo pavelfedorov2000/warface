@@ -1,0 +1,56 @@
+.achievements-list {
+    @include grid(4, vw(47), vw(45));
+    @include padding-y(vw(50));
+}
+
+.achievement-card {
+    $this: &;
+
+    @extend %card;
+    padding: vw(27);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    &__img {
+        margin-bottom: vw(18);
+        @include round(vw(128));
+        border: 2px solid #E2E6F4;
+        box-shadow: $bsh-card;
+    }
+
+    &__content {
+        @include row-grid(vw(5));
+    }
+
+    &__title {
+        font-weight: 700;
+    }
+
+    &__descr {
+        @extend %text-12;
+        color: #C5CFE4;
+    }
+
+    &--style {
+        &_row {
+            padding: 0;
+            flex-direction: row;
+            background-color: transparent;
+            box-shadow: none;
+            border-radius: 0;
+            text-align: left;
+
+            #{$this} {
+                &__img {
+                    flex-shrink: 0;
+                    margin-bottom: 0;
+                    margin-right: vw(13);
+                    width: vw(45);
+                    height: vw(45);
+                }
+            }
+        }
+    }
+}

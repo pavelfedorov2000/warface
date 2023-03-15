@@ -1,22 +1,28 @@
+import { ReactNode } from "react";
 import userAvatar from "../assets/images/user.png";
-import Vk from "./icons/Vk";
+import Button from "./Button";
 
-const ProfileCard = () => {
+interface Props {
+    online?: boolean;
+    actionButton: ReactNode;
+}
+
+const ProfileCard = ({ online, actionButton }: Props) => {
     return (
         <section className="profile-card">
             <div className="profile-card__avatar">
                 <img src={userAvatar} alt="avatar" />
                 <a className="profile-card__icon" href="#">
-                    <Vk />
+                    {actionButton}
                 </a>
             </div>
             <h2 className="profile-card__name">Shenderro</h2>
-            <div className="profile-card__status">
-                Online
-            </div>
-            <button className="button profile-card__logout button--style_link">
-                Выйти из аккаунта
-            </button>
+            {online &&
+                <div className="profile-card__status">
+                    Online
+                </div>
+            }
+            <Button className="profile-card__logout" style="link" text="Выйти из аккаунта" />
         </section>
     );
 };

@@ -11,9 +11,11 @@ const Cases = ({ title, items }: Props) => {
     return (
         <section className="cases">
             <Title className="cases__title" text={title} />
-            <ul className="cases__grid">
+            <ul className="cases__list">
                 {items.map((item, index) => (
-                    <CaseCard key={index} index={index + 1} {...item} />
+                    <li key={index}>
+                        <CaseCard index={index + 1} {...item} />
+                    </li>
                 ))}
             </ul>
         </section>

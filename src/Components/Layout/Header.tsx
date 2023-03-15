@@ -6,6 +6,11 @@ import NotifyIcon from '../icons/NotifyIcon';
 import Menu from '../Menu';
 import NotificationsDropdown from '../NotificationsDropdown';
 import useHandleOutsideClick from '../../hooks/useHandleOutsideClick';
+import logoBg from '../../assets/images/header-bg.svg';
+import { User } from '../icons';
+import Logo from '../Logo';
+import logo from '../../assets/images/logo/logo-main.png';
+import BurgerButton from '../Burger/BurgerButton';
 
 const Header = () => {
     const dropdownNotificationsRef = useRef<HTMLDivElement>(null);
@@ -25,19 +30,24 @@ const Header = () => {
     useHandleOutsideClick(dropdownMenuRef, setDropdownMenuVisible);
 
     return (
-        <header className="header">
+        <header className="header" style={{ backgroundImage: `url(${logoBg})` }}>
             <div className="header__inner">
-                <Menu />
+                <Logo className="header" src={logo} width="146" height="71" />
+                <Menu className="header__menu" />
                 <div className="header__actions">
                     <div ref={dropdownNotificationsRef} className="header__action">
                         <ActionButton onClick={toggleNotificationsVisibility} isExpanded={visibleNotifications} bg="green" icon={<NotifyIcon />} />
                         <NotificationsDropdown />
+                    </div>
+                    <div className="header__action touch-visible">
+                        <ActionButton bg="orange" icon={<User />} />
                     </div>
                     <div ref={dropdownMenuRef} className="header__action">
                         <UserSelect onClick={toggleDropdownMenuVisibility} isExpanded={dropdownMenuVisible} />
                         <DropdownMenu />
                     </div>
                 </div>
+                <BurgerButton />
             </div>
         </header>
     );

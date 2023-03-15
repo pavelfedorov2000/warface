@@ -46,9 +46,7 @@
         margin-left: vw(8);
         display: grid;
         place-items: center;
-        width: vw(25);
-        height: vw(25);
-        border-radius: 50%;
+        @include round(vw(25));
         background-color: #fff;
         transition: $transition box-shadow;
 

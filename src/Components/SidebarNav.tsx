@@ -15,14 +15,14 @@ const SidebarMenuItems: SidebarNavItem[] = [{
     icon: <Favorite />,
     text: 'Закладки'
 }, {
-    path: '/',
+    path: '/views-history',
     icon: <Thumbnail />,
-    text: 'Истории просмотра'
+    text: 'История просмотров'
 }, {
     path: '/',
     icon: <Invoice />,
     text: 'Истории покупок и продаж'
-}]
+}];
 
 const SidebarNav = () => {
     return (
@@ -37,7 +37,7 @@ const SidebarNav = () => {
                             {item.text}
                         </span>
                     </Link>
-                </li>  
+                </li>
             ))}
         </ul>
     );

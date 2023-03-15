@@ -4,5 +4,6 @@ import { Pages } from '../enums/Page';
 export const ROUTES: Route[] = [
     ...Pages.main.map((route) => route[Object.keys(route)[0]]),
     ...Pages.profile.map((route) => route[Object.keys(route)[0]]),
+    ...Pages.sidebar.map((route) => route[Object.keys(route)[0]]),
     ...Pages.other.map((route) => route[Object.keys(route)[0]])
 ];

@@ -4,11 +4,12 @@ import titleDots from "../assets/images/title-dots.svg";
 interface Props {
     className?: string;
     text: string;
+    lineColor?: string;
 }
 
-const Title = ({ className, text }: Props) => {
+const Title = ({ className, text, lineColor }: Props) => {
     return (
-        <h2 className={classNames('title', className && className)} style={{ backgroundImage: `url(${titleDots})` }}>{text}</h2>
+        <h2 className={classNames('title', className && className, lineColor && `title--line_${lineColor}`)} style={{ backgroundImage: `url(${titleDots})` }}>{text}</h2>
     );
 };
 
