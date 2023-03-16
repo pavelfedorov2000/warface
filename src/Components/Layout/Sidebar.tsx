@@ -2,6 +2,7 @@ import Logo from "../Logo";
 import SidebarNav from "../SidebarNav";
 import SidebarStatus from "../SidebarStatus";
 import logo from '../../assets/images/logo/logo.svg';
+import BottomSidebar from "../BottomSidebar";
 
 const Sidebar = () => {
     return (
@@ -10,10 +11,10 @@ const Sidebar = () => {
                 <Logo src={logo} width="420" height="150" />
             </div>
             <div className="sidebar__body">
-                <SidebarStatus />
+                <SidebarStatus className="sidebar__status" />
                 <SidebarNav />
             </div>
-
+            <BottomSidebar />
         </aside>
     );
 };

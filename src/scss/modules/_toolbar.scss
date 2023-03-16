@@ -16,11 +16,12 @@
 
         &::before {
             content: '';
-            position: absolute;
+            position: fixed;
             bottom: 0;
-            left: 0;
+            left: vw($sidebar);
             right: 0;
             z-index: 20;
+            width: vw($toolbar);
             height: vw(154);
             background: linear-gradient(180deg, rgba(229, 234, 245, 0) 0%, #E5EAF5 100%);
         }

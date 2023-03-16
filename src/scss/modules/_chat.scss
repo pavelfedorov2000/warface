@@ -9,30 +9,63 @@
         align-items: center;
         justify-content: space-between;
         border-bottom: 1px solid #D9DFEB;
+
+        @media(max-width: 1024px) {
+            padding: 3rem 1.5rem;
+        }
     }
 
     &__supported {
+        @extend %text-16;
         display: flex;
         align-items: center;
         gap: vw(11);
-        font-size: vw(16);
-        line-height: calc(19 / 16 * 100%);
         font-weight: 700;
+
+        @media(max-width: 1024px) {
+            gap: 1.1rem;
+            font-size: 1.4rem;
+        }
+
+        @media(max-width: 500px) {
+            font-size: 1.2rem;
+        }
     }
 
     &__body {
         padding: vw(40) vw(22) vw(35) vw(25);
+
+        @media(max-width: 1024px) {
+            padding: 4rem 2.2rem 3.5rem 2.5rem;
+        }
+
+        @media(max-width: 767px) {
+            padding: 3rem 1.5rem;
+        }
     }
 
     &__messages {
         margin-bottom: vw(50);
         @include row-grid(vw(30));
+
+        @media(max-width: 1024px) {
+            margin-bottom: 5rem;
+            row-gap: 3rem;
+        }
     }
 
     &__message {
         display: flex;
         align-items: center;
         gap: vw(23);
+
+        @media(max-width: 1024px) {
+            gap: 2.3rem;
+        }
+
+        @media(max-width: 500px) {
+            gap: 1.5rem;
+        }
 
         &--reverse {
             flex-direction: row-reverse;
@@ -45,6 +78,16 @@
 
     &__avatar {
         @include round(vw(50));
+
+        @media(max-width: 1024px) {
+            width: 5rem;
+            height: 5rem;
+        }
+
+        @media(max-width: 500px) {
+            width: 4rem;
+            height: 4rem;
+        }
     }
 }
 
@@ -53,13 +96,26 @@
 
     position: relative;
     padding: vw(18.5) vw(25);
-    min-width: vw(373);
     display: flex;
     align-items: center;
     justify-content: space-between;
     background-color: var(--gray-f3);
     border-radius: 120px;
     font-family: $ff-acrom;
+
+    @media(max-width: 1024px) {
+        flex-grow: 1;
+        border-radius: 12rem;
+        padding: 1.85rem 2.5rem;
+    }
+
+    @media(max-width: 767px) {
+        padding: 1.5rem 1rem;
+    }
+
+    @media(min-width: 1025px) {
+        min-width: vw(373);
+    }
 
     &::before {
         content: '';
@@ -70,28 +126,54 @@
         height: vw(34);
         background-color: var(--gray-f3);
         z-index: 1;
+
+        @media(max-width: 1024px) {
+            width: 4.2rem;
+            height: 3.4rem;
+        }
     }
 
     &__date {
+        @extend %text-16;
         position: relative;
         z-index: 2;
-        font-size: vw(16);
-        line-height: calc(19 / 16 * 100%);
         color: var(--gray-a4);
+
+        @media(max-width: 1024px) {
+            font-size: 1.4rem;
+        }
+
+        @media(max-width: 500px) {
+            font-size: 1rem;
+        }
 
         img {
             flex-shrink: 0;
             margin-right: vw(8);
             width: vw(16);
             height: vw(16);
+
+            @media(max-width: 1024px) {
+                margin-right: 0.8rem;
+                width: 1.6rem;
+                height: 1.6rem;
+            }
+
+            @media(max-width: 500px) {
+                width: 1.2rem;
+                height: 1.2rem;
+            }
         }
     }
 
     &__text {
         position: relative;
         z-index: 2;
-        line-height: calc(25 / 14 * 100%);
         color: var(--gray-8f);
+
+        @media(max-width: 500px) {
+            font-size: 1rem;
+        }
     }
 
     &__remove {
@@ -102,6 +184,11 @@
             height: vw(16);
             fill: var(--gray-a4);
             transition: $transition fill;
+
+            @media(max-width: 1024px) {
+                width: 1.6rem;
+                height: 1.6rem;
+            }
         }
 
         @media (any-hover: hover) {
@@ -117,6 +204,10 @@
         &::before {
             left: vw(-10);
             clip-path: polygon(0% 50%, 100% 0%, 100% 100%);
+
+            @media(max-width: 1024px) {
+                left: -1rem;
+            }
         }
     }
 
@@ -124,25 +215,51 @@
         &::before {
             right: vw(-10);
             clip-path: polygon(0% 0%, 100% 50%, 0% 100%);
+
+            @media(max-width: 1024px) {
+                right: -1rem;
+            }
         }
     }
 }
 
 .support-icon {
     position: relative;
+    flex-shrink: 0;
     display: grid;
     place-items: center;
     @include round(vw(59));
     background: var(--purple-gradient);
 
+    @media(max-width: 1024px) {
+        width: 5.9rem;
+        height: 5.9rem;
+    }
+
+    @media(max-width: 767px) {
+        width: 4.5rem;
+        height: 4.5rem;
+    }
+
     &--size {
         &_xs {
             width: vw(50);
             height: vw(50);
+
+            @media(max-width: 1024px) {
+                width: 5rem;
+                height: 5rem;
+            }
+
+            @media(max-width: 500px) {
+                width: 4rem;
+                height: 4rem;
+            }
         }
     }
 
     span {
+        @extend %text-12;
         position: absolute;
         top: vw(-5);
         right: vw(-5);
@@ -150,10 +267,15 @@
         place-items: center;
         @include round(vw(30));
         background: var(--green-gradient);
-        font-size: vw(12);
-        line-height: calc(14 / 12 * 100%);
         font-weight: 700;
         color: #fff;
+
+        @media(max-width: 1024px) {
+            top: -0.5rem;
+            right: -0.5rem;
+            width: 3rem;
+            height: 3rem;
+        }
     }
 }
 
@@ -163,14 +285,18 @@
     border: 1px solid #E4E9F4;
 
     &__textarea {
+        @extend %text-14;
         width: 100%;
         min-height: vw(100);
         padding: vw(30);
         border: none;
         border-radius: $brs-3;
         font-family: $ff-acrom;
-        font-size: vw(14);
-        line-height: calc(17 / 14 * 100%);
+
+        @media(max-width: 1024px) {
+            min-height: 10rem;
+            padding: 1.5rem;
+        }
 
         &::placeholder {
             color: #BAC9E6;
@@ -184,6 +310,12 @@
         display: flex;
         align-items: center;
         gap: vw(24);
+
+        @media(max-width: 1024px) {
+            right: 1.5rem;
+            bottom: 1.5rem;
+            gap: 2rem;
+        }
     }
 
     &__btn {
@@ -194,6 +326,11 @@
             fill-opacity: .45;
             transition: $transition fill-opacity,
                 $transition fill;
+
+            @media(max-width: 1024px) {
+                width: 2.2rem;
+                height: 2.2rem;
+            }
         }
 
         @media (any-hover: hover) {

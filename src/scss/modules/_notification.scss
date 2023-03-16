@@ -9,10 +9,20 @@
     gap: vw(8) vw(9);
     font-family: $ff-acrom, sans-serif;
 
+    @media(max-width: 1024px) {
+        grid-template-columns: 4.5rem 1fr auto;
+        gap: 0.8rem 0.9rem;
+    }
+
     &__icon {
         grid-area: icon;
         width: vw(45);
         height: vw(45);
+
+        @media(max-width: 1024px) {
+            width: 4.5rem;
+            height: 4.5rem;
+        }
     }
 
     &__title {
@@ -22,8 +32,7 @@
 
     &__title,
     &__time {
-        font-size: vw(12);
-        line-height: calc(14 / 12 * 100%);
+        @extend %text-12;
     }
 
     &__time {
@@ -32,9 +41,8 @@
     }
 
     &__text {
+        @extend %text-10;
         grid-area: text;
-        font-size: vw(10);
-        line-height: calc(13 / 10 * 100%);
         color: var(--gray-a6);
     }
 }

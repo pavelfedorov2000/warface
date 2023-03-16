@@ -5,6 +5,11 @@
     fill: #fff;
     transition: $transition fill;
 
+    @media(max-width: 1024px) {
+        width: 1.8rem;
+        height: 1.8rem;
+    }
+
     &--size {
         &_xs {
             width: var(--icon-size_xs);
@@ -35,11 +40,20 @@
     &--width {
         &_22 {
             width: vw(22);
+
+            @media(max-width: 1024px) {
+                width: 2.2rem;
+            }
         }
 
         &_24 {
             width: vw(24);
             height: vw(20);
+
+            @media(max-width: 1024px) {
+                width: 2.4rem;
+                height: 2rem;
+            }
         }
     }
 }

@@ -1,4 +1,4 @@
-import { BottomSidebar, SidebarStatus } from './Components';
+import { BottomSidebar, BurgerMenu, SidebarStatus } from './Components';
 import AppRouter from './Components/AppRouter';
 import { Header, Sidebar } from './Components/Layout';
 import Toolbar from './Components/Layout/Toolbar';
@@ -6,6 +6,7 @@ import Toolbar from './Components/Layout/Toolbar';
 const App = () => {
     return (
         <div className='wrapper'>
+            <BurgerMenu />
             <Sidebar />
             <Toolbar />
             <div className="page">

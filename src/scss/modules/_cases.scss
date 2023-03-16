@@ -1,8 +1,17 @@
 .cases {
     @include padding-y(vw(65));
 
+    @media(max-width: 1024px) {
+        padding-top: 5rem;
+        padding-bottom: 2rem;
+    }
+
     &__title {
         margin-bottom: vw(63);
+
+        @media(max-width: 1024px) {
+            margin-bottom: 3rem;
+        }
     }
 
     &__list {
@@ -13,13 +22,14 @@
         }
 
         @media(max-width: 1024px) {
+            margin-right: -3rem;
             display: flex;
             gap: 3.5rem;
             overflow-x: auto;
 
             >* {
                 flex-shrink: 0;
-                min-width: 40rem;
+                min-width: 30rem;
             }
         }
 

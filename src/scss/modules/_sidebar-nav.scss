@@ -3,6 +3,10 @@
 
     @include row-grid(vw(22));
 
+    @media(max-width: 1024px) {
+        row-gap: 2.2rem;
+    }
+
     &__item-link {
         display: flex;
         align-items: center;
@@ -14,6 +18,14 @@
         background-position: vw(-34) vw(-33);
         background-repeat: no-repeat;
         transition: $transition background-color;
+
+        @media(max-width: 1024px) {
+            background-size: 0;
+            background-color: rgba(#000, 0.3);
+            border-radius: 0.4rem;
+            height: 5.6rem;
+
+        }
 
         &.active {
             background-color: var(--light-blue);
@@ -41,18 +53,38 @@
     &__item-icon {
         position: relative;
         flex-shrink: 0;
-        margin-right: vw(28);
         width: vw(74);
         height: 100%;
         border-radius: $brs;
         display: grid;
         place-items: center;
         background: var(--purple-gradient);
+
+        @media(max-width: 1024px) {
+            width: 6rem;
+        }
     }
 
     &__item-text {
+        @include padding-x(vw(28));
         font-weight: 700;
         color: var(--gray-b2);
         text-transform: uppercase;
+
+        @media(max-width: 1024px) {
+            @include padding-x(1.5rem);
+        }
+    }
+
+    &__item {
+        &:first-child {
+            @media(max-width: 1024px) {
+                #{$this} {
+                    &__item-icon {
+                        background: var(--green-gradient);
+                    }
+                }
+            }
+        }
     }
 }

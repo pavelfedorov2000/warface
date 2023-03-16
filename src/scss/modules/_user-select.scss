@@ -1,30 +1,52 @@
 .user-select {
     position: relative;
     padding: vw(10) vw(8);
-    min-width: vw(240);
     display: flex;
     align-items: center;
+    text-align: left;
     background-color: #fff;
     border-radius: $brs-btn;
-    background-position: calc(100% - 32px) 50%;
-    background-size: vw(16) vw(9);
-    background-repeat: no-repeat;
+    background-size: 0;
     transition: $transition box-shadow;
+
+    @media(min-width: 1025px) {
+        min-width: vw(240);
+        background-position: calc(100% - 32px) 50%;
+        background-size: vw(16) vw(9);
+        background-repeat: no-repeat;
+    }
+
+    @media(max-width: 1024px) {
+        justify-content: space-between;
+        background-color: rgba(226, 227, 243, 0.65);
+        padding: 1rem 0.8rem;
+    }
 
     &[aria-expanded="true"]~.dropdown-menu {
         @include show();
     }
 
     &__balance {
-        position: absolute;
-        top: vw(-17);
-        right: vw(14);
         display: flex;
         gap: vw(3);
+
+        @media(max-width: 1024px) {
+            gap: 0.3rem;
+        }
+
+        @media(min-width: 1025px) {
+            position: absolute;
+            top: vw(-17);
+            right: vw(14);
+        }
     }
 
     &__balance-item {
         height: vw(35);
+
+        @media(max-width: 1024px) {
+            height: 3.5rem;
+        }
     }
 
     .user__avatar {
@@ -41,6 +63,10 @@
 .balance-item {
     padding: vw(5) vw(12);
 
+    @media(max-width: 1024px) {
+        padding: 0.5rem 1rem;
+    }
+
     &__add {
         flex-shrink: 0;
         margin-left: vw(8);
@@ -49,6 +75,12 @@
         @include round(vw(25));
         background-color: #fff;
         transition: $transition box-shadow;
+
+        @media(max-width: 1024px) {
+            margin-left: 0.5rem;
+            width: 2.25rem;
+            height: 2.25rem;
+        }
 
         @media (any-hover: hover) {
             &:hover {
@@ -60,5 +92,9 @@
     &--end {
         justify-content: flex-end;
         padding-left: vw(16);
+
+        @media(max-width: 1024px) {
+            padding-left: 1.6rem;
+        }
     }
 }

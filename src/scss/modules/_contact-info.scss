@@ -1,9 +1,17 @@
 .support-block {
     padding-top: vw(46);
     display: grid;
-    grid-template-columns: vw(460) 1fr;
     gap: vw(38);
     align-items: flex-start;
+
+    @media(max-width: 1024px) {
+        padding-top: 4.5rem;
+        gap: 3.5rem;
+    }
+
+    @media(min-width: 1025px) {
+        grid-template-columns: vw(460) 1fr;
+    }
 }
 
 .contact-info {
@@ -14,14 +22,29 @@
     font-family: $ff-acrom;
     font-weight: 700;
 
+    @media(max-width: 1024px) {
+        padding: 4.3rem;
+    }
+
+    @media(max-width: 767px) {
+        padding: 3rem;
+    }
+
     &__title {
+        @extend %text-18;
         margin-bottom: vw(30);
-        font-size: vw(18);
-        line-height: calc(22 / 18 * 100%);
+
+        @media(max-width: 1024px) {
+            margin-bottom: 3rem;
+        }
     }
 
     &__list {
         @include row-grid(vw(25));
+
+        @media(max-width: 1024px) {
+            row-gap: 2.5rem;
+        }
     }
 }
 
@@ -37,28 +60,40 @@
     ;
     gap: vw(1) vw(13);
 
+    @media(max-width: 1024px) {
+        gap: 0.1rem 1.3rem;
+    }
+
     &__icon {
         grid-area: icon;
         width: vw(50);
         height: vw(50);
 
+        @media(max-width: 1024px) {
+            width: 5rem;
+            height: 5rem;
+        }
+
         img {
             width: vw(19);
             height: vw(19);
+
+            @media(max-width: 1024px) {
+                width: 1.9rem;
+                height: 1.9rem;
+            }
         }
     }
 
     &__property {
+        @extend %text-12;
         grid-area: property;
-        font-size: vw(12);
-        line-height: calc(14 / 12 * 100%);
         text-transform: uppercase;
         color: var(--gray-be);
     }
 
     &__value {
+        @extend %text-16;
         grid-area: value;
-        font-size: vw(16);
-        line-height: calc(19 / 16 * 100%);
     }
 }

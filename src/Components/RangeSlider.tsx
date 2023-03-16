@@ -8,15 +8,17 @@ interface Props {
     min?: number;
     max: number;
     start: [number, number];
+    onChange: (from: number, to: number) => void;
 }
 
-const RangeSlider = ({ color, min, max, start }: Props) => {
+const RangeSlider = ({ onChange, color, min, max, start }: Props) => {
     const [rangeValueFrom, setRangeValueFrom] = useState(start[0]);
     const [rangeValueTo, setRangeValueTo] = useState(start[1]);
 
     const handleChange = (value: any) => {
         setRangeValueFrom(value[0]);
         setRangeValueTo(value[1]);
+        onChange(value[0], value[1]);
     }
 
     return (

@@ -7,3 +7,11 @@ export const openBurgerMenu = () => ({
 export const closeBurgerMenu = () => ({
     type: ActionType.CloseBurgerMenu
 });
+
+export const openProfileMenu = () => ({
+    type: ActionType.OpenProfileMenu
+});
+
+export const closeProfileMenu = () => ({
+    type: ActionType.CloseProfileMenu
+});

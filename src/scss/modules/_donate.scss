@@ -1,31 +1,67 @@
 .donate-block {
-    background-color: #fff;
-    border-radius: $brs-4;
     padding: vw(40) vw(67) vw(53) vw(90);
     display: flex;
     flex-direction: column;
+
+    @media(max-width: 1024px) {
+        padding: 3rem 0 0 0;
+    }
+
+    @media(min-width: 1025px) {
+        background-color: #fff;
+        border-radius: $brs-4;
+    }
 
     &__top {
         margin-bottom: vw(33);
         display: flex;
         align-items: center;
+        flex-wrap: wrap;
+        gap: vw(22);
+
+        @media(max-width: 1024px) {
+            margin-bottom: 3rem;
+            gap: 2rem;
+        }
     }
 
     &__title {
-        text-align: left;
-        margin-right: auto;
+        display: none;
+
+        @media(min-width: 1025px) {
+            display: block;
+            text-align: left;
+            margin-right: auto;
+        }
     }
 
     &__filter-tabs {
-        @include grid(5, vw(20), vw(14));
-        margin-bottom: vw(20);
+        display: none;
+
+        @media(min-width: 1025px) {
+            @include grid(5, vw(20), vw(14));
+            margin-bottom: vw(20);
+        }
     }
 
     &__cards {
         @include grid(5, vw(20), vw(14));
 
+        @media(max-width: 1024px) {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+
+        @media(max-width: 500px) {
+            grid-template-columns: 1fr;
+        }
+
         &:not(:last-child) {
             margin-bottom: vw(50);
+
+            @media(max-width: 1024px) {
+                margin-bottom: 5rem;
+            }
         }
     }
 
@@ -33,14 +69,15 @@
         padding: vw(22) vw(43.5);
         align-self: center;
         font-weight: 700;
-    }
 
-    &__select {
-        margin-left: vw(22);
+        @media(max-width: 1024px) {
+            padding: 2.2rem 4.35rem;
+        }
     }
 }
 
 .select {
+    @extend %text-14;
     padding: vw(14) vw(20);
     min-width: vw(160);
     background-color: rgba(226, 227, 243, 0.65);
@@ -48,12 +85,21 @@
     border-radius: 3px;
     font-family: $ff-acrom;
     font-weight: 700;
-    font-size: vw(14);
-    line-height: calc(17 / 14 * 100%);
     color: var(--black);
     background-position: calc(85%) 50%;
     background-size: vw(12) vw(7);
     background-repeat: no-repeat;
+
+    @media(max-width: 1024px) {
+        padding: 1.4rem 2rem;
+        min-width: 16rem;
+        border-radius: 0.3rem;
+        background-size: 1.2rem 0.7rem;
+    }
+
+    @media(max-width: 767px) {
+        width: 100%;
+    }
 }
 
 .filter-tab {
@@ -67,6 +113,10 @@
     border-radius: $brs;
     box-shadow: $bsh-card;
     transition: $transition color;
+
+    @media(max-width: 1024px) {
+        padding: 1.5rem;
+    }
 
     &::before {
         content: '';
@@ -95,6 +145,12 @@
         margin-right: vw(6);
         width: vw(39);
         height: vw(39);
+
+        @media(max-width: 1024px) {
+            margin-right: 0.6rem;
+            width: 3.9rem;
+            height: 3.9rem;
+        }
     }
 
     svg {
@@ -104,6 +160,13 @@
         height: vw(20);
         fill: #0E1317;
         transition: $transition fill;
+
+        @media(max-width: 1024px) {
+            margin-left: 1rem;
+            margin-right: 1.6rem;
+            width: 2rem;
+            height: 2rem;
+        }
     }
 
     @media (any-hover: hover) {
@@ -143,6 +206,10 @@
     position: relative;
     padding: vw(46) vw(17) vw(30);
 
+    @media(max-width: 1024px) {
+        padding: 4.6rem 1.7rem 3rem;
+    }
+
     &::before {
         content: '';
         position: absolute;
@@ -152,6 +219,14 @@
         width: vw(120);
         height: vw(5);
         border-radius: 0 0 15px 15px;
+
+        @media(max-width: 1024px) {
+            left: 0;
+            transform: none;
+            width: 100%;
+            height: 0.5rem;
+            border-radius: 0 0 1.5rem 1.5rem;
+        }
     }
 
     &--line {
@@ -182,5 +257,9 @@
 
     &__img {
         margin-bottom: vw(25);
+
+        @media(max-width: 1024px) {
+            margin-bottom: 2.5rem;
+        }
     }
 }

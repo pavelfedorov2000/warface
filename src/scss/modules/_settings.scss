@@ -1,13 +1,32 @@
 .settings-block {
     @include padding-y(vw(60));
     display: grid;
-    grid-template-columns: vw(300) vw(700);
     gap: vw(38);
-    align-items: flex-start;
+
+    @media(max-width: 1024px) {
+        padding-top: 6rem;
+        padding-bottom: 3rem;
+        gap: 3.5rem;
+    }
+
+    @media(min-width: 1025px) {
+        grid-template-columns: vw(300) vw(700);
+        align-items: flex-start;
+    }
 }
 
 .settings-form {
     @extend %card;
     padding: vw(40) vw(35);
     @include grid(2, vw(30), vw(30));
+
+    @media(max-width: 1024px) {
+        padding: 4rem 3.5rem;
+        gap: 3rem;
+    }
+
+    @media(max-width: 767px) {
+        @include padding-x(1.5rem);
+        grid-template-columns: 1fr;
+    }
 }

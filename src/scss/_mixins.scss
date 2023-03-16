@@ -5,6 +5,10 @@
         width: vw(3);
         background: rgba(226, 227, 243, 0.65);
         border-radius: $brs-card;
+
+        @media(max-width: 1024px) {
+            width: 0.3rem;
+        }
     }
 
     &::-webkit-scrollbar-thumb {

@@ -7,18 +7,12 @@
         overflow: hidden;
         position: absolute;
         clip: rect(0 0 0 0);
-
-        /* &:checked ~ #{$this}__style {
-            
-        } */
     }
 
     &__style {
         position: relative;
         flex-shrink: 0;
     }
-
-    &__text {}
 }
 
 .radiobutton {
@@ -30,6 +24,10 @@
     align-items: center;
     justify-content: center;
     padding: vw(9.5);
+
+    @media(max-width: 1024px) {
+        padding: 0.95rem;
+    }
 
     &__input {
         width: 1px;
@@ -58,7 +56,7 @@
         height: 100%;
         background: #EAEBF8;
         border: 1px solid rgba(206, 208, 232, 0.25);
-        box-shadow: 0 4px 35px rgba(142, 145, 176, 0.15);
+        box-shadow: $bsh-field;
         border-radius: $brs;
 
         span {
@@ -70,16 +68,19 @@
             background-position: center;
             background-repeat: no-repeat;
             transition: $transition opacity;
+
+            @media(max-width: 1024px) {
+                background-size: 1.1rem 0.8rem;
+            }
         }
     }
 
     &__text {
+        @extend %text-13;
         position: relative;
         z-index: 1;
         font-family: $ff-acrom;
         font-weight: 700;
-        font-size: vw(13);
-        line-height: calc(16 / 13 * 100%);
         color: #292C33;
     }
 
@@ -92,7 +93,7 @@
                 &__input {
                     &:checked~#{$this} {
                         &__text {
-                            color: #292C33;
+                            color: var(--dark-2);
                         }
 
                         &__style {
@@ -110,9 +111,13 @@
                     @include round(vw(23));
                     background: transparent;
                     box-shadow: none;
-                }
 
-                &__text {}
+                    @media(max-width: 1024px) {
+                        margin-right: 0.8rem;
+                        width: 2.3rem;
+                        height: 2.3rem;
+                    }
+                }
             }
         }
     }

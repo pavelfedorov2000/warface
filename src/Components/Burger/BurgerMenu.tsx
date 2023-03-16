@@ -1,10 +1,12 @@
 import classNames from 'classnames';
-import { Link } from 'react-router-dom';
 import { useTypedSelector } from '../../hooks/useTypedSelector';
 import { useActions } from '../../hooks/useActions';
+import SidebarNav from '../SidebarNav';
+import Menu from '../Menu';
+import CloseButton from '../CloseButton';
 
 const BurgerMenu = () => {
-    const { isMenuOpen } = useTypedSelector((state) => state.burgerReducer);
+    const { isBurgerMenuOpen } = useTypedSelector((state) => state.menuReducer);
     const { closeBurgerMenu } = useActions();
 
     const handleClose = () => {
@@ -14,13 +16,11 @@ const BurgerMenu = () => {
 
     return (
         <div id="burger-menu" className={classNames('burger-menu', {
-            'active': isMenuOpen
+            'active': isBurgerMenuOpen
         })}>
-            <div className="burger-menu__top">
-                <button onClick={handleClose} className="burger-menu__close" type="button" aria-label="Закрыть меню">
-                    <img src="" alt="крестик" width="20" height="20" />
-                </button>
-            </div>
+            <CloseButton onClick={handleClose} className="burger-menu__close" ariaLabel="Закрыть меню" />
+            <Menu className="burger-menu__nav" />
+            <SidebarNav />
         </div>
     );
 }

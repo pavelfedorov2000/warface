@@ -6,9 +6,11 @@ interface Props {
         items: { text: string }[]
     };
     answer?: Review;
+    isExpanded: boolean;
+    onToggleAnswer: () => void;
 }
 
-const ReviewContent = ({ text, answer }: Props) => {
+const ReviewContent = ({ text, answer, isExpanded, onToggleAnswer }: Props) => {
     return (
         <div className="review-content">
             {text && text.items.length !== 0 ?
@@ -21,7 +23,7 @@ const ReviewContent = ({ text, answer }: Props) => {
                     {
                         answer &&
                         <div className="review-content__btns">
-                            <button className="button button--style_link-3">
+                            <button onClick={onToggleAnswer} className="button button--style_link-3" aria-expanded={isExpanded}>
                                 <span className="button__text">Показать ответ</span>
                             </button>
                             <button className="button button--style_link-2">

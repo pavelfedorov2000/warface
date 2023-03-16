@@ -15,9 +15,10 @@ interface Props {
     style?: string;
     bg?: string;
     reversed?: boolean;
+    ariaControls?: string;
 }
 
-const Button = ({ href, onClick, className, border, text, type, isDisabled, transparent, icon, style, bg, reversed }: Props) => {
+const Button = ({ href, onClick, className, border, text, type, isDisabled, transparent, icon, style, bg, reversed, ariaControls }: Props) => {
     const content = <>
         {icon ? icon : null}
         <span className="button__text">{text}</span>
@@ -40,6 +41,7 @@ const Button = ({ href, onClick, className, border, text, type, isDisabled, tran
                     onClick={onClick}
                     disabled={isDisabled}
                     type={type || 'button'}
+                    aria-controls={ariaControls}
                     className={classNames('button', className, style && `button--style_${style}`, bg && `button--style_bg-${bg}`, {
                         'button--border': border,
                         'button--transparent': transparent,

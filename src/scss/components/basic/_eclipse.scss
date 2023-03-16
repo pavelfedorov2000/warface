@@ -1,4 +1,5 @@
 .eclipse {
+    display: none;
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -6,6 +7,12 @@
     z-index: 10;
     @include round(vw(90));
     background-color: #F3F7FF;
+
+    @media(max-width: 1024px) {
+        right: -5.8rem;
+        width: 9rem;
+        height: 9rem;
+    }
 
     &::before,
     &::after {
@@ -19,10 +26,24 @@
     &::before {
         @include round(vw(45));
         background: var(--purple-gradient);
+
+        @media(max-width: 1024px) {
+            width: 4.5rem;
+            height: 4.5rem;
+        }
     }
 
     &::after {
         @include round(vw(15));
         background-color: #D0D4FB;
+
+        @media(max-width: 1024px) {
+            width: 1.5rem;
+            height: 1.5rem;
+        }
+    }
+
+    @media(min-width: 768px) {
+        display: block;
     }
 }

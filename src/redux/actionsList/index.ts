@@ -1,15 +1,17 @@
 export enum ActionType {
-    SetLoaded = 'SetLoaded',
-    FetchProducts = 'FetchProducts',
-    SetProducts = 'SetProducts',
-
     OpenFilters = 'OpenFilters',
     CloseFilters = 'CloseFilters',
+    SubmitFilters = 'SubmitFilters',
     ResetFilters = 'ResetFilters',
-
-    AddFavoriteProduct = 'AddFavoriteProduct',
-    RemoveFavoriteProduct = 'RemoveFavoriteProduct',
+    SetFilterPrice = 'SetFilterPrice',
+    SetFilterServer = 'SetFilterServer',
+    SetFilterRunk = 'SetFilterRunk',
+    SetFilterDonate = 'SetFilterDonate',
+    SetSellerStatus = 'SetSellerStatus',
 
     OpenBurgerMenu = 'OpenBurgerMenu',
     CloseBurgerMenu = 'CloseBurgerMenu',
+
+    OpenProfileMenu = 'OpenProfileMenu',
+    CloseProfileMenu = 'CloseProfileMenu',
 }

@@ -7,14 +7,16 @@ interface Props {
     search?: boolean;
     titleLineColor?: string;
     text?: string;
+    items?: any[];
+    setItems?: any;
 }
 
-const PageTop = ({ title, search, titleLineColor, text }: Props) => {
+const PageTop = ({ title, search, titleLineColor, text, items, setItems }: Props) => {
     return (
         <div className="page-top">
             <BackButton />
             <Title text={title} lineColor={titleLineColor} />
-            {search && <SearchField />}
+            {search && <SearchField items={items} setItems={setItems} />}
             {text && <p>{text}</p>}
         </div>
     );

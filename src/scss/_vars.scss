@@ -123,6 +123,15 @@ $transition: $duration $transition-timing;
     }
 }
 
+%text-14 {
+    font-size: vw(14);
+    line-height: calc(17 / 14 * 100%);
+
+    @media(max-width: 1024px) {
+        font-size: 1.4rem;
+    }
+}
+
 %text-16 {
     font-size: vw(16);
     line-height: calc(19 / 16 * 100%);

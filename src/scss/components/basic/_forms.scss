@@ -1,6 +1,6 @@
 .search-field {
+    @extend %text-16;
     display: flex;
-    justify-self: end;
     align-items: center;
     width: vw(250);
     height: vw(50);
@@ -11,11 +11,26 @@
     border-radius: $brs-btn;
     font-family: $ff, sans-serif;
     font-weight: 500;
-    font-size: vw(16);
-    line-height: calc(19 / 16 * 100%);
     background-position: vw(25) 50%;
     background-size: vw(16);
     background-repeat: no-repeat;
+
+    @media(min-width: 768px) {
+        justify-self: end;
+    }
+
+    @media(max-width: 1024px) {
+        width: 25rem;
+        height: 5rem;
+        padding-left: 5.2rem;
+        padding-right: 2.5rem;
+        background-position-x: 2.5rem;
+        background-size: 1.6rem;
+    }
+
+    @media(max-width: 500px) {
+        width: 100%;
+    }
 
     &::placeholder {
         color: #B8BACF;
@@ -64,13 +79,24 @@ input[type='number']:focus {
     &-horizontal {
         height: vw(3) !important;
 
+        @media(max-width: 1024px) {
+            height: 0.3rem !important;
+        }
+
         #{$this} {
             &-handle {
-                top: -10px !important;
+                top: vw(-10) !important;
                 @include round(vw(25) !important);
                 background: linear-gradient(36.87deg, #B139FE 18.57%, #1E61EB 80.26%);
                 border: vw(4) solid #FFF;
                 box-shadow: none !important;
+
+                @media(max-width: 1024px) {
+                    top: -1rem !important;
+                    width: 2.5rem !important;
+                    height: 2.5rem !important;
+                    border-width: 0.4rem;
+                }
 
                 &:before,
                 &:after {
@@ -86,6 +112,10 @@ input[type='number']:focus {
         margin-top: vw(22.5);
         display: flex;
         justify-content: space-between;
+
+        @media(max-width: 1024px) {
+            margin-top: 2.25rem;
+        }
     }
 
     &__value {
@@ -94,9 +124,14 @@ input[type='number']:focus {
         gap: vw(5);
         font-family: $ff-acrom;
         color: #CDCFE5;
+
+        @media(max-width: 1024px) {
+            gap: 0.5rem;
+        }
     }
 
     &__value-input {
+        @extend %text-14;
         width: vw(82);
         padding: vw(9);
         display: flex;
@@ -107,10 +142,13 @@ input[type='number']:focus {
         border-radius: $brs !important;
         font-family: $ff-acrom;
         font-weight: 700;
-        font-size: vw(14);
-        line-height: calc(17 / 14 * 100%);
         text-align: center;
-        color: #292C33;
+        color: var(--dark-2);
+
+        @media(max-width: 1024px) {
+            width: 8.2rem;
+            padding: 0.9rem;
+        }
     }
 
     &--color {
@@ -148,6 +186,13 @@ input[type='number']:focus {
     background-size: vw(20);
     background-repeat: no-repeat;
 
+    @media(max-width: 1024px) {
+        padding: 1.85rem 2.4rem;
+        grid-template-columns: 1fr 2rem;
+        gap: 0.5rem;
+        background-size: 2rem;
+    }
+
     &__label,
     &__input {
         grid-column: 1 / 2;
@@ -163,7 +208,8 @@ input[type='number']:focus {
     &__input {
         @extend %text-16;
         font-weight: 700;
-        color: #000;
+        color: var(--black);
+        width: 100%;
         text-align: left;
     }
 
@@ -181,9 +227,19 @@ input[type='number']:focus {
     width: vw(20);
     height: vw(20);
 
+    @media(max-width: 1024px) {
+        width: 2rem;
+        height: 2rem;
+    }
+
     svg {
         width: vw(20);
         height: vw(20);
         fill: #BEC2DC;
+
+        @media(max-width: 1024px) {
+            width: 2rem;
+            height: 2rem;
+        }
     }
 }

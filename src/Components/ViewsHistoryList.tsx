@@ -1,10 +1,14 @@
-import { VIEWS_HISTORY } from "../constants/views-history";
+import { ViewsHistory } from "../interfaces/ViewsHistory";
 import ViewsHistoryItem from "./ViewsHistoryItem";
 
-const ViewsHistoryList = () => {
+interface Props {
+    items: ViewsHistory[];
+}
+
+const ViewsHistoryList = ({ items }: Props) => {
     return (
         <ul className="views-history">
-            {VIEWS_HISTORY.map((item, index) => (
+            {items.map((item, index) => (
                 <li key={index}>
                     <ViewsHistoryItem {...item} />
                 </li>

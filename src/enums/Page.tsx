@@ -18,7 +18,6 @@ enum Page {
     TopUsers = 'TopUsers',
     Reviews = 'Reviews',
     Guarantee = 'Guarantee',
-    Forum = 'Forum',
     Profile = 'Profile',
     Goods = 'Goods',
     Orders = 'Orders',
@@ -41,7 +40,7 @@ export const Pages = {
         }
     }, {
         [Page.Home]: {
-            id: 0,
+            id: 1,
             path: '/home',
             title: 'Главная',
             exact: true,
@@ -49,7 +48,7 @@ export const Pages = {
         }
     }, {
         [Page.Accounts]: {
-            id: 1,
+            id: 2,
             path: '/accounts',
             title: 'Аккаунты',
             component: Accounts,
@@ -75,16 +74,10 @@ export const Pages = {
             title: 'Гарантии',
             component: Guarantee
         }
-    }, {
-        [Page.Forum]: {
-            id: 6,
-            path: '/forum',
-            title: 'Форум'
-        }
     }],
     profile: [{
         [Page.Profile]: {
-            id: 7,
+            id: 6,
             title: 'Мой профиль',
             path: '/profile',
             icon: <User />,
@@ -92,22 +85,15 @@ export const Pages = {
         }
     }, {
         [Page.Goods]: {
-            id: 8,
+            id: 7,
             title: 'Мои товары',
             path: '/goods',
             icon: <ShoppingHouse />,
             component: Goods
         }
     }, {
-        [Page.Orders]: {
-            id: 9,
-            title: 'Стол заказов',
-            path: '/goods',
-            icon: <Truck />
-        }
-    }, {
         [Page.Achievements]: {
-            id: 10,
+            id: 8,
             title: 'Достижения',
             path: '/achievements',
             icon: <Winner />,
@@ -115,22 +101,15 @@ export const Pages = {
         }
     }, {
         [Page.Settings]: {
-            id: 11,
+            id: 9,
             title: 'Настройки',
             path: '/settings',
             icon: <SettingsIcon />,
             component: Settings
         }
     }, {
-        [Page.Payment]: {
-            id: 12,
-            title: 'Пополение и вывод',
-            path: '/payment',
-            icon: <Wallet />
-        }
-    }, {
         [Page.ReferalSystem]: {
-            id: 13,
+            id: 10,
             title: 'Реферальная система',
             path: '/referal',
             icon: <Workflow />
@@ -138,7 +117,7 @@ export const Pages = {
     }],
     sidebar: [{
         [Page.ViewsHistory]: {
-            id: 14,
+            id: 11,
             title: 'История просмотров',
             path: '/views-history',
             icon: <Thumbnail />,
@@ -147,14 +126,14 @@ export const Pages = {
     }],
     other: [{
         [Page.Support]: {
-            id: 15,
+            id: 12,
             title: 'Техническая поддержка',
             path: '/support',
             component: Support
         }
     }, {
         [Page.Notifications]: {
-            id: 16,
+            id: 13,
             title: 'Уведомления',
             path: '/notifications',
             component: Notifications

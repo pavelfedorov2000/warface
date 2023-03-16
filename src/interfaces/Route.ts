@@ -1,10 +1,8 @@
-import { EmptyBlock } from "./EmptyBlock";
 import { ReactNode } from "react";
 
 export interface Page {
     title: string;
     subtitle?: string;
-    emptyBlock?: EmptyBlock;
 }
 
 export interface Route extends Page {

@@ -16,10 +16,10 @@
         border-radius: $brs-card;
 
         @media(max-width: 1024px) {
-            left: -5rem;
+            left: -5.5rem;
             top: 2.1rem;
-            width: 24rem;
-            height: 18.6rem;
+            width: 20rem;
+            height: 14.6rem;
         }
     }
 
@@ -124,6 +124,10 @@
             font-size: 4.5rem;
             margin-bottom: 2rem;
         }
+
+        @media(max-width: 767px) {
+            font-size: 3.2rem;
+        }
     }
 
     &__btn {
@@ -133,6 +137,10 @@
 
         @media(max-width: 1024px) {
             padding: 1.65rem 2.75rem;
+        }
+
+        @media(max-width: 767px) {
+            padding: 1.5rem;
         }
     }
 }

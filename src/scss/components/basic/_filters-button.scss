@@ -1,5 +1,9 @@
 .filters-button {
-    $this: &;
+    display: none;
+    font-family: $ff-acrom;
+    padding: 1.5rem;
 
-    position: relative;
+    @media(max-width: 1024px) {
+        display: inline-flex;
+    }
 }

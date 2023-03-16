@@ -5,6 +5,12 @@
         display: flex;
         flex-wrap: wrap;
         gap: vw(25);
+
+        @media(max-width: 1024px) {
+            flex-direction: column;
+            flex-wrap: nowrap;
+            gap: 3rem;
+        }
     }
 
     &__link {
@@ -14,6 +20,11 @@
         color: var(--gray-8a);
         text-transform: uppercase;
         transition: $transition color;
+
+        @media(max-width: 1024px) {
+            padding-bottom: 0.9rem;
+            color: rgba(#fff, 0.35);
+        }
 
         &::after {
             content: '';
@@ -25,10 +36,18 @@
             background: var(--purple-gradient);
             opacity: 0;
             transition: $transition opacity;
+
+            @media(max-width: 1024px) {
+                height: 0.3rem;
+            }
         }
 
         &.active {
             color: var(--dark-3);
+
+            @media(max-width: 1024px) {
+                color: #fff;
+            }
 
             &::after {
                 opacity: 1;

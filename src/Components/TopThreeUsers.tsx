@@ -9,8 +9,8 @@ interface Props {
 const TopThreeUsers = ({ users }: Props) => {
     return (
         <div className="top-three-users">
-            <TopUser index={1} medal={Medal.Silver} {...users[1]} />
             <TopUser index={2} medal={Medal.Gold} {...users[0]} />
+            <TopUser index={1} medal={Medal.Silver} {...users[1]} />
             <TopUser index={3} medal={Medal.Bronze} {...users[2]} />
         </div>
     );

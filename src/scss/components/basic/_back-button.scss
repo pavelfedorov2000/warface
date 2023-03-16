@@ -1,9 +1,6 @@
 .back-button {
     $this: &;
 
-    /* position: absolute;
-    bottom: 0;
-    left: 0; */
     display: grid;
     place-items: center;
     width: vw(65);
@@ -12,11 +9,21 @@
     border-radius: $brs-btn;
     transition: $transition border-color;
 
+    @media(max-width: 1024px) {
+        width: 6.5rem;
+        height: 4rem;
+    }
+
     &__arrow {
         width: vw(26);
         height: vw(16);
         fill: var(--gray-c5);
         transition: $transition fill;
+
+        @media(max-width: 1024px) {
+            width: 2.6rem;
+            height: 1.6rem;
+        }
     }
 
     @media (any-hover: hover) {

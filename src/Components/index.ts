@@ -3,6 +3,7 @@ export { default as SidebarStatus } from './SidebarStatus';
 export { default as SidebarNav } from './SidebarNav';
 export { default as BottomSidebar } from './BottomSidebar';
 
+export { default as CloseButton } from './CloseButton';
 export { default as Menu } from './Menu';
 export { default as DropdownMenu } from './DropdownMenu';
 

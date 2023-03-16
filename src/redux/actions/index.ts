@@ -1,9 +1,7 @@
-import * as BurgerActionCreators from './burger';
+import * as MenuActionCreators from './menu';
 import * as FiltersActionCreators from './filters';
-//import * as FavoriteActionCreators from './favorite';
 
 export default {
-    ...BurgerActionCreators,
+    ...MenuActionCreators,
     ...FiltersActionCreators,
-    //...FavoriteActionCreators,
 }

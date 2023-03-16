@@ -1,9 +1,21 @@
 .top-three-users {
+    @include grid(3, vw(35), vw(35));
     padding-top: vw(70);
     padding-bottom: vw(17);
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: vw(35);
+
+    @media(max-width: 1024px) {
+        gap: 3.5rem;
+        padding-top: 7rem;
+        padding-bottom: 3rem;
+    }
+
+    @media(max-width: 767px) {
+        grid-template-columns: 1fr;
+    }
+
+    @media(min-width: 768px) {
+        grid-template-areas: 'silverUser goldUser bronzeUser';
+    }
 }
 
 .top-user {
@@ -17,11 +29,40 @@
     border-radius: $brs-3;
     font-family: $ff-acrom;
 
+    &--gold {
+        @media(min-width: 768px) {
+            grid-area: goldUser;
+        }
+    }
+
+    &--silver {
+        @media(min-width: 768px) {
+            grid-area: silverUser;
+        }
+    }
+
+    &--bronze {
+        @media(min-width: 768px) {
+            grid-area: bronzeUser;
+        }
+    }
+
+    @media(max-width: 1024px) {
+        padding: 0 3rem 3.5rem;
+    }
+
     &__avatar {
         position: relative;
         margin-top: vw(-30);
         margin-bottom: vw(32);
         @include round(vw(130));
+
+        @media(max-width: 1024px) {
+            margin-top: -3rem;
+            margin-bottom: 3.2rem;
+            width: 13rem;
+            height: 13rem;
+        }
 
         img {
             width: 100%;
@@ -31,6 +72,7 @@
     }
 
     &__place {
+        @extend %text-12;
         position: absolute;
         bottom: vw(-16);
         left: 50%;
@@ -39,9 +81,12 @@
         border-radius: $brs-btn;
         color: #fff;
         font-weight: 700;
-        font-size: vw(12);
-        line-height: calc(14 / 12 * 100%);
         white-space: nowrap;
+
+        @media(max-width: 1024px) {
+            bottom: -1.6rem;
+            padding: 1.05rem 1.25rem;
+        }
 
         span {
             position: absolute;
@@ -53,6 +98,11 @@
             background-position: center;
             background-size: contain;
             background-repeat: no-repeat;
+
+            @media(max-width: 1024px) {
+                width: 2.4rem;
+                height: 2.4rem;
+            }
         }
 
         &--gold {
@@ -69,15 +119,22 @@
     }
 
     &__name {
-        font-size: vw(18);
-        line-height: calc(22 / 18 * 100%);
+        @extend %text-18;
         font-weight: 700;
         margin-bottom: vw(22);
+
+        @media(max-width: 1024px) {
+            margin-bottom: 2.2rem;
+        }
     }
 
     &__stats {
         display: flex;
         gap: vw(10);
+
+        @media(max-width: 1024px) {
+            gap: 1rem;
+        }
     }
 
     &__stats-item {
@@ -87,15 +144,17 @@
         gap: vw(6);
         text-align: center;
 
+        @media(max-width: 1024px) {
+            gap: 0.6rem;
+        }
+
         dt {
-            font-size: vw(12);
-            line-height: calc(14 / 12 * 100%);
+            @extend %text-12;
             color: #B4BAD2;
         }
 
         dd {
-            font-size: vw(16);
-            line-height: calc(19 / 16 * 100%);
+            @extend %text-16;
             font-weight: 700;
             letter-spacing: 0.05em;
         }

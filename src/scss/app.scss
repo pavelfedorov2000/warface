@@ -114,15 +114,5 @@ a {
     }
 }
 
-.mb {
-    &-44 {
-        margin-bottom: vw(44);
-
-        @media(max-width: 1024px) {
-            margin-bottom: 4.4rem;
-        }
-    }
-}
-
 @import 'components/components';
 @import 'modules/modules';

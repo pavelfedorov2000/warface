@@ -1,6 +1,7 @@
 import santchezz from "../assets/images/santchezz.png";
 import { TopUser as TopUserType } from "../interfaces/TopUser";
 import starIcon from "../assets/images/icons/actions-star.svg";
+import classNames from "classnames";
 
 interface Props extends TopUserType {
     index: number;
@@ -9,7 +10,7 @@ interface Props extends TopUserType {
 
 const TopUser = ({ index, medal, place, userName, goods, revenue }: Props) => {
     return (
-        <article className="top-user">
+        <article className={classNames('top-user', `top-user--${medal}`)}>
             <div className="top-user__avatar">
                 <img src={santchezz} alt="avatar" />
                 <span className={`top-user__place top-user__place--${medal}`}>

@@ -1,10 +1,8 @@
 import burger from '../../assets/images/icons/burger.svg';
 import { useActions } from '../../hooks/useActions';
-import { useTypedSelector } from '../../hooks/useTypedSelector';
 
 const BurgerButton = () => {
     const { openBurgerMenu } = useActions();
-    const { isMenuOpen } = useTypedSelector((state) => state.burgerReducer);
 
     const handleOpenMenu = () => {
         document.body.classList.add('_lock');
@@ -12,8 +10,8 @@ const BurgerButton = () => {
     }
 
     return (
-        <button onClick={handleOpenMenu} className="burger-btn" type="button" aria-label="Открыть меню" aria-expanded={isMenuOpen} aria-controls="burger-menu">
-            <img src={burger} alt="кнопка бургер" width="30" height="21" />
+        <button onClick={handleOpenMenu} className="burger-button" type="button" aria-label="Открыть меню" aria-controls="burger-menu">
+            <img src={burger} alt="burger" width="30" height="21" />
         </button>
     );
 }

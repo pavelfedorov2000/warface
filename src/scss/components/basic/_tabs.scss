@@ -2,6 +2,10 @@
     padding-bottom: vw(32);
     display: flex;
     justify-content: center;
+
+    @media(max-width: 1024px) {
+        padding-bottom: 3.2rem;
+    }
 }
 
 .tabs {
@@ -10,6 +14,10 @@
     background-color: #fff;
     box-shadow: $bsh-card;
     border-radius: $brs;
+
+    @media(max-width: 1024px) {
+        @include padding-x(1.8rem);
+    }
 
     &--style {
         &_2 {
@@ -21,13 +29,16 @@
 }
 
 .tab {
+    @extend %text-16;
     position: relative;
     padding: vw(23) vw(18);
     font-weight: 700;
-    font-size: vw(16);
-    line-height: calc(19 / 16 * 100%);
     color: var(--gray-cf);
     transition: $transition color;
+
+    @media(max-width: 1024px) {
+        padding: 2.3rem 1.8rem;
+    }
 
     &::after {
         content: '';
@@ -39,6 +50,10 @@
         background: var(--purple-gradient);
         opacity: 0;
         transition: $transition opacity;
+
+        @media(max-width: 1024px) {
+            height: 0.3rem;
+        }
     }
 
     @media (any-hover: hover) {

@@ -1,13 +1,11 @@
-import burgerReducer from './burger';
+import menuReducer from './menu';
 import filtersReducer from './filters';
-//import favoriteReducer from './favorite';
 
 import { combineReducers } from 'redux';
 
 export const rootReducer = combineReducers({
-    burgerReducer,
+    menuReducer,
     filtersReducer,
-    //favoriteReducer,
 });
 
 export type RootState = ReturnType<typeof rootReducer>;

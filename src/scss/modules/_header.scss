@@ -63,7 +63,7 @@
         display: flex;
         align-items: center;
 
-        &:last-child {
+        .user-select {
             @media(max-width: 1024px) {
                 display: none;
             }

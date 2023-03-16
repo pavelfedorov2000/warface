@@ -1,12 +1,11 @@
-import { useActions } from '../hooks/useActions';
-import { useTypedSelector } from '../hooks/useTypedSelector';
+import FilterIcon from './icons/FilterIcon';
 
 const FiltersButton = () => {
-    const { isVisible } = useTypedSelector((state) => state.filtersReducer);
-    const { openFilters } = useActions();
+
 
     return (
-        <button onClick={openFilters} className="filters-button" aria-expanded={isVisible ? true : false} aria-controls="filters" type="button">
+        <button className="filters-button" aria-controls="filters" type="button">
+            <FilterIcon />
             <span>Фильтры</span>
         </button>
     );

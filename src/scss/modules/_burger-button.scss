@@ -1,0 +1,24 @@
+.burger-button {
+    display: none;
+
+    @media (max-width: 1024px) {
+        display: block;
+        width: 3rem;
+        height: 2.1rem;
+    }
+}
+
+.close-button {
+    display: none;
+    position: absolute;
+    padding: 0.5rem;
+
+    @media(max-width: 1024px) {
+        display: block;
+    }
+
+    img {
+        width: 2rem;
+        height: 2rem;
+    }
+}

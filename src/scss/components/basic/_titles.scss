@@ -1,10 +1,7 @@
 .title {
     position: relative;
     padding-bottom: vw(18);
-    grid-column: 2 / 3;
     display: flex;
-    justify-content: center;
-    text-align: center;
     font-family: $ff-acrom, sans-serif;
     font-weight: 700;
     font-size: vw(24);
@@ -13,10 +10,17 @@
     background-size: vw(157) vw(85);
     background-repeat: no-repeat;
 
+    @media(min-width: 768px) {
+        grid-column: 2 / 3;
+        justify-content: center;
+        text-align: center;
+    }
+
     @media(max-width: 1024px) {
         font-size: 2.4rem;
         background-size: 15.7rem 8.5rem;
         padding-bottom: 1.5rem;
+        background-position-x: 0;
     }
 
     &::after {
@@ -33,6 +37,11 @@
         @media(max-width: 1024px) {
             width: 3.5rem;
             height: 0.4rem;
+        }
+
+        @media(max-width: 767px) {
+            left: 0;
+            transform: none;
         }
     }
 

@@ -29,7 +29,7 @@ const Reviews = ({ title }: Page) => {
         setReviewText(event.target.value);
     }
 
-    const handleAddReview = (event: any) => {
+    const handleAddReview = (event: React.SyntheticEvent<HTMLFormElement>) => {
         event.preventDefault();
 
         setReviewText('');

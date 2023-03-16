@@ -11,8 +11,16 @@ import { User } from '../icons';
 import Logo from '../Logo';
 import logo from '../../assets/images/logo/logo-main.png';
 import BurgerButton from '../Burger/BurgerButton';
+import { useActions } from '../../hooks/useActions';
 
 const Header = () => {
+    const { openProfileMenu } = useActions();
+
+    const handleOpenProfileMenu = () => {
+        document.body.classList.add('_lock');
+        openProfileMenu();
+    }
+
     const dropdownNotificationsRef = useRef<HTMLDivElement>(null);
     const dropdownMenuRef = useRef<HTMLDivElement>(null);
 
@@ -40,7 +48,7 @@ const Header = () => {
                         <NotificationsDropdown />
                     </div>
                     <div className="header__action touch-visible">
-                        <ActionButton bg="orange" icon={<User />} />
+                        <ActionButton onClick={handleOpenProfileMenu} bg="orange" icon={<User />} aria-controls="dropdown-menu" />
                     </div>
                     <div ref={dropdownMenuRef} className="header__action">
                         <UserSelect onClick={toggleDropdownMenuVisibility} isExpanded={dropdownMenuVisible} />

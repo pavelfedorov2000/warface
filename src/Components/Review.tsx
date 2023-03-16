@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { ReviewItem } from "../interfaces/Review";
 import ReviewAnswer from "./ReviewAnswer";
 import ReviewCard from "./ReviewCard";
@@ -8,11 +9,20 @@ interface Props {
 }
 
 const Review = ({ review }: Props) => {
+    const [reviewAnswerVisible, setReviewAnswerVisible] = useState(false);
+    const toggleReviewAnswer = () => {
+        setReviewAnswerVisible((prevState) => !prevState);
+    }
+
+    const closeReviewAnswer = () => {
+        setReviewAnswerVisible(false);
+    }
+
     return (
         <article className="review">
             <ReviewCard {...review} />
-            <ReviewContent {...review} />
-            {review.answer && <ReviewAnswer {...review} />}
+            <ReviewContent isExpanded={reviewAnswerVisible} onToggleAnswer={toggleReviewAnswer} {...review} />
+            {review.answer && <ReviewAnswer onClose={closeReviewAnswer} isVisible={reviewAnswerVisible} {...review} />}
         </article>
     );
 };

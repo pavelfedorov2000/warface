@@ -1,15 +1,16 @@
 import classNames from "classnames";
 import allice from "../assets/images/allice.png";
+import { OnlineStatus } from "../enums/OnlineStatus";
 import { BaseUser } from "../interfaces/User";
 
 interface Props extends BaseUser {
     className?: string;
 }
 
-const SmallUser = ({ className, name, online }: Props) => {
+const SmallUser = ({ className, name, status }: Props) => {
     return (
         <div className={classNames('small-user', className, {
-            'online': online
+            'online': status === OnlineStatus.Online
         })}>
             <div className="small-user__avatar">
                 <img src={allice} alt="avatar" />

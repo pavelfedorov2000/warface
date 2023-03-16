@@ -17,6 +17,7 @@
 
     @media(max-width: 1024px) {
         font-size: 1.4rem;
+        gap: 0.5rem;
     }
 
     @media(max-width: 500px) {
@@ -122,11 +123,11 @@
             }
 
             &-gray {
-                background-color: #EAEBF8;
-                color: #292C33;
+                background: #EAEBF8;
+                color: var(--dark-2);
 
                 svg {
-                    fill: #292C33;
+                    fill: var(--dark-2);
                 }
             }
 

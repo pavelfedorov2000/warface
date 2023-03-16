@@ -4,18 +4,29 @@
     @media (max-width: 1024px) {
         display: block;
         position: fixed;
-        top: 0;
-        left: -100%;
+        top: -150%;
+        left: 0;
         z-index: 101;
+        width: 100%;
         height: 100%;
-        background-color: #fff;
-        transition: $transition left;
-        overflow: auto;
+        padding: 6.8rem 4.7rem;
+        background-color: rgba(#000, 0.9);
+        transition: $transition top;
+        overflow-y: auto;
     }
 
     &.active {
         @media (max-width: 1024px) {
-            left: 0;
+            top: 0;
         }
+    }
+
+    &__close {
+        top: 5.8rem;
+        right: 4rem;
+    }
+
+    &__nav {
+        margin-bottom: 4.5rem;
     }
 }

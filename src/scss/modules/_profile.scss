@@ -1,12 +1,24 @@
 .profile {
     padding-top: vw(50);
     display: grid;
-    grid-template-columns: vw(300) 1fr;
     gap: vw(35) vw(38);
+
+    @media(min-width: 1025px) {
+        grid-template-columns: vw(300) 1fr;
+    }
+
+    @media(max-width: 1024px) {
+        padding-top: 5rem;
+        gap: 3.5rem;
+    }
 
     &__cards {
         @include row-grid(vw(25));
         align-content: start;
+
+        @media(max-width: 1024px) {
+            row-gap: 2.5rem;
+        }
     }
 }
 
@@ -17,11 +29,22 @@
     flex-direction: column;
     align-items: center;
 
+    @media(max-width: 1024px) {
+        padding: 0 3rem 3rem;
+    }
+
     &__avatar {
         position: relative;
         margin-top: vw(-37);
         margin-bottom: vw(16);
         @include round(vw(200));
+
+        @media(max-width: 1024px) {
+            margin-top: -3.7rem;
+            margin-bottom: 1.6rem;
+            width: 20rem;
+            height: 20rem;
+        }
 
         img {
             @extend %cover;
@@ -35,28 +58,47 @@
         bottom: vw(-1);
         @include round(vw(50));
 
+        @media(max-width: 1024px) {
+            right: 2.1rem;
+            bottom: -0.1rem;
+            width: 5rem;
+            height: 5rem;
+        }
+
         svg {
             width: vw(21);
             height: vw(12);
+
+            @media(max-width: 1024px) {
+                width: 2.1rem;
+                height: 1.2rem;
+            }
         }
     }
 
     &__name {
+        @extend %text-18;
         margin-bottom: vw(12);
         font-family: $ff-acrom;
         font-weight: 700;
-        font-size: vw(18);
-        line-height: calc(21 / 18 * 100%);
+
+        @media(max-width: 1024px) {
+            margin-bottom: 1.2rem;
+        }
     }
 
     &__status {
+        @extend %text-12;
         position: relative;
         padding-left: vw(25);
         margin-bottom: vw(17);
         font-family: $ff-acrom;
-        font-size: vw(12);
-        line-height: calc(14 / 12 * 100%);
         color: #C5CFE4;
+
+        @media(max-width: 1024px) {
+            padding-left: 2.5rem;
+            margin-bottom: 1.7rem;
+        }
 
         &::before,
         &::after {
@@ -69,13 +111,24 @@
         &::before {
             left: 0;
             @include round(vw(20));
-            background-color: rgba(#8CD23C, .45);
+            background-color: rgba(#8CD23C, 0.45);
+
+            @media(max-width: 1024px) {
+                width: 2rem;
+                height: 2rem;
+            }
         }
 
         &::after {
             left: vw(5);
             @include round(vw(10));
             background-color: var(--green);
+
+            @media(max-width: 1024px) {
+                left: 0.5rem;
+                width: 1rem;
+                height: 1rem;
+            }
         }
     }
 }
@@ -90,14 +143,34 @@
     &__body {
         padding: vw(34) vw(46) vw(34) vw(40);
         display: grid;
-        grid-template-columns: 1fr vw(310);
         align-content: start;
         border-bottom: 1px solid #E2E9F7;
+
+        @media(max-width: 1024px) {
+            padding: 3.4rem 4.6rem 3.4rem 4rem;
+            gap: 3rem;
+        }
+
+        @media(max-width: 767px) {
+            padding: 3rem 2rem;
+        }
+
+        @media(min-width: 1025px) {
+            grid-template-columns: 1fr vw(310);
+        }
     }
 
     &__tabs {
         justify-content: center;
         gap: vw(40);
+
+        @media(max-width: 1024px) {
+            gap: 4rem;
+        }
+
+        @media(max-width: 767px) {
+            display: none;
+        }
 
         .tab {
             @include padding-x(0);
@@ -110,8 +183,20 @@
     grid-template-columns: repeat(4, 1fr);
     gap: vw(20);
 
+    @media(max-width: 1024px) {
+        gap: 2rem;
+    }
+
+    @media(max-width: 767px) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
     &__item {
         @include row-grid(vw(7));
+
+        @media(max-width: 1024px) {
+            row-gap: 0.7rem;
+        }
 
         &:last-child {
             grid-column: span 2;
@@ -138,6 +223,10 @@
             'total rates rates'
         ;
         gap: 0 vw(5);
+
+        @media(max-width: 1024px) {
+            grid-template-columns: auto 7rem 1fr;
+        }
     }
 
     &__overall {
@@ -156,6 +245,10 @@
             font-size: vw(40);
             line-height: calc(48 / 40 * 100%);
             text-transform: uppercase;
+
+            @media(max-width: 1024px) {
+                font-size: 4rem;
+            }
         }
     }
 
@@ -164,9 +257,18 @@
         justify-content: flex-end;
         gap: vw(5);
 
+        @media(max-width: 1024px) {
+            gap: 0.5rem;
+        }
+
         svg {
             width: vw(10);
             height: vw(10);
+
+            @media(max-width: 1024px) {
+                width: 1rem;
+                height: 1rem;
+            }
         }
     }
 
@@ -175,6 +277,10 @@
         display: flex;
         flex-direction: column-reverse;
         gap: vw(2);
+
+        @media(max-width: 1024px) {
+            gap: 0.2rem;
+        }
     }
 
     &__progress-item {
@@ -182,6 +288,11 @@
         grid-template-columns: vw(70) 1fr;
         gap: vw(5);
         align-items: center;
+
+        @media(max-width: 1024px) {
+            grid-template-columns: 7rem 1fr;
+            gap: 0.5rem;
+        }
     }
 
     &__progress-bar {
@@ -191,6 +302,10 @@
         height: vw(2);
         border-radius: $brs-btn;
         background-color: #D9DFF3;
+
+        @media(max-width: 1024px) {
+            height: 0.2rem;
+        }
 
         span {
             position: absolute;
@@ -204,6 +319,10 @@
 
 .profile-reviews {
     @include row-grid(vw(20));
+
+    @media(max-width: 1024px) {
+        row-gap: 2rem;
+    }
 }
 
 .profile-card-section {
@@ -211,12 +330,20 @@
     padding: vw(29);
     font-family: $ff-acrom;
 
+    @media(max-width: 1024px) {
+        padding: 2.9rem;
+    }
+
     &__top {
         margin-bottom: vw(18);
         display: flex;
         align-items: center;
         justify-content: space-between;
         flex-wrap: wrap;
+
+        @media(max-width: 1024px) {
+            margin-bottom: 1.8rem;
+        }
     }
 
     &__title {
@@ -226,5 +353,9 @@
 
     &__items {
         @include row-grid(vw(12));
+
+        @media(max-width: 1024px) {
+            row-gap: 1.2rem;
+        }
     }
 }

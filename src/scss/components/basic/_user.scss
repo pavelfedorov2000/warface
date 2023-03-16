@@ -9,11 +9,17 @@
         margin-right: vw(11);
         @include round(vw(59));
         box-shadow: $bsh-card;
+
+        @media(max-width: 1024px) {
+            margin-right: 1.1rem;
+            width: 5.9rem;
+            height: 5.9rem;
+        }
     }
 
     &__name {
-        font-size: vw(16);
-        line-height: calc(19 / 16 * 100%);
+        @extend %text-16;
+        font-family: $ff;
         font-weight: 700;
     }
 
@@ -24,11 +30,21 @@
                     margin-right: vw(15);
                     width: vw(45);
                     height: vw(45);
+
+                    @media(max-width: 1024px) {
+                        margin-right: 1.1rem;
+                        width: 4.5rem;
+                        height: 4.5rem;
+                    }
                 }
 
                 &__name {
-                    font-size: vw(14);
-                    line-height: calc(17 / 14 * 100%);
+                    @extend %text-14;
+
+                    @media(max-width: 500px) {
+                        font-size: 1.2rem;
+                        line-height: 1.4rem;
+                    }
                 }
             }
         }
