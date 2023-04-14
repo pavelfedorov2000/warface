@@ -1,6 +1,6 @@
 # About project
 
-Warface gampling app
+Warface gambling app
 
 # Technologies stack:
 
