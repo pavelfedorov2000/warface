@@ -1,14 +1,12 @@
 import { Case } from "../interfaces/Case";
 import CaseCard from "./CaseCard";
 
-interface Props {
-    items: Case[];
-}
+const mainClass = 'cases';
 
-const Cases = ({ items }: Props) => {
+const Cases = ({ items }: { items: Case[]; }) => {
     return (
-        <section className="cases">
-            <ul className="cases__list">
+        <section className={mainClass}>
+            <ul className={`${mainClass}__list`}>
                 {items.map((item, index) => (
                     <li key={index}>
                         <CaseCard index={index + 1} {...item} />

@@ -1,15 +1,14 @@
 import classNames from 'classnames';
 import { Link } from 'react-router-dom';
-
+import { WithClassName } from '../types/types';
 
 interface Props {
     src: string;
-    className?: string;
-    width: string | number;
-    height: string | number;
+    width: number;
+    height: number;
 }
 
-const Logo = ({ className, src, width, height }: Props) => {
+const Logo = ({ className, src, width, height }: Props & WithClassName) => {
     return (
         <div className={classNames('logo', className && `${className}__logo`)}>
             <Link to="/" className="logo__link">

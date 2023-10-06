@@ -5,15 +5,17 @@ import Vk from "../icons/Vk";
 import Logo from "../Logo";
 import Menu from "../Menu";
 
+const mainClass = 'promo-header';
+
 const PromoHeader = () => {
     return (
-        <header className="promo-header">
-            <div className="promo-header__inner">
-                <Logo className="promo-header" src={logo} width={200} height={38} />
-                <Menu className="promo-header__menu" />
-                <div className="promo-header__actions">
-                    <ActionButton className="promo-header__action-btn" bg="blue" icon={<Vk />} />
-                    <Button href="home" className="promo-header__btn" text="Войти" />
+        <header className={mainClass}>
+            <div className={`${mainClass}__inner`}>
+                <Logo className={mainClass} src={logo} width={200} height={38} />
+                <Menu className={`${mainClass}__menu`} />
+                <div className={`${mainClass}__actions`}>
+                    <ActionButton className={`${mainClass}__action-btn`} bg="blue" icon={<Vk />} />
+                    <Button href="home" className={`${mainClass}__btn`} text="Войти" />
                 </div>
             </div>
         </header>

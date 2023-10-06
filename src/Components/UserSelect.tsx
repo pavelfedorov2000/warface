@@ -2,18 +2,20 @@ import classNames from "classnames";
 import dropArrow from "../assets/images/icons/drop-arrow.svg";
 import plusIcon from "../assets/images/icons/plus.svg";
 import User from "./User";
+import { WithClassName } from "../types/types";
 
 interface Props {
-    className?: string;
     onClick?: () => void;
     isExpanded?: boolean;
 }
 
-const UserSelect = ({ className, isExpanded, onClick }: Props) => {
+const mainClass = 'user-select';
+
+const UserSelect = ({ className, isExpanded, onClick }: Props & WithClassName) => {
     return (
-        <button onClick={onClick} className={classNames('user-select', className)} type="button" aria-controls="dropdown-menu" aria-expanded={isExpanded} style={{ backgroundImage: `url(${dropArrow})` }}>
+        <button onClick={onClick} className={classNames(mainClass, className)} type="button" aria-controls="dropdown-menu" aria-expanded={isExpanded} style={{ backgroundImage: `url(${dropArrow})` }}>
             <User size="xs" />
-            <div className="user-select__balance">
+            <div className={`${mainClass}__balance`}>
                 <span className="button user-select__balance-item balance-item">
                     <span className="button__text">5 100B</span>
                 </span>

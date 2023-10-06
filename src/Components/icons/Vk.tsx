@@ -1,10 +1,7 @@
 import classNames from "classnames";
+import { WithClassName } from "../../types/types";
 
-interface Props {
-    className?: string;
-}
-
-const Vk = ({ className }: Props) => {
+const Vk = ({ className }: WithClassName) => {
     return (
         <span className={classNames('action-button action-button--style_bg-blue', className)}>
             <svg width="21" height="12" viewBox="0 0 21 12" fill="none" xmlns="http://www.w3.org/2000/svg">

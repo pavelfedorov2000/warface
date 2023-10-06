@@ -24,16 +24,18 @@ const SidebarMenuItems: SidebarNavItem[] = [{
     text: 'Истории покупок и продаж'
 }];
 
+const mainClass = 'sidebar-nav';
+
 const SidebarNav = () => {
     return (
-        <ul className="sidebar-nav">
+        <ul className={mainClass}>
             {SidebarMenuItems.map((item, index) => (
-                <li key={index} className="sidebar-nav__item">
-                    <Link className="sidebar-nav__item-link" to={item.path} style={{ backgroundImage: `url(${iconBgDots})` }}>
-                        <span className="sidebar-nav__item-icon">
+                <li key={index} className={`${mainClass}__item`}>
+                    <Link className={`${mainClass}__item-link`} to={item.path} style={{ backgroundImage: `url(${iconBgDots})` }}>
+                        <span className={`${mainClass}__item-icon`}>
                             {item.icon}
                         </span>
-                        <span className="sidebar-nav__item-text">
+                        <span className={`${mainClass}__item-text`}>
                             {item.text}
                         </span>
                     </Link>

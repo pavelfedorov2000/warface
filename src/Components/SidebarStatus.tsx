@@ -2,12 +2,9 @@ import classNames from "classnames";
 import ShoppingBox from "./icons/ShoppingBox";
 import User from "./icons/User";
 import Status from "./Status";
+import { WithClassName } from "../types/types";
 
-interface Props {
-    className?: string;
-}
-
-const SidebarStatus = ({ className }: Props) => {
+const SidebarStatus = ({ className }: WithClassName) => {
     return (
         <div className={classNames('sidebar-status', className)}>
             <Status className="mr-12" icon={<ShoppingBox />} bg="green" descr="Купленно товаров" value="181 924 36" />

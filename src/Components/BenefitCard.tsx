@@ -1,20 +1,18 @@
 import star from "../assets/images/star-big.svg";
 import innerStar from "../assets/images/star-inner.svg";
 
-interface Props {
-    text: string;
-}
+const mainClass = 'benefit-card';
 
-const BenefitCard = ({ text }: Props) => {
+const BenefitCard = ({ text }: { text: string; }) => {
     return (
-        <div className="benefit-card">
-            <div className="benefit-card__stars">
-                <img className="benefit-card__star" src={star} alt="star" width="75" height="72" />
-                <img className="benefit-card__inner-star" src={innerStar} alt="star" width="30" height="29" />
+        <div className={mainClass}>
+            <div className={`${mainClass}__stars`}>
+                <img className={`${mainClass}__star`} src={star} alt="star" width={75} height={72} />
+                <img className={`${mainClass}__inner-star`} src={innerStar} alt="star" width={30} height={29} />
             </div>
-            <div className="benefit-card__content">
-                <div className="benefit-card__title">Выгодные предложения</div>
-                <p className="benefit-card__text">
+            <div className={`${mainClass}__content`}>
+                <div className={`${mainClass}__title`}>Выгодные предложения</div>
+                <p className={`${mainClass}__text`}>
                     {text}
                 </p>
             </div>

@@ -1,6 +1,6 @@
 import { GoodType } from "../enums/GoodType";
 import { Label } from "../enums/Label";
-import { OnlineStatusType } from "../enums/OnlineStatus";
+import { OnlineStatus } from "../enums/OnlineStatus";
 import { Server } from "../enums/Server";
 
 export interface CardListItem {
@@ -23,7 +23,7 @@ export interface Card extends Good {
     },
     user: {
         name: string,
-        status: OnlineStatusType;
+        status: OnlineStatus;
     },
     price: string;
 }

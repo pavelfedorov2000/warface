@@ -2,21 +2,21 @@ import classNames from "classnames";
 import globalGold from "../assets/images/global-gold.png";
 import { Achievement } from "../interfaces/Achievement";
 
-interface Props extends Achievement {
-    style?: string;
-}
+const mainClass = 'achievement-card';
 
-const AchievementCard = ({ style, title, text }: Props) => {
+const AchievementCard = ({ style, title, text }: Achievement & { style?: string; }) => {
     return (
-        <div className={classNames('achievement-card', style && `achievement-card--style_row`)}>
-            <div className="achievement-card__img">
+        <div className={classNames(mainClass, {
+            [`${mainClass}--style_row`]: style
+        })}>
+            <div className={`${mainClass}__img`}>
                 <img src={globalGold} alt="global-gold" />
             </div>
-            <div className="achievement-card__content">
-                <div className="achievement-card__title">
+            <div className={`${mainClass}__content`}>
+                <div className={`${mainClass}__title`}>
                     {title}
                 </div>
-                <p className="achievement-card__descr">
+                <p className={`${mainClass}__descr`}>
                     {text}
                 </p>
             </div>

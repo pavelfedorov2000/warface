@@ -1,14 +1,10 @@
 import classNames from 'classnames';
+import { WithClassName } from '../types/types';
 
-interface Props {
-    price: number;
-    className?: string;
-}
-
-const Prices = ({ price, className }: Props) => {
+const Prices = ({ price, className }: { price: number; } & WithClassName) => {
     return (
         <div className={classNames('prices', className)}>
-           
+
         </div>
     );
 }

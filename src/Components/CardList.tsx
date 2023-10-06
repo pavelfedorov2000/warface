@@ -1,12 +1,8 @@
 import classNames from "classnames";
 import { CardListItem } from "../interfaces/Card";
+import { WithClassName } from "../types/types";
 
-interface Props {
-    className?: string;
-    items: CardListItem[];
-}
-
-const CardList = ({ className, items }: Props) => {
+const CardList = ({ className, items }: { items: CardListItem[]; } & WithClassName) => {
     return (
         <dl className={classNames('card-list', className)}>
             {items.map((item, index) => (

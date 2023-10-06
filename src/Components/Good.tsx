@@ -6,22 +6,21 @@ import rankStar from "../assets/images/icons/rank-star.png";
 import vip from "../assets/images/icons/vip.png";
 import gunSmall from "../assets/images/gun-small.png";
 import { GoodType } from "../enums/GoodType";
+import { WithClassName } from "../types/types";
 
-interface Props extends IGood {
-    className?: string;
-}
+const mainClass = 'good';
 
-const Good = ({ className, type }: Props) => {
+const Good = ({ className, type }: IGood & WithClassName) => {
     return (
-        <div className={classNames('good', className)}>
-            <img className="good__status" src={vip} alt="vip" />
-            <img className={classNames('good__img', {
-                'good__img--type_gun': type === GoodType.Gun || !type,
-                'good__img--type_rank': type === GoodType.Rank
+        <div className={classNames(mainClass, className)}>
+            <img className={`${mainClass}__status`} src={vip} alt="vip" />
+            <img className={classNames(`${mainClass}__img`, {
+                [`${mainClass}__img--type_gun`]: type === GoodType.Gun || !type,
+                [`${mainClass}__img--type_rank`]: type === GoodType.Rank
             })} src={type === GoodType.Gun || !type ? gun : rank} alt="" />
-            <img className={classNames('good__small-img', {
-                'good__small-img--type_gun': type === GoodType.Gun || !type,
-                'good__small-img--type_rank': type === GoodType.Rank
+            <img className={classNames(`${mainClass}__small-img`, {
+                [`${mainClass}__small-img--type_gun`]: type === GoodType.Gun || !type,
+                [`${mainClass}__small-img--type_rank`]: type === GoodType.Rank
             })} src={type === GoodType.Gun || !type ? gunSmall : rankStar} alt="" />
             <svg viewBox="0 0 89 89" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M18.2605 29.3502C17.208 28.7426 15.8549 29.1004 15.3198 30.1916C11.8704 37.2256 11.0676 45.2966 13.1081 52.9116C15.339 61.2374 20.7859 68.336 28.2507 72.6458C35.7154 76.9556 44.5864 78.1235 52.9123 75.8926C60.5272 73.8522 67.1156 69.1214 71.4826 62.6171C72.16 61.6082 71.7933 60.2574 70.7409 59.6498C69.6884 59.0421 68.3496 59.4086 67.6615 60.4103C63.886 65.9069 58.2605 69.9034 51.7733 71.6417C44.5748 73.5705 36.905 72.5607 30.4511 68.8346C23.9972 65.1084 19.2878 58.971 17.359 51.7726C15.6207 45.2853 16.2691 38.4152 19.1414 32.3972C19.6649 31.3005 19.3129 29.9578 18.2605 29.3502Z" fill="#E2E3F3" fillOpacity="0.65" />

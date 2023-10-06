@@ -9,32 +9,36 @@ import { useTypedSelector } from '../hooks/useTypedSelector';
 import classNames from "classnames";
 import { useActions } from "../hooks/useActions";
 import { Server } from "../enums/Server";
+import { ClassName } from "../enums/ClassName";
+import { Id } from "../enums/Id";
+
+const mainClass = 'filters';
 
 const Filters = () => {
     const { isVisible, price, runk, donate, server, sellerStatus } = useTypedSelector((state) => state.filtersReducer);
     const { closeFilters, submitFilters, resetFilters, setFilterPrice, setFilterRunk, setFilterDonate, setFilterServer, setSellerStatus } = useActions();
 
     const handleClose = () => {
-        document.body.classList.remove('_lock');
+        document.body.classList.remove(ClassName.Lock);
         closeFilters();
     }
 
     const handleSubmit = (event: React.SyntheticEvent<HTMLFormElement>) => {
         event.preventDefault();
-        document.body.classList.remove('_lock');
+        document.body.classList.remove(ClassName.Lock);
         submitFilters();
     }
 
     const handleReset = () => {
-        document.body.classList.remove('_lock');
+        document.body.classList.remove(ClassName.Lock);
         resetFilters();
     }
 
     return (
-        <form onSubmit={handleSubmit} id="filters" className={classNames('filters', {
-            'active': isVisible
+        <form onSubmit={handleSubmit} id={Id.Filters} className={classNames(mainClass, {
+            [ClassName.Active]: isVisible
         })}>
-            <CloseButton onClick={handleClose} className="filters__close" ariaLabel="Закрыть фильтры" />
+            <CloseButton onClick={handleClose} className={`${mainClass}__close`} ariaLabel="Закрыть фильтры" />
             <fieldset className="filters__item filter">
                 <legend className="filter__title">Цена</legend>
                 <RangeSlider onChange={setFilterPrice} max={20000} start={price} />
@@ -63,9 +67,9 @@ const Filters = () => {
                     ))}
                 </div>
             </fieldset>
-            <div className="filters__btns">
-                <Button className="filters__btn" bg="purple" icon={<FilterIcon />} text="Применить фильтр" type="submit" />
-                <Button onClick={handleReset} className="filters__btn" bg="gray" icon={<ResetIcon />} text="Сбросить фильтр" type="reset" />
+            <div className={`${mainClass}__btns`}>
+                <Button className={`${mainClass}__btn`} bg="purple" icon={<FilterIcon />} text="Применить фильтр" type="submit" />
+                <Button onClick={handleReset} className={`${mainClass}__btn`} bg="gray" icon={<ResetIcon />} text="Сбросить фильтр" type="reset" />
             </div>
         </form>
     );

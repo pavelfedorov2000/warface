@@ -4,14 +4,16 @@ import SidebarStatus from "../SidebarStatus";
 import logo from '../../assets/images/logo/logo.svg';
 import BottomSidebar from "../BottomSidebar";
 
+const mainClass = 'sidebar';
+
 const Sidebar = () => {
     return (
-        <aside className="sidebar">
-            <div className="sidebar__top">
-                <Logo src={logo} width="420" height="150" />
+        <aside className={mainClass}>
+            <div className={`${mainClass}__top`}>
+                <Logo src={logo} width={420} height={150} />
             </div>
-            <div className="sidebar__body">
-                <SidebarStatus className="sidebar__status" />
+            <div className={`${mainClass}__body`}>
+                <SidebarStatus className={`${mainClass}__status`} />
                 <SidebarNav />
             </div>
             <BottomSidebar />

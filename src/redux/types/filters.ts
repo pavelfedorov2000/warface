@@ -1,4 +1,4 @@
-import { OnlineStatusType } from "../../enums/OnlineStatus";
+import { OnlineStatus } from "../../enums/OnlineStatus";
 import { ServerType } from "../../enums/Server";
 import { Card } from "../../interfaces/Card";
 import { ActionType } from "../actionsList";
@@ -9,7 +9,7 @@ export interface FiltersState {
     server: ServerType;
     runk: [number, number];
     donate: [number, number];
-    sellerStatus: OnlineStatusType;
+    sellerStatus: OnlineStatus;
     items: Card[];
 }
 
@@ -51,7 +51,7 @@ interface SetFilterServerAction {
 
 interface SetSellerStatusAction {
     type: ActionType.SetSellerStatus;
-    payload: OnlineStatusType;
+    payload: OnlineStatus;
 }
 
 export type FiltersAction =

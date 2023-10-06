@@ -1,18 +1,16 @@
 import classNames from "classnames";
 import ActionButton from "./ActionButton";
 import Ellipsis from "./icons/Ellipsis";
+import { WithClassName } from "../types/types";
 
-interface Props {
-    className?: string;
-    price: string;
-}
+const mainClass = 'price-box';
 
-const PriceBox = ({ className, price }: Props) => {
+const PriceBox = ({ className, price }: { price: string; } & WithClassName) => {
     return (
-        <div className={classNames('price-box', className)}>
+        <div className={classNames(mainClass, className)}>
             <span>Цена</span>
-            <span className="price-box__value">{price}₽</span>
-            <ActionButton className="price-box__btn" bg="green" icon={<Ellipsis />} />
+            <span className={`${mainClass}__value`}>{price}₽</span>
+            <ActionButton className={`${mainClass}__btn`} bg="green" icon={<Ellipsis />} />
         </div>
     );
 };

@@ -1,11 +1,11 @@
 import classNames from 'classnames';
 import { ReactNode } from 'react';
 import { Link } from 'react-router-dom';
+import { WithClassName } from '../types/types';
 
 interface Props {
     onClick?: () => void;
     href?: string;
-    className?: string;
     border?: boolean;
     text?: string;
     type?: 'button' | 'submit' | 'reset';
@@ -18,7 +18,7 @@ interface Props {
     ariaControls?: string;
 }
 
-const Button = ({ href, onClick, className, border, text, type, isDisabled, transparent, icon, style, bg, reversed, ariaControls }: Props) => {
+const Button = ({ href, onClick, className, border, text, type, isDisabled, transparent, icon, style, bg, reversed, ariaControls }: Props & WithClassName) => {
     const content = <>
         {icon ? icon : null}
         <span className="button__text">{text}</span>
