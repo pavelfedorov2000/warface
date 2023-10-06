@@ -1,11 +1,7 @@
 import { Card as CardType } from "../interfaces/Card";
 import Card from "./Card";
 
-interface Props {
-    items: CardType[]
-}
-
-const Cards = ({ items }: Props) => {
+const Cards = ({ items }: { items: CardType[]; }) => {
     return (
         <div className="cards">
             {items.map((item) => (

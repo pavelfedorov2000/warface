@@ -10,19 +10,21 @@ interface Props {
     onToggleAnswer: () => void;
 }
 
+const mainClass = 'review-content';
+
 const ReviewContent = ({ text, answer, isExpanded, onToggleAnswer }: Props) => {
     return (
-        <div className="review-content">
+        <div className={mainClass}>
             {text && text.items.length !== 0 ?
                 <>
-                    <div className="review-content__text">
+                    <div className={`${mainClass}__text`}>
                         {text?.items.map((item, index) => (
                             <p key={index}>{item.text}</p>
                         ))}
                     </div>
                     {
                         answer &&
-                        <div className="review-content__btns">
+                        <div className={`${mainClass}__btns`}>
                             <button onClick={onToggleAnswer} className="button button--style_link-3" aria-expanded={isExpanded}>
                                 <span className="button__text">Показать ответ</span>
                             </button>

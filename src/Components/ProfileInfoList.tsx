@@ -1,14 +1,12 @@
 import { DefinitionListItem } from "../interfaces/DefinitionList";
 
-interface Props {
-    items: DefinitionListItem[];
-}
+const mainClass = 'profile-info-list';
 
-const ProfileInfoList = ({ items }: Props) => {
+const ProfileInfoList = ({ items }: { items: DefinitionListItem[]; }) => {
     return (
-        <dl className="profile-info-list">
+        <dl className={mainClass}>
             {items.map((item, index) => (
-                <div key={index} className="profile-info-list__item">
+                <div key={index} className={`${mainClass}__item`}>
                     <dt>{item.property}</dt>
                     <dd>{item.value}</dd>
                 </div>

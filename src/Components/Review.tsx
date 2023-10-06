@@ -4,14 +4,10 @@ import ReviewAnswer from "./ReviewAnswer";
 import ReviewCard from "./ReviewCard";
 import ReviewContent from "./ReviewContent";
 
-interface Props {
-    review: ReviewItem;
-}
-
-const Review = ({ review }: Props) => {
+const Review = ({ review }: { review: ReviewItem; }) => {
     const [reviewAnswerVisible, setReviewAnswerVisible] = useState(false);
     const toggleReviewAnswer = () => {
-        setReviewAnswerVisible((prevState) => !prevState);
+        setReviewAnswerVisible((v) => !v);
     }
 
     const closeReviewAnswer = () => {

@@ -2,6 +2,7 @@ import classNames from "classnames";
 import { ChatMessage as ChatMessageType } from "../interfaces/ChatMessage";
 import { formatDateTime } from "../utils/formatDateTime";
 import calendarIcon from "../assets/images/icons/calendar.svg";
+import Image from "./Image";
 
 enum ChatRole {
     User = 'user',
@@ -18,7 +19,7 @@ const ChatMessage = ({ index, date, text }: ChatMessageType & { index: number; }
         })}>
             <p className={`${mainClass}__text`}>{text}</p>
             <time dateTime={formatDateTime(date)} className={`${mainClass}__date`}>
-                <img src={calendarIcon} alt="calendar" />
+                <Image src={calendarIcon} alt="calendar" width={16} height={16} />
                 <span>{date}</span>
             </time>
             <button className={`${mainClass}__remove`}>

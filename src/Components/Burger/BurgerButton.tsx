@@ -1,12 +1,15 @@
 import burger from '../../assets/images/icons/burger.svg';
+import { ButtonType } from '../../enums/ButtonType';
 import { ClassName } from '../../enums/ClassName';
 import { Id } from '../../enums/Id';
 import { useActions } from '../../hooks/useActions';
+import Image from '../Image';
 
 const burgerMap = {
     className: 'burger-button',
     ariaLabel: 'Открыть меню',
     controls: Id.BurgerMenu,
+    type: ButtonType.Button,
     icon: {
         width: 30,
         height: 20,
@@ -23,8 +26,8 @@ const BurgerButton = () => {
     }
 
     return (
-        <button onClick={handleOpenMenu} className={burgerMap.className} type="button" aria-label={burgerMap.ariaLabel} aria-controls={burgerMap.controls}>
-            <img src={burger} alt={burgerMap.icon.alt} width={burgerMap.icon.width} height={burgerMap.icon.height} />
+        <button onClick={handleOpenMenu} className={burgerMap.className} type={burgerMap.type} aria-label={burgerMap.ariaLabel} aria-controls={burgerMap.controls}>
+            <Image {...burgerMap.icon} src={burger} />
         </button>
     );
 }

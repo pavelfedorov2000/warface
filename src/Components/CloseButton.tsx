@@ -2,6 +2,7 @@ import classNames from "classnames";
 import close from "../assets/images/icons/close-simple.svg";
 import { WithClassName } from "../types/types";
 import Image from "./Image";
+import { ButtonType } from "../enums/ButtonType";
 
 interface Props {
     onClick?: () => void;
@@ -17,7 +18,7 @@ const CloseButton = ({ onClick, className, ariaLabel }: Props & WithClassName) =
     };
 
     return (
-        <button onClick={onClick} className={classNames('close-button', className)} aria-label={ariaLabel} type="button">
+        <button onClick={onClick} className={classNames('close-button', className)} aria-label={ariaLabel} type={ButtonType.Button}>
             <Image {...closeButtonIcon} />
         </button>
     );

@@ -1,9 +1,10 @@
-import { ReactNode, useState, useRef } from "react";
+import { ReactNode, useState, useRef, useMemo } from "react";
 import { InputType } from "../enums/InputType";
 import Edit from "./icons/Edit";
+import { ButtonType } from "../enums/ButtonType";
 
 interface Props {
-    type?: InputType.Text | InputType.Phone | InputType.Email | InputType.Password;
+    type?: InputType;
     label: string;
     value?: string;
     activeValue?: string;
@@ -13,6 +14,8 @@ interface Props {
     icon?: ReactNode;
     secure?: boolean;
 }
+
+const mainClass = 'field';
 
 const Field = ({ type, label, value, icon, toggle, activeValue, inActiveValue, editButton, secure }: Props) => {
     const inputRef = useRef<HTMLInputElement>(null);
@@ -25,10 +28,12 @@ const Field = ({ type, label, value, icon, toggle, activeValue, inActiveValue, e
     }
 
     const handleEdit = () => {
-        inputRef.current && inputRef.current.focus();
+        if (inputRef.current) {
+            inputRef.current.focus();
+        }
     }
 
-    function generateValue() {
+    const inputValue = useMemo(() => {
         if (type === InputType.Password) {
             return value?.split('').map((_) => '*').join('');
         }
@@ -39,22 +44,19 @@ const Field = ({ type, label, value, icon, toggle, activeValue, inActiveValue, e
         }
 
         return value;
-    }
+    }, [type, secure]);
 
     return (
-        <label className="field" style={{ backgroundImage: icon ? `url(${icon})` : 'none' }}>
-            <span className="field__label">
-                {label}
-            </span>
-            {
-                toggle ?
-                    <button onClick={handleToggleValue} className="field__input" type="button">
-                        {toggleValue}
-                    </button>
-                    : <input ref={inputRef} className="field__input" value={generateValue()} type={type ?? InputType.Text} />
+        <label className={mainClass} style={{ backgroundImage: icon ? `url(${icon})` : 'none' }}>
+            <span className={`${mainClass}__label`}>{label}</span>
+            {toggle ?
+                <button onClick={handleToggleValue} className={`${mainClass}__input`} type={ButtonType.Button}>
+                    {toggleValue}
+                </button>
+                : <input ref={inputRef} className={`${mainClass}__input`} value={inputValue} type={type ?? InputType.Text} />
             }
             {editButton &&
-                <button onClick={handleEdit} className="edit-btn field__edit" type="button">
+                <button onClick={handleEdit} className={`edit-btn ${mainClass}__edit`} type={ButtonType.Button}>
                     <Edit />
                 </button>
             }

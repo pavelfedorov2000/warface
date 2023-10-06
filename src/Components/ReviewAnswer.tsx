@@ -3,6 +3,7 @@ import EditIcon from "./icons/EditIcon";
 import RemoveAnswer from "./icons/RemoveAnswer";
 import avatar from "../assets/images/user.png";
 import classNames from "classnames";
+import { ClassName } from "../enums/ClassName";
 
 interface Props {
     name?: string;
@@ -18,7 +19,7 @@ interface Props {
 const ReviewAnswer = ({ name, text, date, time, isVisible, onClose }: Props) => {
     return (
         <div className={classNames('review-answer', {
-            'active': isVisible
+            [ClassName.Active]: isVisible
         })}>
             <img src={avatar} alt="avatar" className="review-answer__avatar" />
             <div className="review-answer__name">{name}</div>

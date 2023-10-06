@@ -10,6 +10,9 @@ import classNames from "classnames";
 import { useActions } from "../hooks/useActions";
 import { useTypedSelector } from "../hooks/useTypedSelector";
 import { ClassName } from "../enums/ClassName";
+import { Id } from "../enums/Id";
+import { ButtonType } from "../enums/ButtonType";
+import Image from "./Image";
 
 const mainClass = ClassName.DropdownMenu;
 
@@ -23,13 +26,13 @@ const DropdownMenu = () => {
     }
 
     return (
-        <nav id="dropdown-menu" className={classNames(mainClass, {
+        <nav id={Id.DropdownMenu} className={classNames(mainClass, {
             [ClassName.Active]: isProfileMenuOpen
         })} aria-label="Выпадающее" style={{ backgroundImage: `url(${menuBg})` }}>
             <div className={`${mainClass}__top`}>
                 <div className={`${mainClass}__title`}>Меню</div>
-                <button onClick={handleClose} className={`${mainClass}__top-close`} type="button" aria-label="Закрыть меню">
-                    <img src={topClose} alt="close" />
+                <button onClick={handleClose} className={`${mainClass}__top-close`} type={ButtonType.Button} aria-label="Закрыть меню">
+                    <Image src={topClose} alt="close" width={18} height={18} />
                 </button>
             </div>
             <UserSelect className={`${mainClass}__user`} />
@@ -49,8 +52,8 @@ const DropdownMenu = () => {
                     </Link>
                 </li>
             </ul>
-            <button onClick={handleClose} className={`${mainClass}__close`} type="button" aria-label="Закрыть меню">
-                <img src={menuClose} alt="close" />
+            <button onClick={handleClose} className={`${mainClass}__close`} type={ButtonType.Button} aria-label="Закрыть меню">
+                <Image src={menuClose} alt="close" width={85} height={85} />
             </button>
         </nav>
     );

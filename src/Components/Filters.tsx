@@ -11,6 +11,8 @@ import { useActions } from "../hooks/useActions";
 import { Server } from "../enums/Server";
 import { ClassName } from "../enums/ClassName";
 import { Id } from "../enums/Id";
+import { ButtonType } from "../enums/ButtonType";
+import { Color } from "../enums/Color";
 
 const mainClass = 'filters';
 
@@ -53,7 +55,7 @@ const Filters = () => {
             </fieldset>
             <fieldset className="filters__item filter">
                 <legend className="filter__title">Ранг</legend>
-                <RangeSlider onChange={setFilterRunk} color="green" max={100} start={runk} />
+                <RangeSlider onChange={setFilterRunk} color={Color.Green} max={100} start={runk} />
             </fieldset>
             <fieldset className="filters__item filter">
                 <legend className="filter__title">Количество доната</legend>
@@ -68,8 +70,8 @@ const Filters = () => {
                 </div>
             </fieldset>
             <div className={`${mainClass}__btns`}>
-                <Button className={`${mainClass}__btn`} bg="purple" icon={<FilterIcon />} text="Применить фильтр" type="submit" />
-                <Button onClick={handleReset} className={`${mainClass}__btn`} bg="gray" icon={<ResetIcon />} text="Сбросить фильтр" type="reset" />
+                <Button className={`${mainClass}__btn`} bg={Color.Purple} icon={<FilterIcon />} text="Применить фильтр" type={ButtonType.Submit} />
+                <Button onClick={handleReset} className={`${mainClass}__btn`} bg="gray" icon={<ResetIcon />} text="Сбросить фильтр" type={ButtonType.Reset} />
             </div>
         </form>
     );

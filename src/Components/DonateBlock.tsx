@@ -6,6 +6,11 @@ import { DonateCategory, DONATE_CATEGORIES } from "../enums/Donate";
 import Button from "./Button";
 import DonateCard from "./DonateCard";
 import SearchField from "./SearchField";
+import { ClassName } from "../enums/ClassName";
+import { ButtonType } from "../enums/ButtonType";
+import Image from "./Image";
+
+const mainClass = 'donate-block';
 
 const DonateBlock = () => {
     const [activeCategory, setActiveCategory] = useState<string>(DonateCategory.All);
@@ -46,23 +51,23 @@ const DonateBlock = () => {
     }
 
     return (
-        <section className="donate-block">
-            <header className="donate-block__top">
+        <section className={mainClass}>
+            <header className={`${mainClass}__top`}>
                 <h2 className="title donate-block__title title--line_green title--small">Доната</h2>
                 <SearchField />
-                <select onChange={onSelectCategory} value={activeSelectValue} className="select donate-block__select" style={{ backgroundImage: `url(${selectArrow})` }}>
+                <select onChange={onSelectCategory} value={activeSelectValue} className={`select ${mainClass}__select`} style={{ backgroundImage: `url(${selectArrow})` }}>
                     {DONATE_CATEGORIES.map((category, index) => (
                         <option key={index} value={Object.keys(category)[0]}>{Object.values(category)[0].text}</option>
                     ))}
                 </select>
             </header>
-            <div className="donate-block__filter-tabs">
+            <div className={`${mainClass}__filter-tabs`}>
                 {DONATE_CATEGORIES.map((category, index) => (
                     <button key={index} onClick={() => onChangeCategory(category)} className={classNames('filter-tab', {
-                        'active': Object.keys(category)[0] === activeCategory,
-                    })} type="button">
+                        [ClassName.Active]: Object.keys(category)[0] === activeCategory,
+                    })} type={ButtonType.Button}>
                         {index !== 0 ?
-                            <img src={Object.values(category)[0].icon} alt="" />
+                            <Image src={Object.values(category)[0].icon} width={39} height={39} />
                             :
                             <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path fillRule="evenodd" clipRule="evenodd" d="M0.73 17.2959L6.33 19.6959C6.69999 19.8534 7.12428 19.8151 7.4601 19.5939C7.79592 19.3727 7.99862 18.998 8 18.5959V1.19588C7.99862 0.79376 7.79592 0.419063 7.4601 0.197866C7.12428 -0.0233305 6.69999 -0.0616211 6.33 0.0958787L0.73 2.49588C0.288712 2.68372 0.00165129 3.11628 0 3.59588V16.1959C0.00165129 16.6755 0.288712 17.108 0.73 17.2959ZM2 4.12588L6 2.41588V17.4159L2 15.6659V4.12588Z" />
@@ -77,12 +82,12 @@ const DonateBlock = () => {
                     </button>
                 ))}
             </div>
-            <div className="donate-block__cards">
+            <div className={`${mainClass}__cards`}>
                 {donates.map((donate) => (
                     <DonateCard key={donate.id} {...donate} />
                 ))}
             </div>
-            {donates.length !== DONATE_ITEMS.length && <Button onClick={showMoreDonates} className="donate-block__btn" text="Показать еще 10" />}
+            {donates.length !== DONATE_ITEMS.length && <Button onClick={showMoreDonates} className={`${mainClass}__btn`} text="Показать еще 10" />}
         </section>
     );
 };

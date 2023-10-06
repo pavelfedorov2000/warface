@@ -1,17 +1,17 @@
+import { Color } from "../enums/Color";
 import { Benefit as BenefitType } from "../interfaces/Benefit";
+import Image from "./Image";
 
-interface Props extends BenefitType {
-    iconBg: 'green' | 'purple';
-}
+const mainClass = 'guarantee-card';
 
-const GuaranteeCard = ({ icon, iconBg, title, text }: Props) => {
+const GuaranteeCard = ({ icon, iconBg, title, text }: BenefitType & { iconBg: Color; }) => {
     return (
-        <li className="guarantee-card">
-            <span className={`guarantee-card__icon guarantee-card__icon--${iconBg}`}>
-                <img src={icon} alt="" />
+        <li className={mainClass}>
+            <span className={`${mainClass}__icon ${mainClass}__icon--${iconBg}`}>
+                <Image src={icon} width={22} height={22} />
             </span>
-            <div className="guarantee-card__title">{title}</div>
-            <p className="guarantee-card__text">{text}</p>
+            <div className={`${mainClass}__title`}>{title}</div>
+            <p className={`${mainClass}__text`}>{text}</p>
         </li>
     );
 };

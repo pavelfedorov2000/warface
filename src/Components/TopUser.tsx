@@ -8,23 +8,25 @@ interface Props extends TopUserType {
     medal: string;
 }
 
+const mainClass = 'top-user';
+
 const TopUser = ({ index, medal, place, userName, goods, revenue }: Props) => {
     return (
-        <article className={classNames('top-user', `top-user--${medal}`)}>
-            <div className="top-user__avatar">
+        <article className={classNames(mainClass, `${mainClass}--${medal}`)}>
+            <div className={`${mainClass}__avatar`}>
                 <img src={santchezz} alt="avatar" />
-                <span className={`top-user__place top-user__place--${medal}`}>
+                <span className={`${mainClass}__place ${mainClass}__place--${medal}`}>
                     {place} Место
                     <span style={{ backgroundImage: `url(${starIcon})` }}></span>
                 </span>
             </div>
-            <div className="top-user__name">{userName}</div>
-            <dl className="top-user__stats">
-                <div className="top-user__stats-item">
+            <div className={`${mainClass}__name`}>{userName}</div>
+            <dl className={`${mainClass}__stats`}>
+                <div className={`${mainClass}__stats-item`}>
                     <dt>Купленные товары</dt>
                     <dd>{goods}</dd>
                 </div>
-                <div className="top-user__stats-item">
+                <div className={`${mainClass}__stats-item`}>
                     <dt>Заработанно</dt>
                     <dd>{revenue}</dd>
                 </div>

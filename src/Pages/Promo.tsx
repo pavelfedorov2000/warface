@@ -2,6 +2,7 @@ import { Footer, PromoHeader } from "../Components/Layout";
 import promoBg from "../assets/images/promo-bg.jpg";
 import decorText from "../assets/images/decor-text.svg";
 import { Button, PromoBenefits } from "../Components";
+import { Color } from "../enums/Color";
 
 const Promo = () => {
     return (
@@ -16,7 +17,7 @@ const Promo = () => {
                         <p className="promo__text">
                             Присоединяйтесь к нам прямо сейчас, и получите 15&nbsp;бонусов на счёт при первом пополении своего баланса.
                         </p>
-                        <Button className="promo__btn" href="home" bg="purple" text="Присоединиться" />
+                        <Button className="promo__btn" href="home" bg={Color.Purple} text="Присоединиться" />
                     </div>
                     <section className="promo__aside aside-promo">
                         <PromoBenefits />

@@ -1,3 +1,4 @@
+import { ButtonType } from "../enums/ButtonType";
 import { Card as CardType } from "../interfaces/Card";
 import CardList from "./CardList";
 import Good from "./Good";
@@ -7,31 +8,29 @@ import Remove from "./icons/Remove";
 import PriceBox from "./PriceBox";
 import SmallUser from "./SmallUser";
 
-interface Props extends CardType {
-    handleRemove?: () => void;
-}
+const mainClass = 'card';
 
-const Card = ({ label, status, title, user, price, list }: Props) => {
+const Card = ({ status, title, user, price, list }: CardType & { handleRemove?: () => void; }) => {
     return (
-        <article className="card">
-            {status && <span className="card__badge">{status}</span>}
-            <div className="card__actions">
-                <button className="card__action-btn" type="button">
+        <article className={mainClass}>
+            {status && <span className={`${mainClass}__badge`}>{status}</span>}
+            <div className={`${mainClass}__actions`}>
+                <button className={`${mainClass}__action-btn`} type={ButtonType.Button}>
                     <Edit />
                 </button>
-                <button className="card__action-btn" type="button">
+                <button className={`${mainClass}__action-btn`} type={ButtonType.Button}>
                     <Remove />
                 </button>
             </div>
-            <div className="card__content">
-                <Good className="card__good" />
-                <div className="card__title">{title}</div>
-                <button className="favorite-btn card__favorite" type="button">
+            <div className={`${mainClass}__content`}>
+                <Good className={`${mainClass}__good`} />
+                <div className={`${mainClass}__title`}>{title}</div>
+                <button className="favorite-btn card__favorite" type={ButtonType.Button}>
                     <Favorite />
                 </button>
-                <CardList className="card__list" {...list} />
-                <SmallUser className="card__user" {...user} />
-                <PriceBox className="card__price" price={price} />
+                <CardList className={`${mainClass}__list`} {...list} />
+                <SmallUser className={`${mainClass}__user`} {...user} />
+                <PriceBox className={`${mainClass}__price`} price={price} />
             </div>
         </article>
     );

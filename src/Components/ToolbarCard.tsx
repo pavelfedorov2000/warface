@@ -1,15 +1,14 @@
 import santchezz from "../assets/images/santchezz.png";
+import Image from "./Image";
 
-interface Props {
-    img: string;
-}
+const mainClass = 'toolbar-card';
 
-const ToolbarCard = ({ img }: Props) => {
+const ToolbarCard = ({ img }: { img: string; }) => {
     return (
-        <a className="toolbar-card" href="#">
-            <img className="toolbar-card__img" src={img} alt="img" />
-            <img className="toolbar-card__avatar" src={santchezz} alt="avatar" />
-            <span className="toolbar-card__name">
+        <a className={mainClass} href="#">
+            <Image className={`${mainClass}__img`} src={img} width={100} height={100} />
+            <Image className={`${mainClass}__avatar`} src={santchezz} alt="avatar" width={45} height={45} />
+            <span className={`${mainClass}__name`}>
                 <span>Santchezz</span>
             </span>
         </a>

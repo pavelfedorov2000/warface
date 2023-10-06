@@ -1,15 +1,14 @@
 import classNames from "classnames";
 import avatar from "../assets/images/user.png";
+import Image from "./Image";
 
-interface Props {
-    size?: string;
-}
+const mainClass = 'user';
 
-const User = ({ size }: Props) => {
+const User = ({ size }: { size?: string; }) => {
     return (
-        <div className={classNames('user', size && `user--size_${size}`)}>
-            <img className="user__avatar" src={avatar} alt="avatar" />
-            <span className="user__name">Shanderro</span>
+        <div className={classNames(mainClass, size && `${mainClass}--size_${size}`)}>
+            <Image className={`${mainClass}__avatar`} src={avatar} alt="avatar" width={59} height={59} />
+            <span className={`${mainClass}__name`}>Shanderro</span>
         </div>
     );
 };

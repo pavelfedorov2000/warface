@@ -2,11 +2,7 @@ import { REVIEWS } from "../constants/reviews";
 import { ReviewItem } from "../interfaces/Review";
 import Review from "./Review";
 
-interface Props {
-    reviews: ReviewItem[];
-}
-
-const ReviewsBlock = ({ reviews }: Props) => {
+const ReviewsBlock = ({ reviews }: { reviews: ReviewItem[]; }) => {
     return (
         <ul className="reviews-block">
             {reviews.map((review) => (

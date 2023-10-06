@@ -1,15 +1,16 @@
 import { TopUser } from "../interfaces/TopUser";
+import { WithClassName } from "../types/types";
 import User from "./User";
 
-const UsersTableRow = ({ place, goods, revenue }: TopUser) => {
+const UsersTableRow = ({ className, place, goods, revenue }: TopUser & WithClassName) => {
     return (
         <div className="users-table-row">
-            <div className="users-table__cell">{place}</div>
-            <div className="users-table__cell">
+            <div className={`${className}__cell`}>{place}</div>
+            <div className={`${className}__cell`}>
                 <User />
             </div>
-            <div className="users-table__cell">{goods}</div>
-            <div className="users-table__cell">{revenue}</div>
+            <div className={`${className}__cell`}>{goods}</div>
+            <div className={`${className}__cell`}>{revenue}</div>
         </div>
     );
 };

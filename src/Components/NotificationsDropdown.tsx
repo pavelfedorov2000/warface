@@ -1,23 +1,26 @@
 import { NEW_NOTIFICATIONS } from "../constants/notifications";
+import { ClassName } from "../enums/ClassName";
 import Button from "./Button";
 import Notification from "./Notification";
 
+const mainClass = 'notifications-dropdown';
+
 const NotificationsDropdown = () => {
     return (
-        <div className="notifications-dropdown dropdown-menu">
-            <div className="notifications-dropdown__top">
-                <div className="notifications-dropdown__title">
+        <div className={`${mainClass} ${ClassName.DropdownMenu}`}>
+            <div className={`${mainClass}__top`}>
+                <div className={`${mainClass}__title`}>
                     Уведомления
                     <span>(+{NEW_NOTIFICATIONS.length})</span>
                 </div>
-                <span className="notifications-dropdown__total">(43)</span>
+                <span className={`${mainClass}__total`}>(43)</span>
             </div>
-            <ul className="notifications-dropdown__list">
+            <ul className={`${mainClass}__list`}>
                 {NEW_NOTIFICATIONS.map((notification, index) => (
                     <Notification key={index} {...notification} />
                 ))}
             </ul>
-            <Button className="notifications-dropdown__link" href="/notifications" text="Показать все" style="link" />
+            <Button className={`${mainClass}__link`} href="/notifications" text="Показать все" style="link" />
         </div>
     );
 };

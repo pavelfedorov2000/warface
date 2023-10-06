@@ -7,22 +7,24 @@ interface Props {
     actionButton: ReactNode;
 }
 
+const mainClass = 'profile-card';
+
 const ProfileCard = ({ online, actionButton }: Props) => {
     return (
-        <section className="profile-card">
-            <div className="profile-card__avatar">
+        <section className={mainClass}>
+            <div className={`${mainClass}__avatar`}>
                 <img src={userAvatar} alt="avatar" />
-                <a className="profile-card__icon" href="#">
+                <a className={`${mainClass}__icon`} href="#">
                     {actionButton}
                 </a>
             </div>
-            <h2 className="profile-card__name">Shenderro</h2>
+            <h2 className={`${mainClass}__name`}>Shenderro</h2>
             {online &&
-                <div className="profile-card__status">
+                <div className={`${mainClass}__status`}>
                     Online
                 </div>
             }
-            <Button className="profile-card__logout" style="link" text="Выйти из аккаунта" />
+            <Button className={`${mainClass}__logout`} style="link" text="Выйти из аккаунта" />
         </section>
     );
 };

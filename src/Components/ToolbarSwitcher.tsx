@@ -1,5 +1,7 @@
 import classNames from 'classnames';
 import { ReactNode } from 'react';
+import { ClassName } from '../enums/ClassName';
+import { ButtonType } from '../enums/ButtonType';
 
 interface Props {
     icon: ReactNode;
@@ -9,8 +11,8 @@ interface Props {
 const ToolbarSwitcher = ({ icon, isActive }: Props) => {
     return (
         <button className={classNames('toolbar-switcher', {
-            'active': isActive
-        })} type="button">
+            [ClassName.Active]: isActive
+        })} type={ButtonType.Button}>
             {icon}
         </button>
     );

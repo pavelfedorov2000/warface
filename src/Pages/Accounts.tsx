@@ -7,6 +7,7 @@ import { useActions } from "../hooks/useActions";
 import { useTypedSelector } from "../hooks/useTypedSelector";
 import { Page } from "../interfaces/Route";
 import { ClassName } from "../enums/ClassName";
+import { Color } from "../enums/Color";
 
 const mainClass = 'accounts';
 
@@ -30,7 +31,7 @@ const Accounts = ({ title }: Page) => {
             <PageTop items={accounts} setItems={setAccounts} title={title} search />
 
             <div className={`${mainClass}__grid`}>
-                <Button onClick={handleOpenFilters} className="filters-button" bg="purple" icon={<FilterIcon />} text="Фильтры" ariaControls="filters" />
+                <Button onClick={handleOpenFilters} className="filters-button" bg={Color.Purple} icon={<FilterIcon />} text="Фильтры" ariaControls="filters" />
                 <Filters />
                 {accounts.length > 0 ?
                     <div className={`${mainClass}__cards`}>

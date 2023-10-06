@@ -3,24 +3,27 @@ import { formatDateTime } from "../utils/formatDateTime";
 import Button from "./Button";
 import BtnArrow from "./icons/BtnArrow";
 import viewIcon from "../assets/images/icons/view.svg";
+import Image from "./Image";
+
+const mainClass = 'views-history-item';
 
 const ViewsHistoryItem = ({ title, info, date, time, viewer }: ViewsHistory) => {
     return (
-        <div className="views-history-item">
-            <div className="views-history-item__title">
+        <div className={mainClass}>
+            <div className={`${mainClass}__title`}>
                 <span>
-                    <img src={viewIcon} alt="eye" />
+                    <Image src={viewIcon} alt="eye" width={22} height={14} />
                 </span>
                 {title}
             </div>
-            <div className="views-history-item__info">
-                <span className="views-history-item__info-title">
+            <div className={`${mainClass}__info`}>
+                <span className={`${mainClass}__info-title`}>
                     Краткая информация
                 </span>
                 <p>{info}</p>
             </div>
-            <div className="views-history-item__info">
-                <span className="views-history-item__info-title">
+            <div className={`${mainClass}__info`}>
+                <span className={`${mainClass}__info-title`}>
                     Дата просмотра
                 </span>
                 <p>
@@ -30,7 +33,7 @@ const ViewsHistoryItem = ({ title, info, date, time, viewer }: ViewsHistory) => 
                     <a href="#">{viewer}</a>
                 </p>
             </div>
-            <Button href="#" className="views-history-item__btn" bg="gray-2" text="Перейти" icon={<BtnArrow />} reversed />
+            <Button href="#" className={`${mainClass}__btn`} bg="gray-2" text="Перейти" icon={<BtnArrow />} reversed />
         </div>
     );
 };

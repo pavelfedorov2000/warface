@@ -13,6 +13,7 @@ import logo from '../../assets/images/logo/logo-main.png';
 import BurgerButton from '../Burger/BurgerButton';
 import { useActions } from '../../hooks/useActions';
 import { ClassName } from '../../enums/ClassName';
+import { Color } from '../../enums/Color';
 
 const mainClass = 'header';
 
@@ -47,7 +48,7 @@ const Header = () => {
                 <Menu className={`${mainClass}__menu`} />
                 <div className={`${mainClass}__actions`}>
                     <div ref={dropdownNotificationsRef} className={`${mainClass}__action`}>
-                        <ActionButton onClick={toggleNotificationsVisibility} isExpanded={visibleNotifications} bg="green" icon={<NotifyIcon />} />
+                        <ActionButton onClick={toggleNotificationsVisibility} isExpanded={visibleNotifications} bg={Color.Green} icon={<NotifyIcon />} />
                         <NotificationsDropdown />
                     </div>
                     <div className={`${mainClass}__action touch-visible`}>

@@ -2,6 +2,7 @@ import classNames from "classnames";
 import Nouislider from "nouislider-react";
 import "nouislider/distribute/nouislider.css";
 import { useState } from "react";
+import { InputType } from "../enums/InputType";
 
 interface Props {
     color?: string;
@@ -10,6 +11,8 @@ interface Props {
     start: [number, number];
     onChange: (from: number, to: number) => void;
 }
+
+const mainClass = 'range-slider';
 
 const RangeSlider = ({ onChange, color, min, max, start }: Props) => {
     const [rangeValueFrom, setRangeValueFrom] = useState(start[0]);
@@ -22,16 +25,18 @@ const RangeSlider = ({ onChange, color, min, max, start }: Props) => {
     }
 
     return (
-        <div className={classNames('range-slider', color && `range-slider--color_${color}`)}>
+        <div className={classNames(mainClass, {
+            [`${mainClass}--color_${color}`]: color
+        })}>
             <Nouislider range={{ min: min ?? 0, max: max }} start={start} connect onSlide={handleChange} />
-            <div className="range-slider__values">
-                <div className="range-slider__value">
+            <div className={`${mainClass}__values`}>
+                <div className={`${mainClass}__value`}>
                     <span>от</span>
-                    <input className="range-slider__value-input" type="number" value={rangeValueFrom} readOnly />
+                    <input className={`${mainClass}__value-input`} type={InputType.Number} value={rangeValueFrom} readOnly />
                 </div>
-                <div className="range-slider__value">
+                <div className={`${mainClass}__value`}>
                     <span>до</span>
-                    <input className="range-slider__value-input" type="number" value={rangeValueTo} readOnly />
+                    <input className={`${mainClass}__value-input`} type={InputType.Number} value={rangeValueTo} readOnly />
                 </div>
             </div>
         </div>

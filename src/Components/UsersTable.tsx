@@ -6,24 +6,26 @@ interface Props {
     currentUSer?: boolean;
 }
 
+const mainClass = 'users-table';
+
 const UsersTable = ({ users, currentUSer }: Props) => {
     return (
-        <div className="users-table">
-            <div className="users-table-row users-table__head">
-                <div className="users-table__cell">
+        <div className={mainClass}>
+            <div className={`users-table-row ${mainClass}__head`}>
+                <div className={`${mainClass}__cell`}>
                     {currentUSer ? 'Ваше место' : 'Место'}
                 </div>
                 {!currentUSer &&
                     <>
-                        <div className="users-table__cell">Пользователь</div>
-                        <div className="users-table__cell">Купленные товары</div>
-                        <div className="users-table__cell">Заработанно</div>
+                        <div className={`${mainClass}__cell`}>Пользователь</div>
+                        <div className={`${mainClass}__cell`}>Купленные товары</div>
+                        <div className={`${mainClass}__cell`}>Заработанно</div>
                     </>
                 }
             </div>
-            <div className="users-table__body">
+            <div className={`${mainClass}__body`}>
                 {users.map((user) => (
-                    <UsersTableRow key={user.id} {...user} />
+                    <UsersTableRow key={user.id} {...user} className={mainClass} />
                 ))}
             </div>
         </div>

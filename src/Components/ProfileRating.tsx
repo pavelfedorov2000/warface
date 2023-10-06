@@ -1,27 +1,29 @@
 import { ProfileRating as ProfileRatingType } from "../interfaces/ProfileRating";
 import SimpleStar from "./icons/SimpleStar";
 
+const mainClass = 'profile-rating';
+
 const ProfileRating = ({ overall, total, stars }: ProfileRatingType) => {
     return (
-        <div className="profile-rating">
-            <div className="profile-rating__title">Рейтинг продавца</div>
-            <div className="profile-rating__inner">
-                <div className="profile-rating__overall">
+        <div className={mainClass}>
+            <div className={`${mainClass}__title`}>Рейтинг продавца</div>
+            <div className={`${mainClass}__inner`}>
+                <div className={`${mainClass}__overall`}>
                     Всего {overall} отзывов
                 </div>
-                <div className="profile-rating__total">
+                <div className={`${mainClass}__total`}>
                     <b>{total}</b>
                     из 5
                 </div>
-                <ol className="profile-rating__progress" reversed>
+                <ol className={`${mainClass}__progress`} reversed>
                     {Object.keys(stars).map((star, index) => (
-                        <li key={index} className="profile-rating__progress-item">
-                            <div className="profile-rating__stars">
+                        <li key={index} className={`${mainClass}__progress-item`}>
+                            <div className={`${mainClass}__stars`}>
                                 {Array(index + 1).fill(0).map((_, j) => (
                                     <SimpleStar key={j} />
                                 ))}
                             </div>
-                            <span className="profile-rating__progress-bar">
+                            <span className={`${mainClass}__progress-bar`}>
                                 <span style={{ width: stars[star] }}></span>
                             </span>
                         </li>

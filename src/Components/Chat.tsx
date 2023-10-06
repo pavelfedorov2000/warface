@@ -5,6 +5,7 @@ import User from "./User";
 import userAvatar from "../assets/images/user.png";
 import Support from "./icons/Support";
 import classNames from "classnames";
+import Image from "./Image";
 
 const MESSAGES: ChatMessageType[] = [{
     date: '12.09.2019',
@@ -20,24 +21,26 @@ const MESSAGES: ChatMessageType[] = [{
     text: 'Привет, Отлично !!!'
 }];
 
+const mainClass = 'chat';
+
 const Chat = () => {
     return (
-        <div className="chat">
-            <header className="chat__head">
+        <div className={mainClass}>
+            <header className={`${mainClass}__head`}>
                 <User />
-                <div className="chat__supported">
+                <div className={`${mainClass}__supported`}>
                     Supported
                     <Support count={3} />
                 </div>
             </header>
-            <div className="chat__body">
-                <div className="chat__messages">
+            <div className={`${mainClass}__body`}>
+                <div className={`${mainClass}__messages`}>
                     {MESSAGES.map((message, index) => (
-                        <div className={classNames('chat__message', {
-                            'chat__message--reverse': (index + 1) % 2 === 0,
+                        <div className={classNames(`${mainClass}__message`, {
+                            [`${mainClass}__message--reverse`]: (index + 1) % 2 === 0,
                         })}>
                             {(index + 1) % 2 !== 0 ?
-                                <img className="chat__avatar" src={userAvatar} alt="avatar" />
+                                <Image className={`${mainClass}__avatar`} src={userAvatar} alt="avatar" width={50} height={50} />
                                 :
                                 <Support size="xs" />
                             }

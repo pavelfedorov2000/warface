@@ -2,11 +2,7 @@ import { Medal } from "../enums/Medal";
 import { TopUser as TopUserType } from "../interfaces/TopUser";
 import TopUser from "./TopUser";
 
-interface Props {
-    users: TopUserType[];
-}
-
-const TopThreeUsers = ({ users }: Props) => {
+const TopThreeUsers = ({ users }: { users: TopUserType[]; }) => {
     return (
         <div className="top-three-users">
             <TopUser index={2} medal={Medal.Gold} {...users[0]} />
